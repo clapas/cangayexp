@@ -6,6 +6,17 @@ $config = [
             // !!! insert a secret key in the following (if it is empty) - this is required by cookie validation
             'cookieValidationKey' => '',
         ],
+        'db' => [
+            'class' => 'yii\db\Connection',
+            'dsn' => 'pgsql:host=localhost;dbname=lts',
+            'username' => 'lts',
+            'password' => '3Feke.j3!jj',
+            'charset' => 'utf8',
+        ],
+        'session' => [
+            'name' => 'PHPFRONTSESSID',
+            'savePath' => __DIR__ . '/../tmp',
+        ],
     ],
 ];
 
