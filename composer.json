@@ -36,7 +36,7 @@
     },
     "scripts": {
         "post-install-cmd" : [
-            "./init  --env=Production --overwrite=All",
+            "./init  --env=Production --overwrite=All"//,
             //"./yii migrate --interactive=0"
         ]
     }
