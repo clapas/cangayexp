@@ -35,88 +35,95 @@ $this->title = 'LivingTheSunset';
 
     <div class="body-content">
 
+      <div class="title">
         <h1>Servicios</h1>
           <p>Praesent odio elit, dapibus at convallis vel, luctus sit amet dui. Curabitur in pretium quam. Nullam vel 
             lorem ut purus interdum rhoncus. Nam at pellentesque ex. Quisque at diam laoreet, viverra justo ac, 
             bibendum lectus. Pellentesque faucibus tempor ligula, a ultrices justo maximus id. Ut at ligula mauris. 
             Morbi id lacinia ligula, ut rutrum magna.</p>
-        <h2>Gestión Integral</h2>
+        </div>
         <div class="row">
-            <div class="col-md-2">
-                <p><span class="glyphicon glyphicon-briefcase" style="font-size: 128px" aria-hidden="true"></span></p>
-            </div>
-            <div class="col-md-9">
+          <div class="col-md-3 col-sm-6 col-xs-12">
+            <div class="service-box">
+              <div class="service animated fadeInUp visible" data-animation="fadeInUp" data-delay="500">
+                <span class="fa-stack fa-4x"><i class="fa fa-circle fa-2x fa-stack-2x"></i><i class="fa fa-desktop fa-stack-1x service-icon glyphicon glyphicon-briefcase"></i></span>
+                <h3>Gestión Integral</h3>
                 <p>Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec 
-                  gravida erat vel gravida malesuada. In nisi lacus, faucibus non dignissim in, molestie ac lectus. 
-                  Sed et cursus elit. Donec eget faucibus purus, vel ullamcorper ex. In eget blandit neque. Nulla 
-                  sit amet erat porta, lobortis massa ornare, fermentum ex. Vestibulum ut urna lectus. Fusce 
-                  sagittis mauris nibh, at imperdiet lectus accumsan eu.</p>
+                 gravida erat vel gravida malesuada. In nisi lacus, faucibus non dignissim in, molestie ac lectus.</p>
+              </div>
             </div>
+          </div>
+          <div class="col-md-3 col-sm-6 col-xs-12">
+            <div class="service-box">
+              <div class="service animated fadeInUp visible" data-animation="fadeInUp" data-delay="500">
+                <span class="fa-stack fa-4x"><i class="fa fa-desktop fa-stack-1x service-icon glyphicon glyphicon-cutlery"></i></span>
+                <h3>Cocinero</h3>
+                <p>Donec eget faucibus purus, vel ullamcorper ex. In eget blandit neque. Nulla 
+                 sit amet erat porta, lobortis massa ornare, fermentum ex. Vestibulum ut urna lectus. Fusce 
+                 sagittis mauris nibh, at imperdiet lectus accumsan eu..</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-3 col-sm-6 col-xs-12">
+            <div class="service-box">
+              <div class="service animated fadeInUp visible" data-animation="fadeInUp" data-delay="500">
+                <span class="fa-stack fa-4x"><i class="fa fa-desktop fa-stack-1x service-icon glyphicon glyphicon-eye-open"></i></span>
+                <h3>Niñera</h3>
+                <p>Suspendisse felis erat, vestibulum a sapien at, congue cursus velit. Suspendisse cursus, sapien 
+               vel tempor iaculis, justo urna iaculis ex, et faucibus nunc dui et dolor.</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-3 col-sm-6 col-xs-12">
+            <div class="service-box">
+              <div class="service animated fadeInUp visible" data-animation="fadeInUp" data-delay="500">
+                <span class="fa-stack fa-4x"><i class="fa fa-desktop fa-stack-1x service-icon glyphicon glyphicon-road"></i></span>
+                <h3>Chófer</h3>
+                <p>Suspendisse felis erat, vestibulum a sapien at, congue cursus velit. Suspendisse cursus, sapien 
+               vel tempor iaculis, justo urna iaculis ex, et faucibus nunc dui et dolor.</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-3 col-sm-6 col-xs-12">
+            <div class="service-box">
+              <div class="service animated fadeInUp visible" data-animation="fadeInUp" data-delay="500">
+                <span class="fa-stack fa-4x"><i class="fa fa-desktop fa-stack-1x service-icon glyphicon glyphicon-flag"></i></span>
+                <h3>Guía Turístico</h3>
+                <p>Suspendisse felis erat, vestibulum a sapien at, congue cursus velit. Suspendisse cursus, sapien 
+               vel tempor iaculis, justo urna iaculis ex, et faucibus nunc dui et dolor.</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-3 col-sm-6 col-xs-12">
+            <div class="service-box">
+              <div class="service animated fadeInUp visible" data-animation="fadeInUp" data-delay="500">
+                <span class="fa-stack fa-4x"><i class="fa fa-desktop fa-stack-1x service-icon glyphicon glyphicon-book"></i></span>
+                <h3>Cenas Concertadas</h3>
+                <p>Suspendisse felis erat, vestibulum a sapien at, congue cursus velit. Suspendisse cursus, sapien 
+               vel tempor iaculis, justo urna iaculis ex, et faucibus nunc dui et dolor.</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-3 col-sm-6 col-xs-12">
+            <div class="service-box">
+              <div class="service animated fadeInUp visible" data-animation="fadeInUp" data-delay="500">
+                <span class="fa-stack fa-4x"><i class="fa fa-desktop fa-stack-1x service-icon glyphicon glyphicon-facetime-video"></i></span>
+                <h3>Seguridad</h3>
+                <p>Suspendisse felis erat, vestibulum a sapien at, congue cursus velit. Suspendisse cursus, sapien 
+               vel tempor iaculis, justo urna iaculis ex, et faucibus nunc dui et dolor.</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-3 col-sm-6 col-xs-12">
+            <div class="service-box">
+              <div class="service animated fadeInUp visible" data-animation="fadeInUp" data-delay="500">
+                <span class="fa-stack fa-4x"><i class="fa fa-desktop fa-stack-1x service-icon glyphicon glyphicon-gift"></i></span>
+                <h3>Personal Shopper</h3>
+                <p>Suspendisse felis erat, vestibulum a sapien at, congue cursus velit. Suspendisse cursus, sapien 
+               vel tempor iaculis, justo urna iaculis ex, et faucibus nunc dui et dolor.</p>
+              </div>
+            </div>
+          </div>
         </div>
-        <h2>Cocinero</h2>
-        <div class="row">
-            <div class="col-md-2">
-                <p><span class="glyphicon glyphicon-cutlery" style="font-size: 128px" aria-hidden="true"></span></p>
-            </div>
-            <div class="col-md-9">
-              <p>Phasellus ut volutpat quam. Praesent felis nisi, eleifend scelerisque vehicula ac, ultrices quis 
-                tellus. Sed et ipsum a ante pellentesque dictum. Aliquam faucibus ipsum vitae libero rutrum interdum. 
-                Morbi purus ex, elementum non porttitor at, faucibus at magna. Fusce varius felis a metus fringilla, a 
-                sodales ligula pretium. Nunc id lacus nec nisl rutrum feugiat non nec massa. Maecenas rutrum 
-                eleifend justo vitae ullamcorper.</p>
-            </div>
-        </div>
-        <h2>Niñera</h2>
-        <div class="row">
-            <div class="col-md-2">
-                <p><span class="glyphicon glyphicon-eye-open" style="font-size: 128px" aria-hidden="true"></span></p>
-            </div>
-            <div class="col-md-9">
-              <p>Suspendisse felis erat, vestibulum a sapien at, congue cursus velit. Suspendisse cursus, sapien 
-                vel tempor iaculis, justo urna iaculis ex, et faucibus nunc dui et dolor. Quisque convallis, diam 
-                sed ultricies ornare, eros augue aliquet tortor, vel suscipit erat magna sed arcu. Suspendisse 
-                suscipit tincidunt elit, vel gravida dolor vulputate ac. Sed sodales varius tellus ut vulputate. 
-                Proin ut tristique leo.</p>
-            </div>
-        </div>
-        <h2>Chófer</h2>
-        <div class="row">
-            <div class="col-md-2">
-                <p><span class="glyphicon glyphicon-road" style="font-size: 128px" aria-hidden="true"></span></p>
-            </div>
-            <div class="col-md-9">
-              <p>Nulla efficitur suscipit posuere. Aenean porttitor id arcu ut efficitur. Donec et finibus lacus. 
-                Duis et laoreet enim, ut vulputate enim. Curabitur non sapien eu ipsum commodo rutrum. Mauris vel 
-                varius mauris, et hendrerit tortor. Nunc a felis enim. Donec vel libero aliquet, varius elit ut, 
-                porttitor nisl. Vestibulum id pulvinar nunc.</p>
-            </div>
-        </div>
-        <h2>Seguridad</h2>
-        <div class="row">
-            <div class="col-md-2">
-                <p><span class="glyphicon glyphicon-facetime-video" style="font-size: 128px" aria-hidden="true"></span></p>
-            </div>
-            <div class="col-md-9">
-              <p>Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Duis vitae 
-                erat sit amet ante posuere varius vel quis justo. Proin ultricies tortor in nibh congue, vitae 
-                hendrerit enim efficitur. Sed at arcu eu erat condimentum ullamcorper quis sit amet nibh. Fusce 
-                tempor cursus est, at consequat lectus consequat a. Maecenas volutpat erat vitae ipsum porttitor, 
-                eget dignissim odio ultrices. Nullam ut sagittis mi.</p>
-            </div>
-        </div>
-        <h2>Personal Shopper</h2>
-        <div class="row">
-            <div class="col-md-2">
-                <p><span class="glyphicon glyphicon-gift" style="font-size: 128px" aria-hidden="true"></span></p>
-            </div>
-            <div class="col-md-9">
-              <p>Cras placerat justo nec ultricies facilisis. Nullam dignissim, est nec pretium vestibulum, erat 
-                risus semper nisi, eu bibendum ex quam quis mi. Donec tincidunt, nibh id mollis aliquam, augue nunc 
-                ornare velit, ut posuere ex libero nec lorem. Proin nec eros pharetra, malesuada ante eu, tincidunt 
-                neque. Nulla vitae tempus mauris, vitae hendrerit mi. Morbi lorem mi, posuere non felis et, sodales 
-                faucibus magna. Cras eget pellentesque tellus. Aliquam erat volutpat.</p>
-            </div>
-        </div>
-
     </div>
 </div>

@@ -97,3 +97,123 @@ a.desc:after {
     padding: 10px 20px;
     margin: 0 0 15px 0;
 }
+
+.service-box {
+    margin-bottom: 25px;
+    margin-top: 25px;
+    min-height: 320px;
+}
+
+.service {
+    margin-top: 30px;
+    padding: 45px 20px 20px 20px;
+    border: 1px solid #ececec;
+    border-radius: 4px;
+    text-align: center;
+    transition: .3s;
+    position: relative;
+}
+
+@media (min-width: 992px) {
+    .visible {
+        opacity: 1;
+    }
+}
+
+.fadeInUp {
+    -webkit-animation-name: fadeInUp;
+    animation-name: fadeInUp;
+}
+
+.animated {
+    -webkit-animation-duration: 1s;
+    animation-duration: 1s;
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
+}
+
+.service > .fa-stack {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: -60px;
+    margin: auto;
+    border: 1px solid #ececec;
+    background-color: #fff;
+    border-radius: 50%;
+}
+
+.fa-4x {
+    font-size: 4em;
+}
+
+.service > .fa-stack > .fa-circle {
+    color: #f6f6f6;
+    transition: .3s;
+}
+
+.fa-stack-2x {
+    font-size: 2em;
+}
+
+.fa-stack-1x, .fa-stack-2x {
+    position: absolute;
+    left: 0;
+    width: 100%;
+    text-align: center;
+}
+
+.fa-2x {
+    font-size: 2em;
+}
+
+.fa {
+    display: inline-block;
+    /*font-family: FontAwesome;*/
+    font-style: normal;
+    font-weight: normal;
+    line-height: 1;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.fa-stack-1x {
+    line-height: inherit;
+}
+
+.service > h3 {
+    text-transform: uppercase;
+    font-size: 20px;
+    font-weight: 700;
+}
+
+.service .glyphicon {
+   color: #0c84e4;
+}
+/*
+.service:hover > .fa-stack > .service-icon {
+    -webkit-animation-name: bounceIn;
+    animation-name: bounceIn;
+    -webkit-animation-duration: 1s;
+    animation-duration: 1s;
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
+    color: #fff;
+}
+*/
+
+.body-content .title {
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 30px;
+    float: none;
+    max-width: 92%;
+}
+
+.body-content .title h1 {
+    text-transform: uppercase;
+    color: #515151;
+    font-size: 48px;
+    font-weight: 300;
+    text-align: center;
+}

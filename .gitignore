@@ -29,8 +29,5 @@ phpunit.phar
 # local phpunit config
 /phpunit.xml
 
-# temp directories
-tmp/
-
 # not using tests
 /tests
