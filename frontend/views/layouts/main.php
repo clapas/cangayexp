@@ -84,7 +84,7 @@ AppAsset::register($this);
         <div class="navbar-filler"></div>
         <div class="container-fluid">
           <div class="row">
-            <div class="col-md-2">
+            <div class="col-md-2 visible-lg-block visible-md-block">
               <?php
                   use yii\bootstrap\ButtonGroup;
                   echo ButtonGroup::widget([
@@ -109,11 +109,11 @@ AppAsset::register($this);
             echo Carousel::widget([
                 'items' => [
                     // the item contains only the image
-                    ['content' => '<img data-src="holder.js/900x500/auto/#666:#666" alt="900x500" src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiIHN0YW5kYWxvbmU9InllcyI/PjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB3aWR0aD0iOTAwIiBoZWlnaHQ9IjUwMCIgdmlld0JveD0iMCAwIDkwMCA1MDAiIHByZXNlcnZlQXNwZWN0UmF0aW89Im5vbmUiPjxkZWZzLz48cmVjdCB3aWR0aD0iOTAwIiBoZWlnaHQ9IjUwMCIgZmlsbD0iIzY2NiIvPjxnPjx0ZXh0IHg9IjM0MC45OTIxODc1IiB5PSIyNTAiIHN0eWxlPSJmaWxsOiM2NjY7Zm9udC13ZWlnaHQ6Ym9sZDtmb250LWZhbWlseTpBcmlhbCwgSGVsdmV0aWNhLCBPcGVuIFNhbnMsIHNhbnMtc2VyaWYsIG1vbm9zcGFjZTtmb250LXNpemU6NDJwdDtkb21pbmFudC1iYXNlbGluZTpjZW50cmFsIj45MDB4NTAwPC90ZXh0PjwvZz48L3N2Zz4=" data-holder-rendered="true">', 'caption' => '<h4>Primer título</h4><p>Este es el primer texto</p>'],
+                    ['content' => '<img src="img/slideshow1.jpg">', 'caption' => '<h4>Primer título</h4><p>Este es el primer texto</p>'],
                     // equivalent to the above
-                    ['content' => '<img data-src="holder.js/900x500/auto/#666:#666" alt="900x500" src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiIHN0YW5kYWxvbmU9InllcyI/PjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB3aWR0aD0iOTAwIiBoZWlnaHQ9IjUwMCIgdmlld0JveD0iMCAwIDkwMCA1MDAiIHByZXNlcnZlQXNwZWN0UmF0aW89Im5vbmUiPjxkZWZzLz48cmVjdCB3aWR0aD0iOTAwIiBoZWlnaHQ9IjUwMCIgZmlsbD0iIzY2NiIvPjxnPjx0ZXh0IHg9IjM0MC45OTIxODc1IiB5PSIyNTAiIHN0eWxlPSJmaWxsOiM2NjY7Zm9udC13ZWlnaHQ6Ym9sZDtmb250LWZhbWlseTpBcmlhbCwgSGVsdmV0aWNhLCBPcGVuIFNhbnMsIHNhbnMtc2VyaWYsIG1vbm9zcGFjZTtmb250LXNpemU6NDJwdDtkb21pbmFudC1iYXNlbGluZTpjZW50cmFsIj45MDB4NTAwPC90ZXh0PjwvZz48L3N2Zz4=" data-holder-rendered="true">', 'caption' => '<h4>Segundo título</h4><p>Este es el segundo texto</p>'],
+                    ['content' => '<img src="img/slideshow2.jpg">', 'caption' => '<h4>Segundo título</h4><p>Este es el segundo texto</p>'],
                     // the item contains both the image and the caption
-                    ['content' => '<img data-src="holder.js/900x500/auto/#666:#666" alt="900x500" src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiIHN0YW5kYWxvbmU9InllcyI/PjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB3aWR0aD0iOTAwIiBoZWlnaHQ9IjUwMCIgdmlld0JveD0iMCAwIDkwMCA1MDAiIHByZXNlcnZlQXNwZWN0UmF0aW89Im5vbmUiPjxkZWZzLz48cmVjdCB3aWR0aD0iOTAwIiBoZWlnaHQ9IjUwMCIgZmlsbD0iIzY2NiIvPjxnPjx0ZXh0IHg9IjM0MC45OTIxODc1IiB5PSIyNTAiIHN0eWxlPSJmaWxsOiM2NjY7Zm9udC13ZWlnaHQ6Ym9sZDtmb250LWZhbWlseTpBcmlhbCwgSGVsdmV0aWNhLCBPcGVuIFNhbnMsIHNhbnMtc2VyaWYsIG1vbm9zcGFjZTtmb250LXNpemU6NDJwdDtkb21pbmFudC1iYXNlbGluZTpjZW50cmFsIj45MDB4NTAwPC90ZXh0PjwvZz48L3N2Zz4=" data-holder-rendered="true">', 'caption' => '<h4>Tercer título</h4><p>Este es el tercer texto</p>'],
+                    ['content' => '<img src="img/slideshow3.jpg">', 'caption' => '<h4>Tercer título</h4><p>Este es el tercer texto</p>'],
                 ],
                 'controls' => [
                     '<span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>',
@@ -122,6 +122,27 @@ AppAsset::register($this);
             ]); ?>
             </div>
           </div>
+        </div>
+
+        <div class="jumbotron">
+          <h1>Living The Sunset</h1>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
+            dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
+            ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
+            fugiat nulla pariatur.</p>
+          <p>Donec vel sapien sed dolor consequat elementum. Sed condimentum lacinia posuere. Vivamus sed velit quam. 
+            Curabitur bibendum egestas orci, eleifend tempus dolor iaculis sed. Nunc luctus, quam et gravida dictum, 
+            leo odio commodo risus, a dictum nulla erat et neque. Morbi sit amet malesuada sem, sed ornare urna. 
+            Quisque enim felis, ullamcorper sed nisl vel, porttitor sagittis mi.</p>
+          
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin iaculis suscipit leo nec faucibus. 
+            Integer sodales libero et velit pharetra, sed interdum nisi bibendum. Sed ullamcorper eleifend lectus, 
+            quis semper ante dictum id. Vestibulum placerat mauris tincidunt dapibus vulputate. Praesent fermentum 
+            facilisis urna, a tristique risus lobortis eu. Cras lacinia sapien mi, in tristique purus porta a. Donec 
+            tempus, nisi a ultrices iaculis, arcu diam blandit sem, in faucibus odio orci in augue. Quisque volutpat 
+            semper ipsum a lacinia. Suspendisse eu elit tempus, laoreet lacus eget, posuere quam. Vivamus nec erat 
+            tellus. Duis ut massa felis. Vestibulum a posuere nisl. Maecenas malesuada varius tortor ut scelerisque.</p>
+          
         </div>
 
         <div class="container">

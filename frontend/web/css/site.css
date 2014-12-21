@@ -23,7 +23,16 @@ body {
 
 .jumbotron {
     text-align: center;
-    background-color: transparent;
+    background-color: #2196f3;
+    margin-top: 48px;
+    color: #444;
+    padding-left: 24px;
+    padding-right: 24px;
+}
+
+.jumbotron h1 {
+    color: rgb(255, 204, 0);
+    margin-bottom: inherit;
 }
 
 .jumbotron .btn {
@@ -114,22 +123,13 @@ a.desc:after {
     position: relative;
 }
 
-@media (min-width: 992px) {
-    .visible {
-        opacity: 1;
-    }
-}
-
-.fadeInUp {
-    -webkit-animation-name: fadeInUp;
-    animation-name: fadeInUp;
-}
-
-.animated {
-    -webkit-animation-duration: 1s;
-    animation-duration: 1s;
-    -webkit-animation-fill-mode: both;
-    animation-fill-mode: both;
+.fa-stack {
+    position: relative;
+    display: inline-block;
+    width: 2em;
+    height: 2em;
+    line-height: 2em;
+    vertical-align: middle;
 }
 
 .service > .fa-stack {
@@ -143,42 +143,12 @@ a.desc:after {
     border-radius: 50%;
 }
 
-.fa-4x {
-    font-size: 4em;
-}
-
-.service > .fa-stack > .fa-circle {
-    color: #f6f6f6;
-    transition: .3s;
-}
-
-.fa-stack-2x {
-    font-size: 2em;
-}
-
-.fa-stack-1x, .fa-stack-2x {
-    position: absolute;
-    left: 0;
-    width: 100%;
-    text-align: center;
-}
-
-.fa-2x {
-    font-size: 2em;
-}
-
-.fa {
-    display: inline-block;
-    /*font-family: FontAwesome;*/
-    font-style: normal;
-    font-weight: normal;
-    line-height: 1;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-}
-
 .fa-stack-1x {
     line-height: inherit;
+}
+
+.fa-4x {
+    font-size: 4em;
 }
 
 .service > h3 {
@@ -190,22 +160,11 @@ a.desc:after {
 .service .glyphicon {
    color: #0c84e4;
 }
-/*
-.service:hover > .fa-stack > .service-icon {
-    -webkit-animation-name: bounceIn;
-    animation-name: bounceIn;
-    -webkit-animation-duration: 1s;
-    animation-duration: 1s;
-    -webkit-animation-fill-mode: both;
-    animation-fill-mode: both;
-    color: #fff;
-}
-*/
 
 .body-content .title {
     margin-left: auto;
     margin-right: auto;
-    margin-bottom: 30px;
+    margin-bottom: 64px;
     float: none;
     max-width: 92%;
 }
