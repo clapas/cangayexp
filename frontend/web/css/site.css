@@ -32,12 +32,17 @@ body {
 
 .jumbotron h1 {
     color: rgb(255, 204, 0);
-    margin-bottom: inherit;
+    margin-bottom: 1.2em;
 }
 
 .jumbotron .btn {
     font-size: 21px;
     padding: 14px 24px;
+}
+
+.jumbotron .glyphicon {
+    font-size: 10em;
+    color: white;
 }
 
 .not-set {
@@ -46,7 +51,7 @@ body {
 }
 
 .navbar-filler {
-    height: 90px;
+    height: 75px;
 }
 
 .navbar-inverse .navbar-brand {
@@ -175,4 +180,38 @@ a.desc:after {
     font-size: 48px;
     font-weight: 300;
     text-align: center;
+}
+
+.masthead .btn-group-vertical > .btn {
+    border-bottom-left-radius: 0;
+    border-top-left-radius: 0;
+    margin-top: 0.5em;
+    margin-bottom: 0.5em;
+    padding-top: 1em;
+    padding-bottom: 1em;
+}
+
+.masthead .btn-group-vertical > .btn:first-child {
+    margin-top: 0;
+    margin-bottom: 0.5em;
+    padding-top: 1em;
+    padding-bottom: 1em;
+}
+
+.masthead .col-md-2 {
+    padding-left: inherit;
+    padding-right: inherit;
+}
+
+@media (min-width: 992px) {
+.navbar-collapse .navbar-nav:first-child {
+    padding-left: 12%;
+}
+
+.carousel-control .glyphicon {
+    color: rgb(255, 204, 0);
+}
+
+.thumbnail h3 {
+    font-size: 20px;
 }

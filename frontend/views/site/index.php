@@ -2,7 +2,63 @@
 /* @var $this yii\web\View */
 $this->title = 'LivingTheSunset';
 ?>
-<div class="site-index">
+<div class="container-fluid masthead">
+  <div class="row">
+    <div class="col-md-2 visible-lg-block visible-md-block">
+    <?php echo $this->render('/site/_location_nav') ?>
+    </div>
+    <div class="col-md-8">
+    <?php 
+    use yii\bootstrap\Carousel;
+    echo Carousel::widget([
+        'items' => [
+            ['content' => '<img src="img/slideshow1.jpg">', 'caption' => '<h4>Primer título</h4><p>Este es el primer texto</p>'],
+            ['content' => '<img src="img/slideshow2.jpg">', 'caption' => '<h4>Segundo título</h4><p>Este es el segundo texto</p>'],
+            ['content' => '<img src="img/slideshow3.jpg">', 'caption' => '<h4>Tercer título</h4><p>Este es el tercer texto</p>'],
+            ['content' => '<img src="img/slideshow4.jpg">', 'caption' => '<h4>Cuarto título</h4><p>Este es el cuarto texto</p>'],
+            ['content' => '<img src="img/slideshow5.jpg">', 'caption' => '<h4>Quinto título</h4><p>Este es el quinto texto</p>'],
+        ],
+        'controls' => [
+            '<span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>',
+            '<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>'
+        ]
+    ]); ?>
+    </div>
+  </div>
+</div>
+
+<div class="jumbotron">
+  <h1>Living The Sunset</h1>
+  <div class="row">
+  <div class="col-sm-4">
+  <i class="glyphicon glyphicon-home"></i>
+  <h3>Quisque enim felis</h3>
+  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
+    dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
+    ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
+    fugiat nulla pariatur.</p>
+  </div>
+  <div class="col-sm-4">
+  <i class="glyphicon glyphicon-heart"></i>
+  <h3>Ullamcorper sed nisl vel</h3>
+  <p>Donec vel sapien sed dolor consequat elementum. Sed condimentum lacinia posuere. Vivamus sed velit quam. 
+    Curabitur bibendum egestas orci, eleifend tempus dolor iaculis sed. Nunc luctus, quam et gravida dictum, 
+    leo odio commodo risus, a dictum nulla erat et neque. Morbi sit amet malesuada sem, sed ornare urna.</p>
+  
+  </div>
+  <div class="col-sm-4">
+  <i class="glyphicon glyphicon-picture"></i>
+  <h3>Porttitor sagittis mi</h3>
+  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin iaculis suscipit leo nec faucibus. 
+    Integer sodales libero et velit pharetra, sed interdum nisi bibendum. Sed ullamcorper eleifend lectus, 
+    quis semper ante dictum id. Vestibulum placerat mauris tincidunt dapibus vulputate. Praesent fermentum 
+    facilisis urna, a tristique risus lobortis eu.</p>
+  </div>
+  
+  </div>
+</div>
+
+<div class="site-index content">
 
     <div class="body-content">
 
