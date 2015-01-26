@@ -35,6 +35,11 @@ return [
                      'css' => ['css/bootstrap.css']
                 ],
             ],
+        ],
+        'urlManager' => [
+            'enablePrettyUrl' => true,
+            'showScriptName' => false,
+            'baseUrl' => '/projects/lts'
         ]
     ],
     'params' => $params,
