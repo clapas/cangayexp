@@ -24,6 +24,7 @@ RewriteRule ^img/(.*)$ /projects/lts/frontend/web/img/$1 [L]
 RewriteCond %{HTTP_HOST} ^localhost$ [NC]
 RewriteCond %{REQUEST_URI} !^/projects/lts/(frontend|backend)
 RewriteCond %{REQUEST_FILENAME} !-f [OR]
+RewriteCond %{HTTP_HOST} ^localhost$ [NC]
 RewriteCond %{REQUEST_FILENAME} !-d
 RewriteRule ^(.*)$ /projects/lts/frontend/web/index.php/$1
 
@@ -51,5 +52,6 @@ RewriteRule ^img/(.*)$ /frontend/web/img/$1 [L]
 RewriteCond %{HTTP_HOST} !^localhost$ [NC]
 RewriteCond %{REQUEST_URI} !^/(frontend|backend)
 RewriteCond %{REQUEST_FILENAME} !-f [OR]
+RewriteCond %{HTTP_HOST} ^localhost$ [NC]
 RewriteCond %{REQUEST_FILENAME} !-d
 RewriteRule ^(.*)$ /frontend/web/index.php/$1
