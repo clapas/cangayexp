@@ -8,6 +8,6 @@ return [
         'session' => [
             'name' => 'PHPFRONTSESSID',
             'savePath' => __DIR__ . '/../tmp',
-        ],
+        ]
     ],
 ];

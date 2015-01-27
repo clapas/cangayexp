@@ -6,6 +6,9 @@ $config = [
             'cookieValidationKey' => 'Ck7FtcDbllhxtQFLhngH3hs_gZAZmXkY',
             'baseUrl' => '/projects/lts',
         ],
+        'urlManager' => [
+            'baseUrl' => '/projects/lts'
+        ],
         'session' => [
             'name' => 'PHPFRONTSESSID',
             'savePath' => __DIR__ . '/../tmp',

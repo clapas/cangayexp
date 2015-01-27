@@ -38,8 +38,7 @@ return [
         ],
         'urlManager' => [
             'enablePrettyUrl' => true,
-            'showScriptName' => false,
-            'baseUrl' => '/projects/lts'
+            'showScriptName' => false
         ]
     ],
     'params' => $params,
