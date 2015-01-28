@@ -1,33 +1,36 @@
 RewriteEngine on
 
 # Dev environment
-#RewriteCond %{HTTP_HOST} ^localhost$ [NC]
-#RewriteCond %{REQUEST_URI} ^/projects/lts/admin/(assets|css|js|fonts|img)
-#RewriteRule ^admin/assets/(.*)$ /projects/lts/backend/web/assets/$1 [L]
-#RewriteRule ^admin/css/(.*)$ /projects/lts/backend/web/css/$1 [L]
-#RewriteRule ^admin/js/(.*)$ /projects/lts/backend/web/js/$1 [L]
-#RewriteRule ^admin/fonts/(.*)$ /projects/lts/backend/web/fonts/$1 [L]
-#RewriteRule ^admin/img/(.*)$ /projects/lts/backend/web/img/$1 [L]
-#
-#RewriteCond %{HTTP_HOST} ^localhost$ [NC]
-#RewriteCond %{REQUEST_URI} ^/projects/lts/admin
-#RewriteRule ^admin/?(.*) /projects/lts/backend/web/index.php/$1 [L]
-#
-#RewriteCond %{HTTP_HOST} ^localhost$ [NC]
-#RewriteCond %{REQUEST_URI} ^/projects/lts/(assets|css|js|fonts|img)
-#RewriteRule ^assets/(.*)$ /projects/lts/frontend/web/assets/$1 [L]
-#RewriteRule ^css/(.*)$ /projects/lts/frontend/web/css/$1 [L]
-#RewriteRule ^js/(.*)$ /projects/lts/frontend/web/js/$1 [L]
-#RewriteRule ^fonts/(.*)$ /projects/lts/frontend/web/fonts/$1 [L]
-#RewriteRule ^img/(.*)$ /projects/lts/frontend/web/img/$1 [L]
-#
-#RewriteCond %{HTTP_HOST} ^localhost$ [NC]
-#RewriteCond %{REQUEST_URI} !^/projects/lts/(frontend|backend)
-#RewriteRule ^(.*)$ /projects/lts/frontend/web/index.php/$1 [L]
+RewriteCond %{HTTP_HOST} !^localhost$ [NC] [OR]
+RewriteCond %{REQUEST_URI} !^/projects/lts/admin/(assets|css|js|fonts|img)
+RewriteRule .? - [S=5]
+RewriteRule ^admin/assets/(.*)$ /projects/lts/backend/web/assets/$1 [L]
+RewriteRule ^admin/css/(.*)$ /projects/lts/backend/web/css/$1 [L]
+RewriteRule ^admin/js/(.*)$ /projects/lts/backend/web/js/$1 [L]
+RewriteRule ^admin/fonts/(.*)$ /projects/lts/backend/web/fonts/$1 [L]
+RewriteRule ^admin/img/(.*)$ /projects/lts/backend/web/img/$1 [L]
+
+RewriteCond %{HTTP_HOST} ^localhost$ [NC]
+RewriteCond %{REQUEST_URI} ^/projects/lts/admin
+RewriteRule ^admin/?(.*) /projects/lts/backend/web/index.php/$1 [L]
+
+RewriteCond %{HTTP_HOST} !^localhost$ [NC] [OR]
+RewriteCond %{REQUEST_URI} !^/projects/lts/(assets|css|js|fonts|img)
+RewriteRule .? - [S=5]
+RewriteRule ^assets/(.*)$ /projects/lts/frontend/web/assets/$1 [L]
+RewriteRule ^css/(.*)$ /projects/lts/frontend/web/css/$1 [L]
+RewriteRule ^js/(.*)$ /projects/lts/frontend/web/js/$1 [L]
+RewriteRule ^fonts/(.*)$ /projects/lts/frontend/web/fonts/$1 [L]
+RewriteRule ^img/(.*)$ /projects/lts/frontend/web/img/$1 [L]
+
+RewriteCond %{HTTP_HOST} ^localhost$ [NC]
+RewriteCond %{REQUEST_URI} !^/projects/lts/(frontend|backend)
+RewriteRule ^(.*)$ /projects/lts/frontend/web/index.php/$1 [L]
 
 # Prod environment
-RewriteCond %{HTTP_HOST} !^localhost$ [NC]
-RewriteCond %{REQUEST_URI} ^/admin/(assets|css|js|fonts|img)
+RewriteCond %{HTTP_HOST} ^localhost$ [NC] [OR]
+RewriteCond %{REQUEST_URI} !^/admin/(assets|css|js|fonts|img)
+RewriteRule .? - [S=5]
 RewriteRule ^admin/assets/(.*)$ /backend/web/assets/$1 [L]
 RewriteRule ^admin/css/(.*)$ /backend/web/css/$1 [L]
 RewriteRule ^admin/js/(.*)$ /backend/web/js/$1 [L]
@@ -38,8 +41,9 @@ RewriteCond %{HTTP_HOST} !^localhost$ [NC]
 RewriteCond %{REQUEST_URI} ^/admin
 RewriteRule ^admin/?(.*) /backend/web/index.php/$1 [L]
 
-RewriteCond %{HTTP_HOST} !^localhost$ [NC]
-RewriteCond %{REQUEST_URI} ^/(assets|css|js|fonts|img)
+RewriteCond %{HTTP_HOST} ^localhost$ [NC] [OR]
+RewriteCond %{REQUEST_URI} !^/(assets|css|js|fonts|img)
+RewriteRule .? - [S=5]
 RewriteRule ^assets/(.*)$ /frontend/web/assets/$1 [L]
 RewriteRule ^css/(.*)$ /frontend/web/css/$1 [L]
 RewriteRule ^js/(.*)$ /frontend/web/js/$1 [L]
