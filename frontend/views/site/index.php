@@ -8,34 +8,21 @@ $this->title = 'LivingTheSunset';
       <?php echo $this->render('/site/_location_nav') ?>
     </div>
     <div class="col-md-8">
-    <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
-  <!-- Indicators -->
-  <ol class="carousel-indicators">
-    <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
-    <li data-target="#carousel-example-generic" data-slide-to="1"></li>
-    <li data-target="#carousel-example-generic" data-slide-to="2"></li>
-  </ol>
-
-  <!-- Wrapper for slides -->
-  <div class="carousel-inner" role="listbox">
-    <div class="item active">
-      <img src="img/slideshow1.jpg" alt="...">
-      <div class="carousel-caption">
-        ...
-      </div>
-    </div>
-  </div>
-
-  <!-- Controls -->
-  <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
-    <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
-    <span class="sr-only">Previous</span>
-  </a>
-  <a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
-    <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
-    <span class="sr-only">Next</span>
-  </a>
-</div>
+      <?php 
+      use yii\bootstrap\Carousel;
+      echo Carousel::widget([
+          'items' => [
+              ['content' => '<img src="img/slideshow1.jpg">', 'caption' => '<h4>Primer título</h4><p>Este es el primer texto</p>'],
+              ['content' => '<img src="img/slideshow2.jpg">', 'caption' => '<h4>Segundo título</h4><p>Este es el segundo texto</p>'],
+              ['content' => '<img src="img/slideshow3.jpg">', 'caption' => '<h4>Tercer título</h4><p>Este es el tercer texto</p>'],
+              ['content' => '<img src="img/slideshow4.jpg">', 'caption' => '<h4>Cuarto título</h4><p>Este es el cuarto texto</p>'],
+              ['content' => '<img src="img/slideshow5.jpg">', 'caption' => '<h4>Quinto título</h4><p>Este es el quinto texto</p>'],
+          ],
+          'controls' => [
+              '<span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>',
+              '<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>'
+          ]
+      ]); ?>
     </div>
   </div>
 </div>
