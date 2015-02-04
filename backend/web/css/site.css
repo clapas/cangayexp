@@ -89,3 +89,7 @@ a.desc:after {
     padding: 10px 20px;
     margin: 0 0 15px 0;
 }
+/* Firefox has some awkward fieldset styling involving width that interferes with the responsive table. This cannot be overriden without a Firefox-specific hack that we don't provide in Bootstrap: */
+@-moz-document url-prefix() {
+    fieldset { display: table-cell; }
+}

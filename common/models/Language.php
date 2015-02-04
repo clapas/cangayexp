@@ -7,7 +7,11 @@ use Yii;
 /**
  * This is the model class for table "language".
  *
- * @property string $id
+ * @property string $code
+ * @property string $name
+ *
+ * @property OfferTitle[] $offerTitles
+ * @property OfferDescription[] $offerDescriptions
  */
 class Language extends \yii\db\ActiveRecord
 {
@@ -25,8 +29,9 @@ class Language extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['id'], 'required'],
-            [['id'], 'string', 'max' => 24]
+            [['code', 'name'], 'required'],
+            [['code'], 'string', 'max' => 2],
+            [['name'], 'string', 'max' => 24]
         ];
     }
 
@@ -36,7 +41,24 @@ class Language extends \yii\db\ActiveRecord
     public function attributeLabels()
     {
         return [
-            'id' => Yii::t('app', 'ID'),
+            'code' => Yii::t('app', 'Code'),
+            'name' => Yii::t('app', 'Name'),
         ];
+    }
+
+    /**
+     * @return \yii\db\ActiveQuery
+     */
+    public function getOfferTitles()
+    {
+        return $this->hasMany(OfferTitle::className(), ['language_code' => 'code']);
+    }
+
+    /**
+     * @return \yii\db\ActiveQuery
+     */
+    public function getOfferDescriptions()
+    {
+        return $this->hasMany(OfferDescription::className(), ['language_code' => 'code']);
     }
 }
