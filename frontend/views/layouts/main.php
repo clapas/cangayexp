@@ -37,20 +37,20 @@ AppAsset::register($this);
                 ]
             ]);
             $menuItems = [
-                ['label' => 'Inicio', 'url' => ['/site/index']],
-                ['label' => 'Ventas', 'url' => ['/site/ventas']],
-                ['label' => 'Alquileres', 'url' => ['/site/about']],
-                ['label' => 'Vacaciones', 'url' => ['/site/contact']],
-                ['label' => 'Servicios VIP', 'url' => ['/site/contact'], 'items' => [
-                    ['label' => 'Cocinero', 'url' => '#'],
-                    ['label' => 'Niñera', 'url' => '#'],
-                    ['label' => 'Chófer', 'url' => '#'],
-                    ['label' => 'Seguridad', 'url' => '#'],
-                    ['label' => 'Personal Shopping', 'url' => '#'],
-                    ['label' => 'Guía turístico', 'url' => '#'],
-                    ['label' => 'Cenas concertadas', 'url' => '#'],
-                    ['label' => 'Excursiones', 'url' => '#'],
-                    ['label' => 'Eventos', 'url' => '#']
+                ['label' => Yii::t('app', 'Home'), 'url' => ['/site/index']],
+                ['label' => Yii::t('app', 'Sales'), 'url' => ['/site/ventas']],
+                ['label' => Yii::t('app', 'Rentals'), 'url' => ['/site/about']],
+                ['label' => Yii::t('app', 'Vacations'), 'url' => ['/site/contact']],
+                ['label' => Yii::t('app', 'VIP Services'), 'url' => ['/site/contact'], 'items' => [
+                    ['label' => Yii::t('app', 'Cooker'), 'url' => '#'],
+                    ['label' => Yii::t('app', 'Baby sitter'), 'url' => '#'],
+                    ['label' => Yii::t('app', 'Chauffeur'), 'url' => '#'],
+                    ['label' => Yii::t('app', 'Security'), 'url' => '#'],
+                    ['label' => Yii::t('app', 'Personal Shopper'), 'url' => '#'],
+                    ['label' => Yii::t('app', 'Touristic Guide'), 'url' => '#'],
+                    ['label' => Yii::t('app', 'Arranged Dinner'), 'url' => '#'],
+                    ['label' => Yii::t('app', 'Excursions'), 'url' => '#'],
+                    ['label' => Yii::t('app', 'Events'), 'url' => '#']
                 ]],
             ];
             /*

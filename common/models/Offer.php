@@ -16,6 +16,7 @@ use Yii;
  * @property string $their_reference
  *
  * @property OfferTitle[] $offerTitles
+ * @property OfferFile[] $offerFiles
  * @property OfferDescription[] $offerDescriptions
  * @property PackageOffer[] $packageOffers
  */
@@ -36,6 +37,7 @@ class Offer extends \yii\db\ActiveRecord
     {
         return [
             [['valid_from', 'valid_until'], 'safe'],
+            [['valid_from', 'valid_until'], 'date', 'format' => 'yyyy-M-d'],
             [['is_for_rent', 'is_featured'], 'boolean'],
             [['our_reference', 'their_reference'], 'string', 'max' => 24]
         ];
@@ -55,6 +57,14 @@ class Offer extends \yii\db\ActiveRecord
             'our_reference' => Yii::t('app', 'Our Reference'),
             'their_reference' => Yii::t('app', 'Their Reference'),
         ];
+    }
+
+    /**
+     * @return \yii\db\ActiveQuery
+     */
+    public function getOfferFiles()
+    {
+        return $this->hasMany(OfferFile::className(), ['offer_id' => 'id']);
     }
 
     /**

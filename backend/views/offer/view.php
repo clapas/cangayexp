@@ -37,5 +37,21 @@ $this->params['breadcrumbs'][] = $this->title;
             'their_reference',
         ],
     ]) ?>
+    <h2>Titles</h2>
+    <?php foreach ($model->titles as $lang => $title): ?>
+        <p><?= $lang . ': ' . $title ?></p>
+    <?php endforeach; ?>
+    <h2>Descriptions</h2>
+    <?php foreach ($model->descriptions as $lang => $desc): ?>
+        <p><?= $lang . ': ' . $desc ?></p>
+    <?php endforeach; ?>
 
+    <div class="row">
+      <?php foreach ($model->getOfferFiles()->all() as $f): ?>
+        <div class="col-xs-6 col-md-3">
+          <a href="#" class="thumbnail"><?= Html::img($f->url) ?></a>
+        </div>
+      <?php endforeach; ?>
+    </div>
+        
 </div>

@@ -2,12 +2,24 @@
 
 namespace backend\controllers;
 
+require_once 'smartfile/BasicClient.php';
+
 use Yii;
+
+use backend\models\OfferForm;
+
+use common\models\Language;
 use common\models\Offer;
+use common\models\OfferDescription;
+use common\models\OfferFile;
 use common\models\OfferSearch;
+use common\models\OfferTitle;
+
+use yii\filters\VerbFilter;
+use yii\helpers\ArrayHelper;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
-use yii\filters\VerbFilter;
+use yii\web\UploadedFile;
 
 /**
  * OfferController implements the CRUD actions for Offer model.
@@ -20,7 +32,7 @@ class OfferController extends Controller
             'verbs' => [
                 'class' => VerbFilter::className(),
                 'actions' => [
-                    'delete' => ['post'],
+                    'delete' => ['post']
                 ],
             ],
         ];
@@ -60,13 +72,60 @@ class OfferController extends Controller
      */
     public function actionCreate()
     {
-        $model = new Offer();
+        $model = new OfferForm();
+	$languages = ArrayHelper::map(Language::find()->all(), 'code', 'name');
 
+	    /*
+            if (Yii::$app->request->isPost) {
+            $model->load(Yii::$app->request->post());
+	    \yii\helpers\VarDumper::dump($model->titles); 
+	    Yii::$app->end();
+	    die;
+	    }
+	    */
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
+
+            foreach ($model->titles as $lang => $title) {
+	        if (in_array($lang,  array_keys($languages))) {
+		    $ot = new OfferTitle();
+		    $ot->title = $title;
+		    $ot->offer_id = $model->id;
+		    $ot->language_code = $lang;
+		    $ot->save();
+		}
+	    }
+            foreach ($model->descriptions as $lang => $desc) {
+	        if (in_array($lang,  array_keys($languages))) {
+		    $od = new OfferDescription();
+		    $od->md_content = $desc;
+		    $od->offer_id = $model->id;
+		    $od->language_code = $lang;
+		    $od->save();
+		}
+	    }
+            $model->files = UploadedFile::getInstances($model, 'files');
+
+            if ($model->files && $model->validate()) {
+                $key = Yii::$app->params['SF_API_KEY'];
+                $pass = Yii::$app->params['SF_API_PWD'];
+                $path =  Yii::$app->params['SF_data_path'];
+                $client = new \BasicClient($key, $pass);
+                foreach ($model->files as $file) {
+                    $rh = fopen($file->tempName, 'rb');
+                    $response = $client->post($path, array($file->name => $rh));
+                    $offerFile = new OfferFile();
+                    $offerFile->url = Yii::$app->params['SF_base_url'] . $file->name;
+                    $offerFile->offer_id = $model->id;
+                    $offerFile->save();
+                    //$file->saveAs('uploads/' . $file->baseName . '.' . $file->extension);
+                }
+            }
             return $this->redirect(['view', 'id' => $model->id]);
+
         } else {
             return $this->render('create', [
                 'model' => $model,
+		'languages' => $languages
             ]);
         }
     }
@@ -80,12 +139,14 @@ class OfferController extends Controller
     public function actionUpdate($id)
     {
         $model = $this->findModel($id);
+	$languages = ArrayHelper::map(Language::find()->all(), 'code', 'name');
 
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
             return $this->redirect(['view', 'id' => $model->id]);
         } else {
             return $this->render('update', [
                 'model' => $model,
+		'languages' => $languages
             ]);
         }
     }
@@ -112,7 +173,9 @@ class OfferController extends Controller
      */
     protected function findModel($id)
     {
-        if (($model = Offer::findOne($id)) !== null) {
+        if (($model = OfferForm::findOne($id)) !== null) {
+	    $model->titles = ArrayHelper::map($model->getOfferTitles()->all(), 'language_code', 'title');
+	    $model->descriptions = ArrayHelper::map($model->getOfferDescriptions()->all(), 'language_code', 'md_content');
             return $model;
         } else {
             throw new NotFoundHttpException('The requested page does not exist.');

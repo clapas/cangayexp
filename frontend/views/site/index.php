@@ -29,6 +29,7 @@ $this->title = 'LivingTheSunset';
 
 <div class="jumbotron">
   <h1>Living The Sunset</h1>
+  <? var_dump($_GET) ?>
   <div class="row">
     <div class="col-sm-4">
       <i class="glyphicon glyphicon-home"></i>

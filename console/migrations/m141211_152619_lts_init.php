@@ -47,6 +47,11 @@ class m141211_152619_lts_init extends Migration {
             //'to_n_units' => Schema::TYPE_SMALLINT,
             'check (valid_until is null or valid_until >= valid_from)'
         ]);
+        $this->createTable('{{%offer_file}}', [
+            'id' => Schema::TYPE_PK,
+            'url' => Schema::TYPE_STRING . '(256)',
+            'offer_id' => Schema::TYPE_INTEGER . ' references offer(id)'
+        ]);
         $this->createTable('{{%offer_title}}', [
             'id' => Schema::TYPE_PK,
             'language_code' => Schema::TYPE_STRING . '(2) not null references language(code)',
@@ -80,6 +85,7 @@ class m141211_152619_lts_init extends Migration {
         $this->dropTable('{{%package}}');
         $this->dropTable('{{%offer_description}}');
         $this->dropTable('{{%offer_title}}');
+        $this->dropTable('{{%offer_file}}');
         $this->dropTable('{{%offer}}');
         $this->dropTable('{{%item}}');
         $this->execute('drop type "ItemType"');
