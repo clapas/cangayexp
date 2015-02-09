@@ -3,6 +3,7 @@ use yii\helpers\Html;
 use yii\bootstrap\Nav;
 use yii\bootstrap\NavBar;
 use yii\widgets\Breadcrumbs;
+use common\components\LanguageBootstrap;
 use frontend\assets\AppAsset;
 use frontend\widgets\Alert;
 
@@ -69,16 +70,21 @@ AppAsset::register($this);
                 'options' => ['class' => 'navbar-nav'],
                 'items' => $menuItems,
             ]);
-            $menuItems = [[
-                'label' => 'Español', 
-                'url' => ['/site/index'],
-                'items' => [
-                    ['label' => 'English', 'url' => '#']
-                ]
+            $altLangs = [];
+            foreach (Yii::$app->params['languages'] as $code => $lang) {
+	        if ($code != Yii::$app->language) $altLangs[] = [
+		    'label' => $lang,
+		    'url' => LanguageBootstrap::hRefLang(Yii::$app->request->url, $code)
+		];
+            }
+            $langMenu = [[
+                'label' => Yii::$app->params['languages'][Yii::$app->language],
+                'url' => '#',
+                'items' => $altLangs
             ]];
             echo Nav::widget([
                 'options' => ['class' => 'navbar-nav navbar-right'],
-                'items' => $menuItems,
+                'items' => $langMenu,
             ]);
             NavBar::end();
         ?>

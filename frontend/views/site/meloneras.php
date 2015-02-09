@@ -5,7 +5,7 @@ $this->title = 'LivingTheSunset';
 <div class="container-fluid masthead">
   <div class="row">
     <div class="col-md-2 visible-lg-block visible-md-block">
-    <?php echo $this->render('/site/_location_nav', ['active' => ['meloneras' => true]]) ?>
+    <?php echo $this->render('_location_nav', ['active' => ['meloneras' => true]]) ?>
     </div>
     <div class="col-md-10 property-list">
       <div class="row">

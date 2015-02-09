@@ -1,6 +1,11 @@
 <?php
 return [
     'vendorPath' => dirname(dirname(__DIR__)) . '/vendor',
+    'sourceLanguage' => 'en',
+    'language' => 'en',
+    'bootstrap' => [
+        'common\components\LanguageBootstrap'
+    ],
     'components' => [
         'cache' => [
             'class' => 'yii\caching\FileCache',
@@ -8,10 +13,6 @@ return [
         'urlManager' => [
             'enablePrettyUrl' => true,
             'showScriptName' => false,
-	    'rules' => [
-	        '<lang:(es|de|no|ru)>' => '/',
-                '<lang:(es|de|no|ru)>/<controller:\w+>/<action:\w+>/<id:\d+>' => '<controller>/<action>'
-	    ]
         ],
         'i18n' => [
             'translations' => [
