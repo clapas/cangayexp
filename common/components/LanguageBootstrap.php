@@ -40,16 +40,5 @@ class LanguageBootstrap implements BootstrapInterface {
 	    else $langCode = '/' . $langCode;
 	    return substr($bUrl, 0, -3) . $langCode . substr($url, strlen($bUrl));
 	}
-
-
-
-	/*
-        if ($langCode == Yii::$app->sourceLanguage) 
-            return Yii::$app->urlManager->getBaseUrl()
-                .substr($url, strpos($url, Yii::$app->urlManager->getBaseUrl()) . substr($url, -3
-        echo $url; die;
-        echo strpos($url, Yii::$app->urlManager->getBaseUrl()); die;
-        return $url;
-	*/
     }
 }

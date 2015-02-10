@@ -10,13 +10,14 @@ $this->title = 'LivingTheSunset';
     <div class="col-md-8">
       <?php 
       use yii\bootstrap\Carousel;
+      use yii\helpers\Url;
       echo Carousel::widget([
           'items' => [
-              ['content' => '<img src="img/slideshow1.jpg">', 'caption' => '<h4>Primer título</h4><p>Este es el primer texto</p>'],
-              ['content' => '<img src="img/slideshow2.jpg">', 'caption' => '<h4>Segundo título</h4><p>Este es el segundo texto</p>'],
-              ['content' => '<img src="img/slideshow3.jpg">', 'caption' => '<h4>Tercer título</h4><p>Este es el tercer texto</p>'],
-              ['content' => '<img src="img/slideshow4.jpg">', 'caption' => '<h4>Cuarto título</h4><p>Este es el cuarto texto</p>'],
-              ['content' => '<img src="img/slideshow5.jpg">', 'caption' => '<h4>Quinto título</h4><p>Este es el quinto texto</p>'],
+              ['content' => '<img src="' . Url::to('@web/img/slideshow1.jpg') . '">', 'caption' => '<h4>Primer título</h4><p>Este es el primer texto</p>'],
+              ['content' => '<img src="' . Url::to('@web/img/slideshow2.jpg') . '">', 'caption' => '<h4>Segundo título</h4><p>Este es el segundo texto</p>'],
+              ['content' => '<img src="' . Url::to('@web/img/slideshow3.jpg') . '">', 'caption' => '<h4>Tercer título</h4><p>Este es el tercer texto</p>'],
+              ['content' => '<img src="' . Url::to('@web/img/slideshow4.jpg') . '">', 'caption' => '<h4>Cuarto título</h4><p>Este es el cuarto texto</p>'],
+              ['content' => '<img src="' . Url::to('@web/img/slideshow5.jpg') . '">', 'caption' => '<h4>Quinto título</h4><p>Este es el quinto texto</p>'],
           ],
           'controls' => [
               '<span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>',

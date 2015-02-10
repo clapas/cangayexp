@@ -3,9 +3,6 @@ return [
     'vendorPath' => dirname(dirname(__DIR__)) . '/vendor',
     'sourceLanguage' => 'en',
     'language' => 'en',
-    'bootstrap' => [
-        'common\components\LanguageBootstrap'
-    ],
     'components' => [
         'cache' => [
             'class' => 'yii\caching\FileCache',
@@ -28,7 +25,4 @@ return [
             ],
         ]
     ],
-    'as beforeRequest' => [
-        'class' => common\components\LanguageFilter::className()
-    ]
 ];

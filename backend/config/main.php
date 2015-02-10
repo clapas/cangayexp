@@ -10,7 +10,10 @@ return [
     'id' => 'app-backend',
     'basePath' => dirname(__DIR__),
     'controllerNamespace' => 'backend\controllers',
-    'bootstrap' => ['log'],
+    'bootstrap' => [
+        'log',
+        'common\components\LanguageBootstrap'
+    ],
     'modules' => [],
     'components' => [
         'user' => [
@@ -29,6 +32,9 @@ return [
         'errorHandler' => [
             'errorAction' => 'site/error',
         ],
+    ],
+    'as beforeRequest' => [
+        'class' => common\components\LanguageFilter::className()
     ],
     'params' => $params,
 ];

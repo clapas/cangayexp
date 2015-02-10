@@ -8,7 +8,10 @@ $params = array_merge(
 return [
     'id' => 'app-frontend',
     'basePath' => dirname(__DIR__),
-    'bootstrap' => ['log'],
+    'bootstrap' => [
+        'log',
+        'common\components\LanguageBootstrap'
+    ],
     'controllerNamespace' => 'frontend\controllers',
     'components' => [
         'user' => [
@@ -36,6 +39,9 @@ return [
                 ],
             ],
         ],
+    ],
+    'as beforeRequest' => [
+        'class' => common\components\LanguageFilter::className()
     ],
     'params' => $params,
 ];
