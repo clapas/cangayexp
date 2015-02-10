@@ -28,7 +28,7 @@ class LanguageBootstrap implements BootstrapInterface {
     public static function changeLanguage($lang) {
         Yii::$app->language = $lang;
 	Yii::$app->urlManager->setBaseUrl(Yii::$app->urlManager->getBaseUrl() . '/' . $lang);
-        //Yii::$app->homeUrl = Yii::$app->homeUrl . $lang;
+        Yii::$app->homeUrl = Yii::$app->homeUrl . $lang;
     }
     public static function hRefLang($url, $langCode) {
         $bUrl = Yii::$app->urlManager->getBaseUrl();
