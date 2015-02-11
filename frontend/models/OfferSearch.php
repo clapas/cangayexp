@@ -1,6 +1,6 @@
 <?php
 
-namespace common\models;
+namespace frontend\models;
 
 use Yii;
 use yii\base\Model;
@@ -42,7 +42,16 @@ class OfferSearch extends Offer
      */
     public function search($params)
     {
-        $query = Offer::find();
+        $query = Offer::find()->with([
+	    'offerFiles',
+	    'offerTitles' => function($q) {
+	        $q->asArray()->andWhere('language_code = :lang', [':lang' => Yii::$app->language]);
+            },
+	    'offerDescriptions' => function($q) {
+	        $q->asArray()->andWhere('language_code = :lang', [':lang' => Yii::$app->language]);
+            }
+	]);
+	//\yii\helpers\VarDumper::dump($query, 5, true); die;
 
         $dataProvider = new ActiveDataProvider([
             'query' => $query,
@@ -66,3 +75,4 @@ class OfferSearch extends Offer
         return $dataProvider;
     }
 }
+

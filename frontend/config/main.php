@@ -10,7 +10,7 @@ return [
     'basePath' => dirname(__DIR__),
     'bootstrap' => [
         'log',
-        'common\components\LanguageBootstrap'
+        'frontend\components\LanguageBootstrap'
     ],
     'controllerNamespace' => 'frontend\controllers',
     'components' => [
@@ -41,7 +41,7 @@ return [
         ],
     ],
     'as beforeRequest' => [
-        'class' => common\components\LanguageFilter::className()
+        'class' => frontend\components\LanguageFilter::className()
     ],
     'params' => $params,
 ];

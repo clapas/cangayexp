@@ -11,8 +11,7 @@ return [
     'basePath' => dirname(__DIR__),
     'controllerNamespace' => 'backend\controllers',
     'bootstrap' => [
-        'log',
-        'common\components\LanguageBootstrap'
+        'log'
     ],
     'modules' => [],
     'components' => [
@@ -32,9 +31,6 @@ return [
         'errorHandler' => [
             'errorAction' => 'site/error',
         ],
-    ],
-    'as beforeRequest' => [
-        'class' => common\components\LanguageFilter::className()
     ],
     'params' => $params,
 ];

@@ -7,14 +7,15 @@ require_once 'smartfile/BasicClient.php';
 use Yii;
 
 use backend\models\OfferForm;
+use backend\models\OfferSearch;
 
 use common\models\Language;
 use common\models\Offer;
 use common\models\OfferDescription;
 use common\models\OfferFile;
-use common\models\OfferSearch;
 use common\models\OfferTitle;
 
+use yii\filters\AccessControl;
 use yii\filters\VerbFilter;
 use yii\helpers\ArrayHelper;
 use yii\web\Controller;
@@ -29,6 +30,15 @@ class OfferController extends Controller
     public function behaviors()
     {
         return [
+            'access' => [
+                'class' => AccessControl::className(),
+                'rules' => [
+                    [
+                        'allow' => true,
+                        'roles' => ['@'],
+                    ],
+                ],
+            ],
             'verbs' => [
                 'class' => VerbFilter::className(),
                 'actions' => [

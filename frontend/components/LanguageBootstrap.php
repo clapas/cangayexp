@@ -1,5 +1,5 @@
 <?php
-namespace common\components;
+namespace frontend\components;
 
 use Yii;
 
@@ -20,9 +20,16 @@ class LanguageBootstrap implements BootstrapInterface {
         ArrayHelper::remove($languages, Yii::$app->sourceLanguage);
         $langPatt = implode(array_keys($languages), '|');
         Yii::$app->urlManager->addRules([
+            "<lang:({$langPatt})>/offer/<location:\w+>/<offer_type:\w+>" => 'offer/index',
+            "<lang:({$langPatt})>/offer/<location:\w+>" => 'offer/index',
 	    "<lang:({$langPatt})>/" => '/',
+            "offer/<location:\w+>/<offer_type:\w+>" => 'offer/index',
+            "offer/<location:\w+>" => 'offer/index',
+            "offer" => 'offer/index',
             "<lang:({$langPatt})>/<controller:\w+>/<action:\w+>" => '<controller>/<action>',
-            "<lang:({$langPatt})>/<controller:\w+>/<action:\w+>/<id:\d+>" => '<controller>/<action>'
+            /*
+            "<lang:({$langPatt})>/<controller:\w+>/<action:\w+>/<id:\d+>" => '<controller>/<action>',
+            */
         ]);
     }
     public static function changeLanguage($lang) {

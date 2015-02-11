@@ -23,7 +23,6 @@ use yii\jui\DatePicker;
 	<?php endforeach; ?>
       </ul>
       <!-- Tab panes -->
-      <br>
       <div class="tab-content">
         <?php $f = 1; foreach ($languages as $code => $lang): ?>
           <div role="tabpanel" class="tab-pane <?php echo $f-->0?'active':''?>" id="title_<?= $code ?>">
@@ -38,7 +37,7 @@ use yii\jui\DatePicker;
           </div>
 	<?php endforeach; ?>
       </div>
-      <hr>
+      <br>
     </div>
 
     <?= $form->field($model, 'valid_from')->textInput() ?>
@@ -59,13 +58,13 @@ use yii\jui\DatePicker;
        ]);
     ?>
 
-    <?= $form->field($model, 'is_for_rent')->checkbox() ?>
-
-    <?= $form->field($model, 'is_featured')->checkbox() ?>
-
     <?= $form->field($model, 'our_reference')->textInput(['maxlength' => 24]) ?>
 
     <?= $form->field($model, 'their_reference')->textInput(['maxlength' => 24]) ?>
+
+    <?= $form->field($model, 'is_for_rent')->checkbox() ?>
+
+    <?= $form->field($model, 'is_featured')->checkbox() ?>
 
     <?= $form->field($model, 'files[]')->fileInput(['multiple' => true]) ?>
 

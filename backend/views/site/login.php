@@ -11,10 +11,8 @@ $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="site-login">
     <h1><?= Html::encode($this->title) ?></h1>
-    <h2><?php echo Yii::getAlias('@web') ?></h2>
-    <h2><?php echo Yii::getAlias('@webroot') ?></h2>
 
-    <p>Please fill out the following fields to login:</p>
+    <p><?= Yii::t('app', 'Please fill out the following fields to login:') ?></p>
 
     <div class="row">
         <div class="col-lg-5">

@@ -2,10 +2,8 @@
 use yii\helpers\Html;
 use yii\bootstrap\Nav;
 use yii\bootstrap\NavBar;
-use yii\widgets\Breadcrumbs;
-use common\components\LanguageBootstrap;
+use frontend\components\LanguageBootstrap;
 use frontend\assets\AppAsset;
-use frontend\widgets\Alert;
 
 /* @var $this \yii\web\View */
 /* @var $content string */
@@ -28,7 +26,7 @@ AppAsset::register($this);
     <div class="wrap">
         <?php
             NavBar::begin([
-                'brandLabel' => 'Living The Sunset',
+                'brandLabel' => 'Living In The Sunset',
                 'brandUrl' => Yii::$app->homeUrl,
                 'options' => [
                     'class' => 'navbar-inverse navbar-fixed-top',
@@ -39,9 +37,9 @@ AppAsset::register($this);
             ]);
             $menuItems = [
                 ['label' => Yii::t('app', 'Home'), 'url' => Yii::$app->homeUrl],
-                ['label' => Yii::t('app', 'Sales'), 'url' => ['/site/ventas']],
-                ['label' => Yii::t('app', 'Rentals'), 'url' => ['/site/about']],
-                ['label' => Yii::t('app', 'Vacations'), 'url' => ['/site/contact']],
+                ['label' => Yii::t('app', 'Sales'), 'url' => ['/offer/all/sales']],
+                ['label' => Yii::t('app', 'Rentals'), 'url' => ['/offer/all/rentals']],
+                ['label' => Yii::t('app', 'Vacations'), 'url' => ['/offer/all/vacations']],
                 ['label' => Yii::t('app', 'VIP Services'), 'url' => ['/site/contact'], 'items' => [
                     ['label' => Yii::t('app', 'Cooker'), 'url' => '#'],
                     ['label' => Yii::t('app', 'Baby sitter'), 'url' => '#'],
@@ -90,18 +88,13 @@ AppAsset::register($this);
         ?>
         <div class="navbar-filler"></div>
 
-        <!--<div class="container">-->
-        <?php /* Breadcrumbs::widget([
-            'links' => isset($this->params['breadcrumbs']) ? $this->params['breadcrumbs'] : [],
-        ]) */?>
-        <?php /* Alert::widget() */?>
         <?= $content ?>
-        <!--</div>-->
+
     </div>
 
     <footer class="footer">
         <div class="container">
-        <p class="pull-left">&copy; My Company <?= date('Y') ?></p>
+        <p class="pull-left">&copy; Living In The Sunset <?= date('Y') ?></p>
         <p class="pull-right"><?= Yii::powered() ?></p>
         </div>
     </footer>

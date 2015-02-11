@@ -7,7 +7,7 @@ $this->title = 'LivingTheSunset';
     <div class="col-md-2 visible-lg-block visible-md-block">
       <?php echo $this->render('/site/_location_nav') ?>
     </div>
-    <div class="col-md-8">
+    <div class="col-md-8 col-xs-12">
       <?php 
       use yii\bootstrap\Carousel;
       use yii\helpers\Url;
@@ -24,6 +24,10 @@ $this->title = 'LivingTheSunset';
               '<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>'
           ]
       ]); ?>
+    </div>
+    <div class="col-xs-12 visible-xs-block visible-sm-block">
+      <br>
+      <?php echo $this->render('/site/_location_nav') ?>
     </div>
   </div>
 </div>

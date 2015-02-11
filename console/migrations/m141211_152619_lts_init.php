@@ -9,6 +9,13 @@ class m141211_152619_lts_init extends Migration {
             'code' => Schema::TYPE_STRING . '(2) primary key',
             'name' => Schema::TYPE_STRING . '(24) not null'
         ]);
+        $this->batchInsert('{{%language}}', [ 'code', 'name' ], [
+	    ['es', 'Español' ],
+	    ['en', 'English' ],
+	    ['de', 'Deutsch' ],
+	    ['no', 'Norsk' ],
+	    ['ru', 'Pу́сский']
+	]);
         $this->createTable('{{%location}}', [
             'id' => Schema::TYPE_PK,
             'alias' => Schema::TYPE_STRING . '(32) not null',
@@ -50,20 +57,20 @@ class m141211_152619_lts_init extends Migration {
         $this->createTable('{{%offer_file}}', [
             'id' => Schema::TYPE_PK,
             'url' => Schema::TYPE_STRING . '(256)',
-            'offer_id' => Schema::TYPE_INTEGER . ' references offer(id)'
+            'offer_id' => Schema::TYPE_INTEGER . ' references offer(id) on delete cascade'
         ]);
         $this->createTable('{{%offer_title}}', [
             'id' => Schema::TYPE_PK,
             'language_code' => Schema::TYPE_STRING . '(2) not null references language(code)',
             'title' => Schema::TYPE_STRING . '(32)',
-            'offer_id' => Schema::TYPE_INTEGER . ' references offer(id)',
+            'offer_id' => Schema::TYPE_INTEGER . ' references offer(id) on delete cascade',
             'unique (language_code, offer_id)'
         ]);
         $this->createTable('{{%offer_description}}', [
             'id' => Schema::TYPE_PK,
             'language_code' => Schema::TYPE_STRING . '(2) not null references language(code)',
             'md_content' => Schema::TYPE_TEXT,
-            'offer_id' => Schema::TYPE_INTEGER . ' references offer(id)',
+            'offer_id' => Schema::TYPE_INTEGER . ' references offer(id) on delete cascade',
             'unique (language_code, offer_id)'
         ]);
         $this->createTable('{{%package}}', [
@@ -74,8 +81,8 @@ class m141211_152619_lts_init extends Migration {
         ]);
         $this->createTable('{{%package_offer}}', [
             'id' => Schema::TYPE_PK,
-            'offer_id' => Schema::TYPE_INTEGER . ' not null references offer(id)',
-            'package_id' => Schema::TYPE_INTEGER . ' not null references package(id)',
+            'offer_id' => Schema::TYPE_INTEGER . ' not null references offer(id) on delete cascade',
+            'package_id' => Schema::TYPE_INTEGER . ' not null references package(id) on delete cascade',
             'n_units' => Schema::TYPE_SMALLINT
         ]);
     }

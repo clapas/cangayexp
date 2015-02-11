@@ -19,6 +19,7 @@ use yii\filters\AccessControl;
  */
 class SiteController extends Controller
 {
+    public $layout = 'container';
     /**
      * @inheritdoc
      */
@@ -67,11 +68,13 @@ class SiteController extends Controller
     }
 
     public function actionMeloneras() {
+        $this->layout = 'main';
         return $this->render('meloneras');
     }
 
     public function actionIndex()
     {
+        $this->layout = 'main';
         return $this->render('index');
     }
 

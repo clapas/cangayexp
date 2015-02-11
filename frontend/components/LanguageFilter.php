@@ -1,10 +1,10 @@
 <?php
-namespace common\components;
+namespace frontend\components;
 
 use Yii;
 use yii\base\ActionFilter;
 
-use common\components\LanguageBootstrap;
+use frontend\components\LanguageBootstrap;
 
 class LanguageFilter extends ActionFilter {
     public function beforeAction($action) {
