@@ -15,6 +15,9 @@ return [
     ],
     'modules' => [],
     'components' => [
+        'request' => [
+            'enableCsrfValidation' => false
+        ],
         'user' => [
             'identityClass' => 'backend\models\BackendUser',
             'enableAutoLogin' => true,
