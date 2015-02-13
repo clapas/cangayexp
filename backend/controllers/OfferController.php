@@ -115,8 +115,10 @@ class OfferController extends Controller
                 $client = new \BasicClient($key, $pass);
                 foreach ($model->files as $file) {
                     $rh = fopen($file->tempName, 'rb');
-/*
+                    try {
                     $response = $client->post($path, array($file->name => $rh));
+                    } catch (Exception $e) { echo $e->getMessage(); die; }
+/*
                     $offerFile = new OfferFile();
                     $offerFile->url = Yii::$app->params['SF_base_url'] . $file->name;
                     $offerFile->offer_id = $model->id;
