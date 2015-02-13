@@ -219,7 +219,7 @@ class Service_SmartFile_Client
         // Get Status from headers:
         $sep = strpos($response, "\r\n");
         $headers = substr($response, 0, $sep);
-        list($ignored, $http_status, $ignored) = split(' ', $headers);
+        list($ignored, $http_status, $ignored) = explode(' ', $headers);
 
         $response = $this->getBody($response);
 
