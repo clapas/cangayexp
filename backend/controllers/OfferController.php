@@ -113,19 +113,16 @@ class OfferController extends Controller
                 $pass = Yii::$app->params['SF_API_PWD'];
                 $path =  Yii::$app->params['SF_data_path'];
                 $client = new \BasicClient($key, $pass);
+		/*
                 foreach ($model->files as $file) {
-                    try {
-                        $rh = fopen($file->tempName, 'rb');
-                        $response = $client->post($path, array($file->name => $rh));
-		    } catch (Exception $e) {
-		        echo $e->getMessage();
-			die;
-		    }
+                    $rh = fopen($file->tempName, 'rb');
+                    $response = $client->post($path, array($file->name => $rh));
                     $offerFile = new OfferFile();
                     $offerFile->url = Yii::$app->params['SF_base_url'] . $file->name;
                     $offerFile->offer_id = $model->id;
                     $offerFile->save();
                 }
+		*/
             }
             return $this->redirect(['view', 'id' => $model->id]);
 
