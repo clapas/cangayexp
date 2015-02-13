@@ -33,8 +33,8 @@ class OfferForm extends Offer
     {
         return ArrayHelper::merge(parent::attributeLabels(), [
             'files' => Yii::t('app', 'Files'),
-            'titles' => Yii::t('app', 'Titles'),
-            'descriptions' => Yii::t('app', 'Descriptions'),
+            'titles' => Yii::t('app', 'Title'),
+            'descriptions' => Yii::t('app', 'Description'),
         ]);
     }
 }

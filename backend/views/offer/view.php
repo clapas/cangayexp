@@ -33,19 +33,34 @@ $this->params['breadcrumbs'][] = $this->title;
             'valid_until',
             'is_for_rent:boolean',
             'is_featured:boolean',
+            'is_electricity_incl:boolean',
+            'is_water_incl:boolean',
             'our_reference',
             'their_reference',
+            'rate_eu',
+            'commun_expenses_eu',
+            'floor_area_m2',
+            'zone_name',
         ],
     ]) ?>
-    <h2>Titles</h2>
-    <?php foreach ($model->titles as $lang => $title): ?>
-        <p><?= $lang . ': ' . $title ?></p>
-    <?php endforeach; ?>
-    <h2>Descriptions</h2>
-    <?php foreach ($model->descriptions as $lang => $desc): ?>
-        <p><?= $lang . ': ' . $desc ?></p>
-    <?php endforeach; ?>
-
+    <h2><?= Yii::t('app', 'Titles') ?></h2>
+    <table class="table table-bordered table-stripped">
+      <?php foreach ($model->titles as $lang => $title): ?>
+      <tr>
+        <td><?= $lang ?></td>
+        <td><?= $title ?></td>
+      </tr>
+      <?php endforeach; ?>
+    </table>
+    <table class="table table-bordered table-stripped">
+      <?php foreach ($model->descriptions as $lang => $desc): ?>
+        <tr>
+          <td><?= $lang ?></td>
+          <td><?= $desc ?></td>
+        </tr>
+      <?php endforeach; ?>
+    </table>
+ 
     <div class="row">
       <?php foreach ($model->getOfferFiles()->all() as $f): ?>
         <div class="col-xs-6 col-md-3">
@@ -53,5 +68,5 @@ $this->params['breadcrumbs'][] = $this->title;
         </div>
       <?php endforeach; ?>
     </div>
-        
+
 </div>

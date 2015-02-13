@@ -20,14 +20,17 @@ class LanguageBootstrap implements BootstrapInterface {
         ArrayHelper::remove($languages, Yii::$app->sourceLanguage);
         $langPatt = implode(array_keys($languages), '|');
         Yii::$app->urlManager->addRules([
+            "<lang:({$langPatt})>/offer/view/<id:\d+>" => 'offer/view',
+            'offer/view/<id:\d+>' => 'offer/view',
             "<lang:({$langPatt})>/offer/<location:\w+>/<offer_type:\w+>" => 'offer/index',
-            "<lang:({$langPatt})>/offer/<location:\w+>" => 'offer/index',
+            "<lang:({$langPatt})>/offer/<location:\w*>" => 'offer/index',
+            "<lang:({$langPatt})>/offer" => 'offer/index',
 	    "<lang:({$langPatt})>/" => '/',
-            "offer/<location:\w+>/<offer_type:\w+>" => 'offer/index',
-            "offer/<location:\w+>" => 'offer/index',
-            "offer" => 'offer/index',
-            "<lang:({$langPatt})>/<controller:\w+>/<action:\w+>" => '<controller>/<action>',
+            'offer/<location:\w+>/<offer_type:\w+>' => 'offer/index',
+            'offer/<location:\w*>' => 'offer/index',
+            'offer' => 'offer/index',
             /*
+            "<lang:({$langPatt})>/<controller:\w+>/<action:\w+>" => '<controller>/<action>',
             "<lang:({$langPatt})>/<controller:\w+>/<action:\w+>/<id:\d+>" => '<controller>/<action>',
             */
         ]);

@@ -16,9 +16,20 @@ class m141211_152619_lts_init extends Migration {
 	    ['no', 'Norsk' ],
 	    ['ru', 'Pу́сский']
 	]);
+        $this->createTable('{{%zone}}', [
+            'name' => Schema::TYPE_STRING . '(24) primary key'
+	]);
+        $this->batchInsert('{{%zone}}', ['name' ], [
+	    ['Meloneras'],
+	    ['Playa del Inglés'],
+	    ['Maspalomas'],
+	    ['San Agustín'],
+	    ['Puerto Rico']
+	]);
         $this->createTable('{{%location}}', [
             'id' => Schema::TYPE_PK,
             'alias' => Schema::TYPE_STRING . '(32) not null',
+	    'zone_name' => Schema::TYPE_STRING . '(24) not null references zone(name)',
             'street_name' => Schema::TYPE_STRING . '(255)',
             'street_number' => Schema::TYPE_STRING . '(16)',
             'unformatted_address_line' => Schema::TYPE_STRING . '(255)',
@@ -44,19 +55,27 @@ class m141211_152619_lts_init extends Migration {
             'valid_until' => Schema::TYPE_DATE,
             'is_for_rent' => Schema::TYPE_BOOLEAN . ' not null default false',
             'is_featured' => Schema::TYPE_BOOLEAN . ' not null default false',
+            'is_electricity_incl' => Schema::TYPE_BOOLEAN . ' not null default false',
+            'is_water_incl' => Schema::TYPE_BOOLEAN . ' not null default false',
             'our_reference' => Schema::TYPE_STRING . '(24)',
             'their_reference' => Schema::TYPE_STRING . '(24)',
+	    'rate_eucent' => Schema::TYPE_INTEGER,
+	    'commun_expenses_eucent' => Schema::TYPE_INTEGER,
+	    'floor_area_dm2' => Schema::TYPE_INTEGER,
             //'min_rent_period_days' => Schema::TYPE_SMALLINT,
             //'max_rent_period_days' => Schema::TYPE_SMALLINT,
             //'unit_rate_eucents' => Schema::TYPE_INTEGER,
             //'n_available' => Schema::TYPE_SMALLINT,
             //'from_n_units' => Schema::TYPE_SMALLINT,
             //'to_n_units' => Schema::TYPE_SMALLINT,
+	    'zone_name' => Schema::TYPE_STRING . '(24) references zone(name)',
             'check (valid_until is null or valid_until >= valid_from)'
         ]);
+        //$this->createTable('{{%offer_commun_area}}'...
+        //$this->createTable('{{%offer_surroundings}}'...
         $this->createTable('{{%offer_file}}', [
             'id' => Schema::TYPE_PK,
-            'url' => Schema::TYPE_STRING . '(256)',
+            'url' => Schema::TYPE_STRING . '(255)',
             'offer_id' => Schema::TYPE_INTEGER . ' references offer(id) on delete cascade'
         ]);
         $this->createTable('{{%offer_title}}', [
@@ -97,6 +116,7 @@ class m141211_152619_lts_init extends Migration {
         $this->dropTable('{{%item}}');
         $this->execute('drop type "ItemType"');
         $this->dropTable('{{%location}}');
+        $this->dropTable('{{%zone}}');
         $this->dropTable('{{%language}}');
     }
 }

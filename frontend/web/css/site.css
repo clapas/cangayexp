@@ -224,7 +224,7 @@ a.desc:after {
 }
 
 .thumbnail > img.std {
-    height: 300px;
+    max-height: 300px;
     width: 300px;
 }
 .navbar-fixed-top .navbar-collapse, .navbar-fixed-bottom .navbar-collapse {

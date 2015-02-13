@@ -14,6 +14,7 @@ use common\models\Offer;
 use common\models\OfferDescription;
 use common\models\OfferFile;
 use common\models\OfferTitle;
+use common\models\Zone;
 
 use yii\filters\AccessControl;
 use yii\filters\VerbFilter;
@@ -83,7 +84,8 @@ class OfferController extends Controller
     public function actionCreate()
     {
         $model = new OfferForm();
-	$languages = ArrayHelper::map(Language::find()->all(), 'code', 'name');
+	$languages = ArrayHelper::map(Language::find()->asArray()->all(), 'code', 'name');
+	$zones = ArrayHelper::map(Zone::find()->asArray()->all(), 'name', 'name');
 
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
 
@@ -127,7 +129,8 @@ class OfferController extends Controller
         } else {
             return $this->render('create', [
                 'model' => $model,
-		'languages' => $languages
+		'languages' => $languages,
+		'zones' => $zones
             ]);
         }
     }
@@ -142,13 +145,15 @@ class OfferController extends Controller
     {
         $model = $this->findModel($id);
 	$languages = ArrayHelper::map(Language::find()->all(), 'code', 'name');
+	$zones = ArrayHelper::map(Zone::find()->asArray()->all(), 'name', 'name');
 
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
             return $this->redirect(['view', 'id' => $model->id]);
         } else {
             return $this->render('update', [
                 'model' => $model,
-		'languages' => $languages
+		'languages' => $languages,
+		'zones' => $zones
             ]);
         }
     }

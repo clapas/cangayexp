@@ -59,8 +59,15 @@ class OfferController extends Controller
      */
     public function actionView($id)
     {
+	$model = $this->findModel($id);
+	$titles = ArrayHelper::map($model->getOfferTitles()->asArray()->all(), 'language_code', 'title');
+	$descriptions = ArrayHelper::map($model->getOfferDescriptions()->asArray()->all(), 'language_code', 'md_content');
+	$title = $titles[Yii::$app->language] ? $titles[Yii::$app->language] : $titles[Yii::$app->sourceLanguage];
+	$description = $descriptions[Yii::$app->language] ? $descriptions[Yii::$app->language] : $descriptions[Yii::$app->sourceLanguage];
         return $this->render('view', [
-            'model' => $this->findModel($id),
+            'model' => $model,
+	    'model_title' => $title,
+	    'model_description' => $description
         ]);
     }
 
