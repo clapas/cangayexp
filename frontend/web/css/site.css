@@ -230,3 +230,7 @@ a.desc:after {
 .navbar-fixed-top .navbar-collapse, .navbar-fixed-bottom .navbar-collapse {
     max-height: none;
 }
+.carousel-inner > .item > img, .carousel-inner > .item > a > img {
+    margin-left: auto;
+    margin-right: auto;
+}

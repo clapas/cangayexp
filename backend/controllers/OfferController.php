@@ -85,14 +85,6 @@ class OfferController extends Controller
         $model = new OfferForm();
 	$languages = ArrayHelper::map(Language::find()->all(), 'code', 'name');
 
-	    /*
-            if (Yii::$app->request->isPost) {
-            $model->load(Yii::$app->request->post());
-	    \yii\helpers\VarDumper::dump($model->titles); 
-	    Yii::$app->end();
-	    die;
-	    }
-	    */
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
 
             foreach ($model->titles as $lang => $title) {
@@ -115,19 +107,24 @@ class OfferController extends Controller
 	    }
             $model->files = UploadedFile::getInstances($model, 'files');
 
+	    $err = '';
             if ($model->files && $model->validate()) {
                 $key = Yii::$app->params['SF_API_KEY'];
                 $pass = Yii::$app->params['SF_API_PWD'];
                 $path =  Yii::$app->params['SF_data_path'];
                 $client = new \BasicClient($key, $pass);
                 foreach ($model->files as $file) {
-                    $rh = fopen($file->tempName, 'rb');
-                    $response = $client->post($path, array($file->name => $rh));
+                    try {
+                        $rh = fopen($file->tempName, 'rb');
+                        $response = $client->post($path, array($file->name => $rh));
+		    } catch (Exception $e) {
+		        echo $e->getMessage();
+			die;
+		    }
                     $offerFile = new OfferFile();
                     $offerFile->url = Yii::$app->params['SF_base_url'] . $file->name;
                     $offerFile->offer_id = $model->id;
                     $offerFile->save();
-                    //$file->saveAs('uploads/' . $file->baseName . '.' . $file->extension);
                 }
             }
             return $this->redirect(['view', 'id' => $model->id]);
