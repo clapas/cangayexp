@@ -32,16 +32,20 @@ AppAsset::register($this);
                 ],
             ]);
             $menuItems = [
-                ['label' => 'Home', 'url' => ['/site/index']],
+                ['label' => Yii::t('app', 'Home'), 'url' => Yii::$app->homeUrl],
             ];
+            echo Nav::widget([
+                'options' => ['class' => 'navbar-nav'],
+                'items' => $menuItems,
+            ]);
             if (Yii::$app->user->isGuest) {
-                $menuItems[] = ['label' => 'Login', 'url' => ['/site/login']];
+                $menuItems = [['label' => Yii::t('app', 'Login'), 'url' => ['/site/login']]];
             } else {
-                $menuItems[] = [
+                $menuItems = [[
                     'label' => 'Logout (' . Yii::$app->user->identity->username . ')',
                     'url' => ['/site/logout'],
                     'linkOptions' => ['data-method' => 'post']
-                ];
+                ]];
             }
             echo Nav::widget([
                 'options' => ['class' => 'navbar-nav navbar-right'],
@@ -60,7 +64,7 @@ AppAsset::register($this);
 
     <footer class="footer">
         <div class="container">
-        <p class="pull-left">&copy; My Company <?= date('Y') ?></p>
+        <p class="pull-left">&copy; Living In The Sunset <?= date('Y') ?></p>
         <p class="pull-right"><?= Yii::powered() ?></p>
         </div>
     </footer>

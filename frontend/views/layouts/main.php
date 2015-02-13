@@ -37,9 +37,30 @@ AppAsset::register($this);
             ]);
             $menuItems = [
                 ['label' => Yii::t('app', 'Home'), 'url' => Yii::$app->homeUrl],
-                ['label' => Yii::t('app', 'Sales'), 'url' => ['/offer/all/sales']],
-                ['label' => Yii::t('app', 'Rentals'), 'url' => ['/offer/all/rentals']],
-                ['label' => Yii::t('app', 'Vacations'), 'url' => ['/offer/all/vacations']],
+                ['label' => Yii::t('app', 'Sales'), 'url' => '#', 'items' => [
+		    ['label' => Yii::t('app', 'All'), 'url' => ['/offer/all/sales']],
+		    ['label' => 'Meloneras', 'url' => ['/offer/meloneras/sales']],
+		    ['label' => 'Playa del Inglés', 'url' => ['/offer/playa_del_ingles/sales']],
+		    ['label' => 'Campo de Golf', 'url' => ['/offer/campo_de_golf/sales']],
+		    ['label' => 'San Agustín', 'url' => ['/offer/san_agustin/sales']],
+		    ['label' => 'Puerto Rico', 'url' => ['/offer/puerto_rico/sales']],
+		]],
+                ['label' => Yii::t('app', 'Rentals'), 'url' => '#', 'items' => [
+		    ['label' => Yii::t('app', 'All'), 'url' => ['/offer/all/rentals']],
+		    ['label' => 'Meloneras', 'url' => ['/offer/meloneras/rentals']],
+		    ['label' => 'Playa del Inglés', 'url' => ['/offer/playa_del_ingles/rentals']],
+		    ['label' => 'Campo de Golf', 'url' => ['/offer/campo_de_golf/rentals']],
+		    ['label' => 'San Agustín', 'url' => ['/offer/san_agustin/rentals']],
+		    ['label' => 'Puerto Rico', 'url' => ['/offer/puerto_rico/rentals']],
+		]],
+                ['label' => Yii::t('app', 'Vacations'), 'url' => '#', 'items' => [
+		    ['label' => Yii::t('app', 'All'), 'url' => ['/offer/all/vacations']],
+		    ['label' => 'Meloneras', 'url' => ['/offer/meloneras/vacations']],
+		    ['label' => 'Playa del Inglés', 'url' => ['/offer/playa_del_ingles/vacations']],
+		    ['label' => 'Campo de Golf', 'url' => ['/offer/campo_de_golf/vacations']],
+		    ['label' => 'San Agustín', 'url' => ['/offer/san_agustin/vacations']],
+		    ['label' => 'Puerto Rico', 'url' => ['/offer/puerto_rico/vacations']],
+		]],
                 ['label' => Yii::t('app', 'VIP Services'), 'url' => ['/site/contact'], 'items' => [
                     ['label' => Yii::t('app', 'Cooker'), 'url' => '#'],
                     ['label' => Yii::t('app', 'Baby sitter'), 'url' => '#'],

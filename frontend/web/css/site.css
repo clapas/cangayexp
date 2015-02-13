@@ -15,11 +15,11 @@ body {
 }
 
 .footer {
-    height: 60px;
+    height: 100px;
     background-color: rgb(255, 204, 0);
     color: #444;
     border-top: 1px solid #ddd;
-    padding-top: 20px;
+    padding-top: 40px;
 }
 
 .jumbotron {
@@ -233,4 +233,12 @@ a.desc:after {
 .carousel-inner > .item > img, .carousel-inner > .item > a > img {
     margin-left: auto;
     margin-right: auto;
+}
+.row .summary {
+    margin: 0 15px 15px;
+}
+.row .pagination {
+    display: block;
+    clear: both;
+    margin: 0 15px 15px;
 }

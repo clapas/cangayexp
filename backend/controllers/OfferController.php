@@ -88,50 +88,51 @@ class OfferController extends Controller
 	$zones = ArrayHelper::map(Zone::find()->asArray()->all(), 'name', 'name');
 
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
-
-            foreach ($model->titles as $lang => $title) {
-	        if (in_array($lang,  array_keys($languages))) {
-		    $ot = new OfferTitle();
-		    $ot->title = $title;
-		    $ot->offer_id = $model->id;
-		    $ot->language_code = $lang;
-		    $ot->save();
-		}
-	    }
-            foreach ($model->descriptions as $lang => $desc) {
-	        if (in_array($lang,  array_keys($languages))) {
-		    $od = new OfferDescription();
-		    $od->md_content = $desc;
-		    $od->offer_id = $model->id;
-		    $od->language_code = $lang;
-		    $od->save();
-		}
-	    }
-            $model->files = UploadedFile::getInstances($model, 'files');
-
-	    $err = '';
-            if ($model->files && $model->validate()) {
-                $key = Yii::$app->params['SF_API_KEY'];
-                $pass = Yii::$app->params['SF_API_PWD'];
-                $path =  Yii::$app->params['SF_data_path'];
-                $client = new \BasicClient($key, $pass);
-                foreach ($model->files as $file) {
-                    $rh = fopen($file->tempName, 'rb');
-                    $response = $client->post($path, array($file->name => $rh));
-                    $offerFile = new OfferFile();
-                    $offerFile->url = Yii::$app->params['SF_base_url'] . $file->name;
-                    $offerFile->offer_id = $model->id;
-                    $offerFile->save();
-                }
-            }
+            $this->saveRelations($model, $languages);
             return $this->redirect(['view', 'id' => $model->id]);
-
         } else {
             return $this->render('create', [
                 'model' => $model,
 		'languages' => $languages,
 		'zones' => $zones
             ]);
+        }
+    }
+    protected function saveRelations($model, $languages) {
+        foreach ($model->titles as $lang => $title) {
+            if (in_array($lang,  array_keys($languages))) {
+		$ot = OfferTitle::findOne(['offer_id' => $model->id, 'language_code' => $lang]);
+		if (!$ot) $ot = new OfferTitle();
+                $ot->title = $title;
+                $ot->offer_id = $model->id;
+                $ot->language_code = $lang;
+                $ot->save();
+            }
+        }
+        foreach ($model->descriptions as $lang => $desc) {
+            if (in_array($lang,  array_keys($languages))) {
+		$od = OfferDescription::findOne(['offer_id' => $model->id, 'language_code' => $lang]);
+                if (!$od) $od = new OfferDescription();
+                $od->md_content = $desc;
+                $od->offer_id = $model->id;
+                $od->language_code = $lang;
+                $od->save();
+            }
+        }
+        $model->files = UploadedFile::getInstances($model, 'files');
+        if ($model->files && $model->validate()) {
+            $key = Yii::$app->params['SF_API_KEY'];
+            $pass = Yii::$app->params['SF_API_PWD'];
+            $path =  Yii::$app->params['SF_data_path'];
+            $client = new \BasicClient($key, $pass);
+            foreach ($model->files as $file) {
+                $rh = fopen($file->tempName, 'rb');
+                $response = $client->post($path, array($file->name => $rh));
+                $offerFile = new OfferFile();
+                $offerFile->url = Yii::$app->params['SF_base_url'] . $file->name;
+                $offerFile->offer_id = $model->id;
+                $offerFile->save();
+            }
         }
     }
 
@@ -148,6 +149,7 @@ class OfferController extends Controller
 	$zones = ArrayHelper::map(Zone::find()->asArray()->all(), 'name', 'name');
 
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
+            $this->saveRelations($model, $languages);
             return $this->redirect(['view', 'id' => $model->id]);
         } else {
             return $this->render('update', [
@@ -181,8 +183,9 @@ class OfferController extends Controller
     protected function findModel($id)
     {
         if (($model = OfferForm::findOne($id)) !== null) {
-	    $model->titles = ArrayHelper::map($model->getOfferTitles()->all(), 'language_code', 'title');
-	    $model->descriptions = ArrayHelper::map($model->getOfferDescriptions()->all(), 'language_code', 'md_content');
+	    $model->titles = ArrayHelper::map($model->getOfferTitles()->asArray()->all(), 'language_code', 'title');
+	    $model->descriptions = ArrayHelper::map($model->getOfferDescriptions()->asArray()->all(), 'language_code', 'md_content');
+	    $model->files = $model->getOfferFiles()->asArray()->all();
             return $model;
         } else {
             throw new NotFoundHttpException('The requested page does not exist.');

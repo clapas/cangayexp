@@ -2,6 +2,7 @@
 use yii\helpers\Html;
 use yii\widgets\DetailView;
 
+$this->title = Html::encode($model_title);
 $this->params['breadcrumbs'][] = ['label' => Yii::t('app', 'Offers'), 'url' => ['index']];
 $this->params['breadcrumbs'][] = $model->id;
 

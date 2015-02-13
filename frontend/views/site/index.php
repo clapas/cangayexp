@@ -33,23 +33,21 @@ $this->title = 'LivingTheSunset';
 </div>
 
 <div class="jumbotron">
-  <h1>Living The Sunset</h1>
-  <? var_dump($_GET) ?>
+  <h1>Living In The Sunset</h1>
   <div class="row">
     <div class="col-sm-4">
       <i class="glyphicon glyphicon-home"></i>
       <h3>Quisque enim felis</h3>
       <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
         dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
-        ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
-        fugiat nulla pariatur.</p>
+        ex ea commodo consequat.</p>
     </div>
     <div class="col-sm-4">
       <i class="glyphicon glyphicon-heart"></i>
       <h3>Ullamcorper sed nisl vel</h3>
       <p>Donec vel sapien sed dolor consequat elementum. Sed condimentum lacinia posuere. Vivamus sed velit quam. 
       Curabitur bibendum egestas orci, eleifend tempus dolor iaculis sed. Nunc luctus, quam et gravida dictum, 
-      leo odio commodo risus, a dictum nulla erat et neque. Morbi sit amet malesuada sem, sed ornare urna.</p>
+      leo odio commodo risus, a dictum nulla erat et neque.</p>
   
     </div>
     <div class="col-sm-4">
@@ -57,8 +55,7 @@ $this->title = 'LivingTheSunset';
       <h3>Porttitor sagittis mi</h3>
       <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin iaculis suscipit leo nec faucibus. 
         Integer sodales libero et velit pharetra, sed interdum nisi bibendum. Sed ullamcorper eleifend lectus, 
-        quis semper ante dictum id. Vestibulum placerat mauris tincidunt dapibus vulputate. Praesent fermentum 
-        facilisis urna, a tristique risus lobortis eu.</p>
+        quis semper ante dictum id. Vestibulum placerat mauris tincidunt dapibus vulputate.</p>
     </div>
   </div>
 </div>
@@ -68,8 +65,8 @@ $this->title = 'LivingTheSunset';
   <div class="body-content container">
 
     <div class="title">
-      <h1>Servicios</h1>
-      <p>Praesent odio elit, dapibus at convallis vel, luctus sit amet dui. Curabitur in pretium quam. Nullam vel 
+      <h1><?= Yii::t('app', 'Services') ?></h1>
+      <p class="lead">Praesent odio elit, dapibus at convallis vel, luctus sit amet dui. Curabitur in pretium quam. Nullam vel 
         lorem ut purus interdum rhoncus. Nam at pellentesque ex. Quisque at diam laoreet, viverra justo ac, 
         bibendum lectus. Pellentesque faucibus tempor ligula, a ultrices justo maximus id. Ut at ligula mauris. 
         Morbi id lacinia ligula, ut rutrum magna.</p>
