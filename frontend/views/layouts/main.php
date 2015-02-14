@@ -62,15 +62,16 @@ AppAsset::register($this);
 		    ['label' => 'Puerto Rico', 'url' => ['/offer/puerto_rico/vacations']],
 		]],
                 ['label' => Yii::t('app', 'VIP Services'), 'url' => ['/site/contact'], 'items' => [
-                    ['label' => Yii::t('app', 'Cooker'), 'url' => '#'],
-                    ['label' => Yii::t('app', 'Baby sitter'), 'url' => '#'],
-                    ['label' => Yii::t('app', 'Chauffeur'), 'url' => '#'],
-                    ['label' => Yii::t('app', 'Security'), 'url' => '#'],
-                    ['label' => Yii::t('app', 'Personal Shopper'), 'url' => '#'],
-                    ['label' => Yii::t('app', 'Touristic Guide'), 'url' => '#'],
-                    ['label' => Yii::t('app', 'Arranged Dinner'), 'url' => '#'],
-                    ['label' => Yii::t('app', 'Excursions'), 'url' => '#'],
-                    ['label' => Yii::t('app', 'Events'), 'url' => '#']
+                    ['label' => Yii::t('app', 'Comprehensive Management'), 'url' => ['site/index', '#' => 'comprehensive_management']],
+                    ['label' => Yii::t('app', 'Cooker'), 'url' => ['site/index', '#' => 'cooker']],
+                    ['label' => Yii::t('app', 'Baby sitter'), 'url' => ['site/index', '#' => 'baby_sitter']],
+                    ['label' => Yii::t('app', 'Chauffeur'), 'url' => ['site/index', '#' => 'chauffeur']],
+                    ['label' => Yii::t('app', 'Security'), 'url' => ['site/index', '#' => 'security']],
+                    ['label' => Yii::t('app', 'Personal Shopper'), 'url' => ['site/index', '#' => 'personal_shopper']],
+                    ['label' => Yii::t('app', 'Touristic Guide'), 'url' => ['site/index', '#' => 'touristic_guide']],
+                    ['label' => Yii::t('app', 'Arranged Dinner'), 'url' => ['site/index', '#' => 'arranged_dinner']],
+                    ['label' => Yii::t('app', 'Excursions'), 'url' => ['site/index', '#' => 'excursions']],
+                    ['label' => Yii::t('app', 'Events'), 'url' => ['site/index', '#' => 'events']]
                 ]],
             ];
             /*

@@ -2,6 +2,7 @@
 
 use yii\helpers\Html;
 use yii\widgets\ListView;
+use yii\bootstrap\Modal;
 
 /* @var $this yii\web\View */
 /* @var $searchModel common\models\OfferSearch */
@@ -26,3 +27,19 @@ $this->params['breadcrumbs'][] = $this->title;
 	]
     ]); ?>
 </div>
+<?php
+Modal::begin([
+    'header' => '<h2>' . Yii::t('app', 'Book this property') . '</h2>',
+    'options' => ['id' => 'book_modal']
+]);
+
+echo 'Contact us at xxx@xxx.dom...';
+
+Modal::end();
+$script = <<< JS
+    $('a[href=#book]').on('click', function() {
+        $('#book_modal').modal('show');
+    });
+JS;
+$this->registerJs($script);
+?>

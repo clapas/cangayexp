@@ -108,12 +108,12 @@ use yii\jui\DatePicker;
 </div>
 <?php
 $script = <<< JS
-  $(function() {
+  //$(function() {
      $('form').on('change', 'input:file', function() {
        var fileName = $(this).val();
        if (fileName) $('input[type=file]:first').clone().insertAfter('input[type=file]:last');
      });
-  });
+  //});
 JS;
 $this->registerJs($script);
 ?>

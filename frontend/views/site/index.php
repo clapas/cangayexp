@@ -76,7 +76,8 @@ $this->title = 'LivingTheSunset';
         <div class="service-box">
           <div class="service">
             <span class="fa-stack fa-4x"><i class="fa-stack-1x glyphicon glyphicon-briefcase"></i></span>
-            <h3>Gestión Integral</h3>
+            <a name="comprehensive_management"></a>
+            <h3><?= Yii::t('app', 'Comprehensive Management') ?></h3>
             <p>Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec 
              gravida erat vel gravida malesuada. In nisi lacus, faucibus non dignissim in, molestie ac lectus.</p>
           </div>
@@ -86,7 +87,8 @@ $this->title = 'LivingTheSunset';
         <div class="service-box">
           <div class="service animated fadeInUp visible" data-animation="fadeInUp" data-delay="500">
             <span class="fa-stack fa-4x"><i class="fa fa-desktop fa-stack-1x service-icon glyphicon glyphicon-cutlery"></i></span>
-            <h3>Cocinero</h3>
+            <a name="cooker"></a>
+            <h3><?= Yii::t('app', 'Cooker') ?></h3>
             <p>Donec eget faucibus purus, vel ullamcorper ex. In eget blandit neque. Nulla 
              sit amet erat porta, lobortis massa ornare, fermentum ex. Vestibulum ut urna lectus. Fusce 
              sagittis mauris nibh, at imperdiet lectus accumsan eu..</p>
@@ -97,7 +99,8 @@ $this->title = 'LivingTheSunset';
         <div class="service-box">
           <div class="service animated fadeInUp visible" data-animation="fadeInUp" data-delay="500">
             <span class="fa-stack fa-4x"><i class="fa fa-desktop fa-stack-1x service-icon glyphicon glyphicon-eye-open"></i></span>
-            <h3>Niñera</h3>
+            <a name="baby_sitter"></a>
+            <h3><?= Yii::t('app', 'Baby Sitter') ?></h3>
             <p>Suspendisse felis erat, vestibulum a sapien at, congue cursus velit. Suspendisse cursus, sapien 
            vel tempor iaculis, justo urna iaculis ex, et faucibus nunc dui et dolor.</p>
           </div>
@@ -107,7 +110,8 @@ $this->title = 'LivingTheSunset';
         <div class="service-box">
           <div class="service animated fadeInUp visible" data-animation="fadeInUp" data-delay="500">
             <span class="fa-stack fa-4x"><i class="fa fa-desktop fa-stack-1x service-icon glyphicon glyphicon-road"></i></span>
-            <h3>Chófer</h3>
+            <a name="chauffeur"></a>
+            <h3><?= Yii::t('app', 'Chauffeur') ?></h3>
             <p>Suspendisse felis erat, vestibulum a sapien at, congue cursus velit. Suspendisse cursus, sapien 
            vel tempor iaculis, justo urna iaculis ex, et faucibus nunc dui et dolor.</p>
           </div>
@@ -117,7 +121,8 @@ $this->title = 'LivingTheSunset';
         <div class="service-box">
           <div class="service animated fadeInUp visible" data-animation="fadeInUp" data-delay="500">
             <span class="fa-stack fa-4x"><i class="fa fa-desktop fa-stack-1x service-icon glyphicon glyphicon-flag"></i></span>
-            <h3>Guía Turístico</h3>
+            <a name="touristic_guide"></a>
+            <h3><?= Yii::t('app', 'Touristic Guide') ?></h3>
             <p>Suspendisse felis erat, vestibulum a sapien at, congue cursus velit. Suspendisse cursus, sapien 
            vel tempor iaculis, justo urna iaculis ex, et faucibus nunc dui et dolor.</p>
           </div>
@@ -127,7 +132,8 @@ $this->title = 'LivingTheSunset';
         <div class="service-box">
           <div class="service animated fadeInUp visible" data-animation="fadeInUp" data-delay="500">
             <span class="fa-stack fa-4x"><i class="fa fa-desktop fa-stack-1x service-icon glyphicon glyphicon-book"></i></span>
-            <h3>Cenas Concertadas</h3>
+            <a name="arranged_dinner"></a>
+            <h3><?= Yii::t('app', 'Arranged Dinner') ?></h3>
             <p>Suspendisse felis erat, vestibulum a sapien at, congue cursus velit. Suspendisse cursus, sapien 
            vel tempor iaculis, justo urna iaculis ex, et faucibus nunc dui et dolor.</p>
           </div>
@@ -137,7 +143,8 @@ $this->title = 'LivingTheSunset';
         <div class="service-box">
           <div class="service animated fadeInUp visible" data-animation="fadeInUp" data-delay="500">
             <span class="fa-stack fa-4x"><i class="fa fa-desktop fa-stack-1x service-icon glyphicon glyphicon-facetime-video"></i></span>
-            <h3>Seguridad</h3>
+            <a name="security"></a>
+            <h3><?= Yii::t('app', 'Security') ?></h3>
             <p>Suspendisse felis erat, vestibulum a sapien at, congue cursus velit. Suspendisse cursus, sapien 
            vel tempor iaculis, justo urna iaculis ex, et faucibus nunc dui et dolor.</p>
           </div>
@@ -147,7 +154,8 @@ $this->title = 'LivingTheSunset';
         <div class="service-box">
           <div class="service animated fadeInUp visible" data-animation="fadeInUp" data-delay="500">
             <span class="fa-stack fa-4x"><i class="fa fa-desktop fa-stack-1x service-icon glyphicon glyphicon-gift"></i></span>
-            <h3>Personal Shopper</h3>
+            <a name="personal_shopper"></a>
+            <h3><?= Yii::t('app', 'Personal Shopper') ?></h3>
             <p>Suspendisse felis erat, vestibulum a sapien at, congue cursus velit. Suspendisse cursus, sapien 
            vel tempor iaculis, justo urna iaculis ex, et faucibus nunc dui et dolor.</p>
           </div>
