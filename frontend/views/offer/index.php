@@ -33,7 +33,7 @@ Modal::begin([
     'options' => ['id' => 'book_modal']
 ]);
 
-echo 'Contact us at xxx@xxx.dom...';
+echo Yii::t('app', 'Contact us at') . ' ' . Html::mailto('livinginthesunset@gmail.com');
 
 Modal::end();
 $script = <<< JS

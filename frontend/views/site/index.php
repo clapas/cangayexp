@@ -9,6 +9,7 @@ $this->title = 'LivingTheSunset';
     </div>
     <div class="col-md-8 col-xs-12">
       <?php 
+      use yii\helpers\Html;
       use yii\bootstrap\Carousel;
       use yii\helpers\Url;
       echo Carousel::widget([
@@ -75,7 +76,7 @@ $this->title = 'LivingTheSunset';
       <div class="col-md-3 col-sm-6 col-xs-12">
         <div class="service-box">
           <div class="service">
-            <span class="fa-stack fa-4x"><i class="fa-stack-1x glyphicon glyphicon-briefcase"></i></span>
+            <?= Html::img('@web/img/shutterstock_171931424.jpg', ['class' => 'img-responsive']) ?>
             <a name="comprehensive_management"></a>
             <h3><?= Yii::t('app', 'Comprehensive Management') ?></h3>
             <p>Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec 
@@ -86,7 +87,7 @@ $this->title = 'LivingTheSunset';
       <div class="col-md-3 col-sm-6 col-xs-12">
         <div class="service-box">
           <div class="service animated fadeInUp visible" data-animation="fadeInUp" data-delay="500">
-            <span class="fa-stack fa-4x"><i class="fa fa-desktop fa-stack-1x service-icon glyphicon glyphicon-cutlery"></i></span>
+            <?= Html::img('@web/img/shutterstock_208840960.jpg', ['class' => 'img-responsive']) ?>
             <a name="cooker"></a>
             <h3><?= Yii::t('app', 'Cooker') ?></h3>
             <p>Donec eget faucibus purus, vel ullamcorper ex. In eget blandit neque. Nulla 
@@ -98,7 +99,7 @@ $this->title = 'LivingTheSunset';
       <div class="col-md-3 col-sm-6 col-xs-12">
         <div class="service-box">
           <div class="service animated fadeInUp visible" data-animation="fadeInUp" data-delay="500">
-            <span class="fa-stack fa-4x"><i class="fa fa-desktop fa-stack-1x service-icon glyphicon glyphicon-eye-open"></i></span>
+            <?= Html::img('@web/img/shutterstock_172154483.jpg', ['class' => 'img-responsive']) ?>
             <a name="baby_sitter"></a>
             <h3><?= Yii::t('app', 'Baby Sitter') ?></h3>
             <p>Suspendisse felis erat, vestibulum a sapien at, congue cursus velit. Suspendisse cursus, sapien 
@@ -109,7 +110,7 @@ $this->title = 'LivingTheSunset';
       <div class="col-md-3 col-sm-6 col-xs-12">
         <div class="service-box">
           <div class="service animated fadeInUp visible" data-animation="fadeInUp" data-delay="500">
-            <span class="fa-stack fa-4x"><i class="fa fa-desktop fa-stack-1x service-icon glyphicon glyphicon-road"></i></span>
+            <?= Html::img('@web/img/shutterstock_94199572.jpg', ['class' => 'img-responsive']) ?>
             <a name="chauffeur"></a>
             <h3><?= Yii::t('app', 'Chauffeur') ?></h3>
             <p>Suspendisse felis erat, vestibulum a sapien at, congue cursus velit. Suspendisse cursus, sapien 
@@ -120,7 +121,7 @@ $this->title = 'LivingTheSunset';
       <div class="col-md-3 col-sm-6 col-xs-12">
         <div class="service-box">
           <div class="service animated fadeInUp visible" data-animation="fadeInUp" data-delay="500">
-            <span class="fa-stack fa-4x"><i class="fa fa-desktop fa-stack-1x service-icon glyphicon glyphicon-flag"></i></span>
+            <?= Html::img('@web/img/shutterstock_182239871.jpg', ['class' => 'img-responsive']) ?>
             <a name="touristic_guide"></a>
             <h3><?= Yii::t('app', 'Touristic Guide') ?></h3>
             <p>Suspendisse felis erat, vestibulum a sapien at, congue cursus velit. Suspendisse cursus, sapien 
@@ -131,7 +132,7 @@ $this->title = 'LivingTheSunset';
       <div class="col-md-3 col-sm-6 col-xs-12">
         <div class="service-box">
           <div class="service animated fadeInUp visible" data-animation="fadeInUp" data-delay="500">
-            <span class="fa-stack fa-4x"><i class="fa fa-desktop fa-stack-1x service-icon glyphicon glyphicon-book"></i></span>
+            <?= Html::img('@web/img/shutterstock_122048368.jpg', ['class' => 'img-responsive']) ?>
             <a name="arranged_dinner"></a>
             <h3><?= Yii::t('app', 'Arranged Dinner') ?></h3>
             <p>Suspendisse felis erat, vestibulum a sapien at, congue cursus velit. Suspendisse cursus, sapien 
@@ -142,7 +143,7 @@ $this->title = 'LivingTheSunset';
       <div class="col-md-3 col-sm-6 col-xs-12">
         <div class="service-box">
           <div class="service animated fadeInUp visible" data-animation="fadeInUp" data-delay="500">
-            <span class="fa-stack fa-4x"><i class="fa fa-desktop fa-stack-1x service-icon glyphicon glyphicon-facetime-video"></i></span>
+            <?= Html::img('@web/img/shutterstock_62976403.jpg', ['class' => 'img-responsive']) ?>
             <a name="security"></a>
             <h3><?= Yii::t('app', 'Security') ?></h3>
             <p>Suspendisse felis erat, vestibulum a sapien at, congue cursus velit. Suspendisse cursus, sapien 
@@ -153,7 +154,7 @@ $this->title = 'LivingTheSunset';
       <div class="col-md-3 col-sm-6 col-xs-12">
         <div class="service-box">
           <div class="service animated fadeInUp visible" data-animation="fadeInUp" data-delay="500">
-            <span class="fa-stack fa-4x"><i class="fa fa-desktop fa-stack-1x service-icon glyphicon glyphicon-gift"></i></span>
+            <?= Html::img('@web/img/shutterstock_62913607.jpg', ['class' => 'img-responsive']) ?>
             <a name="personal_shopper"></a>
             <h3><?= Yii::t('app', 'Personal Shopper') ?></h3>
             <p>Suspendisse felis erat, vestibulum a sapien at, congue cursus velit. Suspendisse cursus, sapien 
