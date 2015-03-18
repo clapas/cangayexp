@@ -62,16 +62,15 @@ AppAsset::register($this);
 		    ['label' => 'Puerto Rico', 'url' => ['/offer/puerto_rico/vacations']],
 		]],
                 ['label' => Yii::t('app', 'VIP Services'), 'url' => ['/site/contact'], 'items' => [
-                    ['label' => Yii::t('app', 'Comprehensive Management'), 'url' => ['site/index', '#' => 'comprehensive_management']],
+                    ['label' => Yii::t('app', ''), 'url' => ['site/index', '#' => 'comprehensive_management']],
+                    ['label' => Yii::t('app', 'Excursions'), 'url' => ['site/index', '#' => 'excursions']],
                     ['label' => Yii::t('app', 'Cooker'), 'url' => ['site/index', '#' => 'cooker']],
                     ['label' => Yii::t('app', 'Baby sitter'), 'url' => ['site/index', '#' => 'baby_sitter']],
                     ['label' => Yii::t('app', 'Chauffeur'), 'url' => ['site/index', '#' => 'chauffeur']],
-                    ['label' => Yii::t('app', 'Security'), 'url' => ['site/index', '#' => 'security']],
-                    ['label' => Yii::t('app', 'Personal Shopper'), 'url' => ['site/index', '#' => 'personal_shopper']],
                     ['label' => Yii::t('app', 'Touristic Guide'), 'url' => ['site/index', '#' => 'touristic_guide']],
-                    ['label' => Yii::t('app', 'Arranged Dinner'), 'url' => ['site/index', '#' => 'arranged_dinner']],
-                    ['label' => Yii::t('app', 'Excursions'), 'url' => ['site/index', '#' => 'excursions']],
-                    ['label' => Yii::t('app', 'Events'), 'url' => ['site/index', '#' => 'events']]
+                    ['label' => Yii::t('app', 'Arranged Events'), 'url' => ['site/index', '#' => 'arranged_events']],
+                    ['label' => Yii::t('app', 'Cleaning'), 'url' => ['site/index', '#' => 'cleaning']],
+                    ['label' => Yii::t('app', 'Personal Shopper'), 'url' => ['site/index', '#' => 'personal_shopper']],
                 ]],
             ];
             /*
@@ -115,12 +114,17 @@ AppAsset::register($this);
     </div>
 
     <footer class="footer">
-        <div class="container">
-        <p class="pull-left">&copy; Living In The Sunset <?= date('Y') ?></p>
-        <p class="pull-right"><?= Yii::powered() ?></p>
-        </div>
+      <div class="container">
+        <p class="lead">Living In The Sunset&reg;  <?= date('Y') ?></p>
+        <p>Estaremos encantados de atender sus peticiones; puede ponerse en contacto con nosotros a través de:</p>
+        <ul>
+          <li>Email: <a href="mailto:livinginthesunset@gmail.com">livinginthesunset@gmail.com</a></li>
+          <li>Tf: 0034 679 297 297</li>
+          <li>Tf: 0034 649094148</li>
+          <li>Tf: 0034 28 931339</li>
+        </ul>
+      </div>
     </footer>
-
     <?php $this->endBody() ?>
 </body>
 </html>

@@ -15,11 +15,11 @@ body {
 }
 
 .footer {
-    height: 100px;
     background-color: rgb(255, 204, 0);
     color: #444;
     border-top: 1px solid #ddd;
     padding-top: 40px;
+    padding-bottom: 30px;
 }
 
 .jumbotron {
@@ -39,6 +39,10 @@ body {
 .jumbotron .btn {
     font-size: 21px;
     padding: 14px 24px;
+}
+
+.jumbotron p {
+    font-size: 18px;
 }
 
 .jumbotron .glyphicon {
@@ -120,7 +124,7 @@ a.desc:after {
 
 @media (min-width: 768px) {
     .service-box {
-      min-height: 440px;
+      min-height: 480px;
     }
 }
 

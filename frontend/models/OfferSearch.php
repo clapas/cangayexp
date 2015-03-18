@@ -45,10 +45,10 @@ class OfferSearch extends Offer
         $query = Offer::find()->with([
 	    'offerFiles',
 	    'offerTitles' => function($q) {
-	        $q->asArray()->andWhere('language_code = :lang and title != \'\' or language_code = :slang', [':lang' => Yii::$app->language, ':slang' => Yii::$app->sourceLanguage]);
+	        $q->asArray()->andWhere('language_code = :lang and title != \'\' or title = \'\' and language_code = :slang', [':lang' => Yii::$app->language, ':slang' => Yii::$app->sourceLanguage]);
             },
 	    'offerDescriptions' => function($q) {
-	        $q->asArray()->andWhere('language_code = :lang and md_content != \'\' or language_code = :slang', [':lang' => Yii::$app->language, ':slang' => Yii::$app->sourceLanguage]);
+	        $q->asArray()->andWhere('language_code = :lang and md_content != \'\' or md_content = \'\' and language_code = :slang', [':lang' => Yii::$app->language, ':slang' => Yii::$app->sourceLanguage]);
             }
 	]);
 	//\yii\helpers\VarDumper::dump($query, 5, true); die;

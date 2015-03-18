@@ -33,7 +33,7 @@ use yii\jui\DatePicker;
 	    </div>
 	    <div class="form-group">
               <?= Html::activeLabel($model, 'descriptions') ?>
-              <textarea class="form-control" name="OfferForm[descriptions][<?= $code ?>]"><?= $model->descriptions[$code] ?></textarea>
+              <textarea rows="8" class="form-control" name="OfferForm[descriptions][<?= $code ?>]"><?= $model->descriptions[$code] ?></textarea>
 	    </div>
           </div>
 	<?php endforeach; ?>

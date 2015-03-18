@@ -81,9 +81,10 @@ class Offer extends \yii\db\ActiveRecord
             'is_water_incl' => Yii::t('app', 'Is Water Included'),
             'our_reference' => Yii::t('app', 'Our Reference'),
             'their_reference' => Yii::t('app', 'Their Reference'),
-            'rate_eu' => Yii::t('app', 'Rate (€)'),
-            'commun_expenses_eu' => Yii::t('app', 'Community Expenses (€)'),
-            'floor_area_dm2' => Yii::t('app', 'Floor Area (m²)'),
+            'rate_eu' => Yii::t('app', 'Rate') . ' (€)',
+            'commun_expenses_eu' => Yii::t('app', 'Community Expenses') . ' (€)',
+            'floor_area_m2' =>  Yii::t('app', 'Floor Area') . ' (m²)',
+            'floor_area' =>  Yii::t('app', 'Floor Area'),
             'zone_name' => Yii::t('app', 'Zone'),
         ];
     }

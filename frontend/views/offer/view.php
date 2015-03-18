@@ -45,33 +45,40 @@ echo newerton\fancybox\FancyBox::widget([
   <h1><?= Html::encode($model_title) ?></h1>
 </div>
 
-<p class="lead"><?= Html::encode($model_description) ?></p>
 <div class="row">
-  <div class="col-md-6">
-    <?= DetailView::widget([
-        'model' => $model,
-        'attributes' => [
-            'id',
-            'valid_from',
-            'valid_until',
-            'is_for_rent:boolean',
-            'is_electricity_incl:boolean',
-            'is_water_incl:boolean',
-            'our_reference',
-            'rate_eu',
-            'commun_expenses_eu',
-            'floor_area_m2',
-            'zone_name',
-        ],
-    ]) ?>
+  <div class="col-md-8">
+  <?php 
+      $md = new cebe\markdown\Markdown();
+      echo $md->parse(Html::encode($model_description));
+  ?>
   </div>
-  <div class="col-md-6">
+  <div class="col-md-4">
     <div class="row">
-      <?php foreach ($model->getOfferFiles()->all() as $of): ?>
-      <div class="col-xs-6 col-md-3">
-        <?php echo Html::a(Html::img($of->url, ['class' => 'std']), $of->url, ['rel' => 'fancybox', 'class' => 'thumbnail']) ?>
-      </div>
-      <?php endforeach; ?>
+      <?= DetailView::widget([
+          'model' => $model,
+          'options' => [
+              'class'=> 'table detail-view'
+          ],
+          'attributes' => [
+              'id',
+              'valid_from',
+              'valid_until',
+              'is_for_rent:boolean',
+              'is_electricity_incl:boolean',
+              'is_water_incl:boolean',
+              'our_reference',
+              'rate_eu',
+              'commun_expenses_eu',
+              'floor_area_m2',
+              'zone_name',
+          ],
+      ]) ?>
     </div>
   </div>
 </div>
+<hr>
+<?php foreach ($model->getOfferFiles()->all() as $of): ?>
+  <div class="col-xs-6 col-md-3">
+    <?php echo Html::a(Html::img($of->url, ['class' => 'std']), $of->url, ['rel' => 'fancybox', 'class' => 'thumbnail']) ?>
+  </div>
+<?php endforeach; ?>
