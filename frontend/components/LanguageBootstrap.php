@@ -25,10 +25,11 @@ class LanguageBootstrap implements BootstrapInterface {
             "<lang:({$langPatt})>/offer/<location:\w+>/<offer_type:\w+>" => 'offer/index',
             "<lang:({$langPatt})>/offer/<location:\w*>" => 'offer/index',
             "<lang:({$langPatt})>/offer" => 'offer/index',
-	    "<lang:({$langPatt})>/" => '/',
+	    ['pattern' => "<lang:({$langPatt})>/", 'route' => 'site/index', 'suffix' => '/'],
             'offer/<location:\w+>/<offer_type:\w+>' => 'offer/index',
             'offer/<location:\w*>' => 'offer/index',
             'offer' => 'offer/index',
+	    ['pattern' => '/', 'route' => 'site/index', 'suffix' => '/'],
             /*
             "<lang:({$langPatt})>/<controller:\w+>/<action:\w+>" => '<controller>/<action>',
             "<lang:({$langPatt})>/<controller:\w+>/<action:\w+>/<id:\d+>" => '<controller>/<action>',
@@ -38,13 +39,17 @@ class LanguageBootstrap implements BootstrapInterface {
     public static function changeLanguage($lang) {
         Yii::$app->language = $lang;
 	Yii::$app->urlManager->setBaseUrl(Yii::$app->urlManager->getBaseUrl() . '/' . $lang);
-        Yii::$app->homeUrl = Yii::$app->homeUrl . $lang;
+        if (Yii::$app->language != Yii::$app->sourceLanguage) $lang .= '/';
+        Yii::$app->homeUrl = Yii::$app->homeUrl . $lang . '/';
     }
+    /* hRefLang returns the URL for the $url passed as the first parameter but for the 
+       $langCode passed as the second parameter.
+     */
     public static function hRefLang($url, $langCode) {
         $bUrl = Yii::$app->urlManager->getBaseUrl();
         if (Yii::$app->language == Yii::$app->sourceLanguage) {
 	    if ($langCode != Yii::$app->sourceLanguage and strlen(substr($url, strlen($bUrl) + 1)) > 1) $langCode .= '/';
-            return $bUrl . '/' . $langCode . substr($url, strlen($bUrl) + 1);
+            return $bUrl . '/' . $langCode . '/' . substr($url, strlen($bUrl) + 1);
 	} else {
 	    if ($langCode == Yii::$app->sourceLanguage) $langCode = '';
 	    else $langCode = '/' . $langCode;

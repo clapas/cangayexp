@@ -61,8 +61,7 @@ AppAsset::register($this);
 		    ['label' => 'San Agustín', 'url' => ['/offer/san_agustin/vacations']],
 		    ['label' => 'Puerto Rico', 'url' => ['/offer/puerto_rico/vacations']],
 		]],
-                ['label' => Yii::t('app', 'VIP Services'), 'url' => ['/site/contact'], 'items' => [
-                    ['label' => Yii::t('app', ''), 'url' => ['site/index', '#' => 'comprehensive_management']],
+                ['label' => Yii::t('app', 'VIP Services'), 'url' => '#', 'items' => [
                     ['label' => Yii::t('app', 'Excursions'), 'url' => ['site/index', '#' => 'excursions']],
                     ['label' => Yii::t('app', 'Cooker'), 'url' => ['site/index', '#' => 'cooker']],
                     ['label' => Yii::t('app', 'Baby sitter'), 'url' => ['site/index', '#' => 'baby_sitter']],
