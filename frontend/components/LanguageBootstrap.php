@@ -40,7 +40,7 @@ class LanguageBootstrap implements BootstrapInterface {
         Yii::$app->language = $lang;
 	Yii::$app->urlManager->setBaseUrl(Yii::$app->urlManager->getBaseUrl() . '/' . $lang);
         if (Yii::$app->language != Yii::$app->sourceLanguage) $lang .= '/';
-        Yii::$app->homeUrl = Yii::$app->homeUrl . $lang . '/';
+        Yii::$app->homeUrl = Yii::$app->homeUrl . $lang;
     }
     /* hRefLang returns the URL for the $url passed as the first parameter but for the 
        $langCode passed as the second parameter.
