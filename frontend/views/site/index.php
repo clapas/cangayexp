@@ -14,11 +14,11 @@ $this->title = 'LivingTheSunset';
       use yii\helpers\Url;
       echo Carousel::widget([
           'items' => [
-              ['content' => '<img src="' . Url::to('@web/img/slideshow1.jpg') . '">', 'caption' => '<h4>Primer título</h4><p>Este es el primer texto</p>'],
-              ['content' => '<img src="' . Url::to('@web/img/slideshow2.jpg') . '">', 'caption' => '<h4>Segundo título</h4><p>Este es el segundo texto</p>'],
-              ['content' => '<img src="' . Url::to('@web/img/slideshow3.jpg') . '">', 'caption' => '<h4>Tercer título</h4><p>Este es el tercer texto</p>'],
-              ['content' => '<img src="' . Url::to('@web/img/slideshow4.jpg') . '">', 'caption' => '<h4>Cuarto título</h4><p>Este es el cuarto texto</p>'],
-              ['content' => '<img src="' . Url::to('@web/img/slideshow5.jpg') . '">', 'caption' => '<h4>Quinto título</h4><p>Este es el quinto texto</p>'],
+              ['content' => '<img src="' . Url::to('@web/img/slideshow1.jpg') . '">', 'caption' => '<h4>Living in the Sunset</h4>'],
+              ['content' => '<img src="' . Url::to('@web/img/slideshow2.jpg') . '">', 'caption' => '<h4>Living in the Sunset</h4>'],
+              ['content' => '<img src="' . Url::to('@web/img/slideshow3.jpg') . '">', 'caption' => '<h4>Living in the Sunset</h4>'],
+              ['content' => '<img src="' . Url::to('@web/img/slideshow4.jpg') . '">', 'caption' => '<h4>Living in the Sunset</h4>'],
+              ['content' => '<img src="' . Url::to('@web/img/slideshow5.jpg') . '">', 'caption' => '<h4>Living in the Sunset</h4>'],
           ],
           'controls' => [
               '<span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>',
@@ -35,60 +35,62 @@ $this->title = 'LivingTheSunset';
 
 <div class="jumbotron">
   <h1>Living In The Sunset</h1>
-  <div class="row">
-    <div class="col-sm-4">
-      <i class="glyphicon glyphicon-home"></i>
-      <h3><?= Yii::t('app', 'Our Mission') ?></h3>
-      <p>Living In The Sunset&reg; es el fruto de una colaboración directa entre 
-        diferentes profesionales, especializados en los sectores de la 
-        abogacía y del turismo, con cooperadores en países nórdicos entre otros. 
-        Marcamos la diferencia ofreciendo un servicio jurídico directo sin intermediarios para 
-        que el cliente pueda disponer en todo momento de la información 
-        necesaria respecto a las tramitaciones contratadas.</p>
-    </div>
-    <div class="col-sm-4">
-      <i class="glyphicon glyphicon-heart"></i>
-      <h3><?= Yii::t('app', 'Our Offering') ?></h3>
-      <p>Living In The Sunset&reg; tiene una estructura sólida y de principios 
-        asentados, destacándonos  del resto de opciones como la óptima 
-        solución garantizando la eficiencia, seriedad y seguridad de un servicio 
-        jurídico directo, sin intermediaciones inmobiliarias desconocedoras de 
-        ciertas materias exclusivamente jurídicas, que a través de nuestro 
-        servicio pueden ser resueltas inmediatamente.</p>
-    </div>
-    <div class="col-sm-4">
-      <i class="glyphicon glyphicon-picture"></i>
-      <h3><?= Yii::t('app', 'Your Benefits') ?></h3>
-      <p>En caso de optar por nuestra opción, no tendrá que preocuparse por 
-        realizar trámites y gestiones burocráticas, sea de índole administrativa, 
-        notarial, registral, liquidadora o cualquier otra dado que el servicio 
-        ofrecido es íntegro, siendo el cliente la pieza fundamental en todo 
-        caso. Inclusive ofrecemos un servicio jurídico post venta, mediante el 
-        cual ofrecemos la posibilidad a nuestros clientes de no tener que 
-        buscar asesoramiento en otros profesionales</p>
-    </div>
+    <p><em>Living in the Sunset</em> nace del fruto de una colaboración directa entre
+    diferentes profesionales, especializados en los sectores de la
+    abogacía y del turismo, con cooperadores en países nórdicos y otros.</p>
+    <p>Esta fusión da lugar al mejor equipo, cuya elección le proporcionará un
+    trato personalizado, eficiente y profesional mediante el cual podrá
+    localizar la opción óptima para el disfrute vacacional así como un
+    destino de descanso y ocio temporal. Así mismo, optará por el mejor
+    servicio jurídico de asesoramiento, asistencia y gestión en la
+    tramitación de la compra de inmuebles.
+    Siendo el mejor referente para su inversión, y para la adquisición de inmuebles 
+    en la isla más afortunada del archipiélago canario, Gran Canaria, donde el sol no
+    descansa en gran parte del año.</p>
+    <p>Gracias a una amplia experiencia en el sector turístico, podemos
+    proporcionar los mejores servicios y la máxima calidad a nuestros
+    clientes, así que, cualquier opción que elija, sea bienvenido y
+    asegúrese de llevarla a buen término con todas las facilidades y
+    comodidades que prestamos. Igualmente, es la primera opción de
+    reserva vacacional por larga, media o corta temporada dado el servicio
+    de intermediación turística que se ofrece.</p>
+    <p><em>Living in the Sunset</em> se creó para marcar la diferencia en este
+    ámbito ofreciendo un servicio jurídico directo sin intermediarios para
+    que el cliente pueda disponer en todo momento de la información
+    necesaria respecto a las tramitaciones contratadas.</p>
+    <p>Living in the Sunset tiene una estructura sólida y de principios
+    asentados, destacándonos del resto de opciones como la óptima
+    solución garantizando la eficiencia, seriedad y seguridad de un servicio
+    jurídico directo, sin intermediaciones inmobiliarias desconocedoras de
+    ciertas materias exclusivamente jurídicas, que a través de nuestro
+    servicio pueden ser resueltas inmediatamente.</p>
+    <p>En caso de optar por nuestra opción, no tendrá que preocuparse por
+    realizar trámites y gestiones burocráticas, sea de índole administrativa,
+    notarial, registral, liquidadora o cualquier otra dado que el servicio
+    ofrecido es íntegro, siendo el cliente la pieza fundamental en todo
+    caso. Inclusive ofrecemos un servicio jurídico post venta, mediante el
+    cual ofrecemos la posibilidad a nuestros clientes de no tener que
+    buscar asesoramiento en otros profesionales sino en aquéllos que
+    desde un principio han intervenido en las gestiones pertinentes, ya
+    sean de asuntos que deriven de la propia adquisición como cualquier
+    otro asunto de cualquier tipo de jurisdicción, en cualquier partido
+    judicial, dado la extensa lista de colaboradores en este gran proyecto.</p>
+    <p>Le damos la bienvenida y opte por el confort que le ofrecemos en uno
+    de los lugares más privilegiados del mundo.</p>
   </div>
-</div>
 
 <div class="site-index">
 
   <div class="body-content container">
 
     <div class="title">
-      <h1><?= Yii::t('app', 'Services') ?></h1>
+      <h1><?= Yii::t('app', 'Colaborations') ?></h1>
       <p class="lead text-center">Le damos la bienvenida y opte por el confort que le ofrecemos en uno 
       de los lugares más privilegiados del mundo.</p>
       <p class="lead text-center">Existe una numerosa lista de colaboraciones externas en virtud de las 
         cuales, en calidad de intermediario turístico, podrá disponerse de 
         numerosos servicios para garantizar su tranquilidad. Estos servicios 
         podrán ser ofrecidos bajo petición y precio del servicio a consultar.</p>
-      <p class="lead text-center">Gracias a una amplia experiencia en el sector turístico, podemos 
-        proporcionar los mejores servicios y la máxima calidad a nuestros 
-        clientes, así que, cualquier opción que elija, sea bienvenido y 
-        asegúrese de llevarla a buen término con todas las facilidades y 
-        comodidades que prestamos. Igualmente, es la primera opción de 
-        reserva vacacional por larga, media o corta temporada dado el servicio 
-        de intermediación turística que se ofrece.</p>
     </div>
     <div class="row">
       <div class="col-md-3 col-sm-6 col-xs-12">
