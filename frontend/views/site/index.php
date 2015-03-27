@@ -83,11 +83,11 @@ $this->title = 'LivingTheSunset';
 
   <div class="body-content container">
 
-    <div class="title">
-      <h1><?= Yii::t('app', 'Colaborations') ?></h1>
-      <p class="lead text-center">Le damos la bienvenida y opte por el confort que le ofrecemos en uno 
+    <div class="title text-center">
+      <h2><?= Yii::t('app', 'Colaborations') ?></h2>
+      <p class="lead">Le damos la bienvenida y opte por el confort que le ofrecemos en uno 
       de los lugares más privilegiados del mundo.</p>
-      <p class="lead text-center">Existe una numerosa lista de colaboraciones externas en virtud de las 
+      <p class="lead">Existe una numerosa lista de colaboraciones externas en virtud de las 
         cuales, en calidad de intermediario turístico, podrá disponerse de 
         numerosos servicios para garantizar su tranquilidad. Estos servicios 
         podrán ser ofrecidos bajo petición y precio del servicio a consultar.</p>
