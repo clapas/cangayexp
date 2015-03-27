@@ -199,10 +199,12 @@ a.desc:after {
     font-size: 20px;
 }
 
+/*
 .thumbnail > img.std {
     max-height: 300px;
     width: 300px;
 }
+*/
 .navbar-fixed-top .navbar-collapse, .navbar-fixed-bottom .navbar-collapse {
     max-height: none;
 }
