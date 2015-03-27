@@ -92,11 +92,7 @@ use yii\jui\DatePicker;
   
       <?= $form->field($model, 'is_featured')->checkbox() ?>
   
-      <?= $form->field($model, 'files[]')->fileInput(['multiple' => true]) ?>
-      <?php if (isset($model->files)) foreach($model->files as $f): ?>
-         <p><?= $f['url'] ?></p>
-      <?php endforeach; ?>
-      </div>
+     </div>
   </div>
 
   <div class="form-group">

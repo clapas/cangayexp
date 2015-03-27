@@ -2,6 +2,8 @@
 
 use yii\helpers\Html;
 use yii\widgets\DetailView;
+use yii\widgets\ActiveForm;
+use kartik\widgets\FileInput;
 
 /* @var $this yii\web\View */
 /* @var $model common\models\Offer */
@@ -106,12 +108,53 @@ echo newerton\fancybox\FancyBox::widget([
       ]) ?>
     </div>
   </div>
+  <h2><?= Yii::t('app', 'Pictures') ?></h2>
   <div class="row">
-    <h2><?= Yii::t('app', 'Pictures') ?></h2>
     <?php foreach ($model->getOfferFiles()->all() as $f): ?>
-      <div class="col-xs-6 col-md-3">
+      <div class="col-xs-6 col-md-3 form-group">
         <a href="<?= $f->url ?>" class="thumbnail"><?= Html::img($f->url) ?></a>
+        <?= Html::a(Yii::t('app', 'Delete'), ['delete-file', 'id' => $f->id], [
+            'class' => 'btn btn-small btn-danger',
+            'data' => [
+                'confirm' => Yii::t('app', 'Are you sure you want to delete this item?'),
+                'method' => 'post',
+            ],
+        ]) ?>
       </div>
     <?php endforeach; ?>
   </div>
+  <?php 
+    //echo $form->field($model, 'files[]')->fileInput(['multiple' => true]);
+  ?>
+  <h3><?= Yii::t('app', 'Add Pictures') ?></h3>
+  <?php
+    $form = ActiveForm::begin(['action' => ['upload-files', 'id' => $model->id], 'options' => ['enctype' => 'multipart/form-data']]);
+    echo $form->field($model, 'files[]', ['template' => "{input}\n{hint}\n{error}"])->widget(FileInput::classname(), [
+        'options' => ['multiple' => true, 'accept' => 'image/*'],
+        'pluginOptions' => [
+            'previewFileType' => 'image', 
+            'showRemove' => false,
+            'browseLabel' => Yii::t('app', 'Browse …'),
+            'updloadLabel' => Yii::t('app', 'Upload'),
+            'msgSelected' => Yii::t('app', '{n} files selected')
+        ]
+    ]);
+    ActiveForm::end();
+  ?>
 </div>
+<?php
+$script = <<< JS
+(function($) {
+    $.fn.uniformHeight = function() {
+        var minHeight   = Number.MAX_VALUE,
+            min         = Math.min;
+
+        return this.each(function() {
+            minHeight = min(minHeight, $(this).height());
+        }).children('img').height(minHeight);
+    }
+})(jQuery);
+$('.thumbnail').uniformHeight();
+JS;
+$this->registerJs($script);
+?>
