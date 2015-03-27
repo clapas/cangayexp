@@ -218,3 +218,7 @@ a.desc:after {
     clear: both;
     margin: 0 15px 15px;
 }
+
+.fancybox-nav span {
+    visibility: visible;
+}

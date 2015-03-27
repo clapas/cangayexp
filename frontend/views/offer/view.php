@@ -11,31 +11,13 @@ echo newerton\fancybox\FancyBox::widget([
     'helpers' => true,
     'mouse' => true,
     'config' => [
-        'maxWidth' => '90%',
-        'maxHeight' => '90%',
-        'playSpeed' => 7000,
         'padding' => 0,
         'fitToView' => false,
-        'width' => '70%',
-        'height' => '70%',
-        'autoSize' => false,
-        'closeClick' => false,
-        'openEffect' => 'elastic',
-        'closeEffect' => 'elastic',
-        'prevEffect' => 'elastic',
-        'nextEffect' => 'elastic',
-        'closeBtn' => false,
         'openOpacity' => true,
-        'helpers' => [
-            'title' => ['type' => 'float'],
-            'buttons' => [],
-            'thumbs' => ['width' => 68, 'height' => 50],
-            'overlay' => [
-                'css' => [
-                    'background' => 'rgba(0, 0, 0, 0.8)'
-                ]
-            ]
-        ],
+        'maxWidth' => '100%',
+        'maxHeight' => '100%',
+        'prevEffect' => 'none',
+        'nextEffect' => 'none',
     ]
 ]);
 
@@ -53,7 +35,6 @@ echo newerton\fancybox\FancyBox::widget([
   ?>
   </div>
   <div class="col-md-4">
-    <div class="row">
       <?= DetailView::widget([
           'model' => $model,
           'options' => [
@@ -73,12 +54,29 @@ echo newerton\fancybox\FancyBox::widget([
               'zone_name',
           ],
       ]) ?>
-    </div>
   </div>
 </div>
 <hr>
-<?php foreach ($model->getOfferFiles()->all() as $of): ?>
-  <div class="col-xs-6 col-md-3">
-    <?php echo Html::a(Html::img($of->url, ['class' => 'std']), $of->url, ['rel' => 'fancybox', 'class' => 'thumbnail']) ?>
-  </div>
-<?php endforeach; ?>
+<div class="row">
+  <?php foreach ($model->getOfferFiles()->all() as $of): ?>
+    <div class="col-xs-6 col-md-3">
+      <?php echo Html::a(Html::img($of->url, ['class' => 'std']), $of->url, ['rel' => 'fancybox', 'class' => 'thumbnail']) ?>
+    </div>
+  <?php endforeach; ?>
+</div>
+<?php
+$script = <<< JS
+(function($) {
+    $.fn.uniformHeight = function() {
+        var minHeight   = Number.MAX_VALUE,
+            min         = Math.min;
+
+        return this.each(function() {
+            minHeight = min(minHeight, $(this).height());
+        }).css('max-height', minHeight);
+    }
+})(jQuery);
+$('.thumbnail img').uniformHeight();
+JS;
+$this->registerJs($script);
+?>

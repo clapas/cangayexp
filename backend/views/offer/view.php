@@ -151,7 +151,7 @@ $script = <<< JS
 
         return this.each(function() {
             minHeight = min(minHeight, $(this).height());
-        }).children('img').height(minHeight);
+        }).children('img').css('max-height', minHeight);
     }
 })(jQuery);
 $('.thumbnail').uniformHeight();
