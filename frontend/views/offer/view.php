@@ -78,5 +78,5 @@ $script = <<< JS
 })(jQuery);
 $('.thumbnail img').uniformHeight();
 JS;
-$this->registerJs($script);
+$this->registerJs($script, yii\web\View::POS_LOAD);
 ?>
