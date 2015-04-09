@@ -199,12 +199,14 @@ a.desc:after {
     font-size: 20px;
 }
 
-/*
-.thumbnail > img.std {
-    max-height: 300px;
-    width: 300px;
+.thumbnail div.img {
+    height: 300px;
+    display: block;
+    background-repeat: no-repeat; 
+    background-size: cover;
+    background-position: center;
 }
-*/
+
 .navbar-fixed-top .navbar-collapse, .navbar-fixed-bottom .navbar-collapse {
     max-height: none;
 }

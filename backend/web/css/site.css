@@ -100,3 +100,12 @@ a.desc:after {
     border-right: 1px solid #ddd;
     padding: 10px;
 }
+
+.thumbnail div.img {
+    height: 300px;
+    display: block;
+    background-repeat: no-repeat; 
+    background-size: cover;
+    background-position: center;
+}
+

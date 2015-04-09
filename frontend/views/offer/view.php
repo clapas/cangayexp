@@ -60,23 +60,7 @@ echo newerton\fancybox\FancyBox::widget([
 <div class="row">
   <?php foreach ($model->getOfferFiles()->all() as $of): ?>
     <div class="col-xs-6 col-md-3">
-      <?php echo Html::a(Html::img($of->url, ['class' => 'std']), $of->url, ['rel' => 'fancybox', 'class' => 'thumbnail']) ?>
+      <?php echo Html::a(Html::tag('div', null, ['class' => 'img', 'style' => 'background-image: url(' . $of->url . ')']), $of->url, ['rel' => 'fancybox', 'class' => 'thumbnail']) ?>
     </div>
   <?php endforeach; ?>
 </div>
-<?php
-$script = <<< JS
-(function($) {
-    $.fn.uniformHeight = function() {
-        var minHeight   = Number.MAX_VALUE,
-            min         = Math.min;
-
-        return this.each(function() {
-            minHeight = min(minHeight, $(this).height());
-        }).css('max-height', minHeight);
-    }
-})(jQuery);
-$('.thumbnail img').uniformHeight();
-JS;
-$this->registerJs($script, yii\web\View::POS_LOAD);
-?>

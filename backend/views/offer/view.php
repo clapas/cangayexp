@@ -12,39 +12,6 @@ $this->title = $model->id;
 $this->params['breadcrumbs'][] = ['label' => Yii::t('app', 'Offers'), 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 
-echo newerton\fancybox\FancyBox::widget([
-    'target' => 'a[rel=fancybox]',
-    'helpers' => true,
-    'mouse' => true,
-    'config' => [
-        'maxWidth' => '90%',
-        'maxHeight' => '90%',
-        'playSpeed' => 7000,
-        'padding' => 0,
-        'fitToView' => false,
-        'width' => '70%',
-        'height' => '70%',
-        'autoSize' => false,
-        'closeClick' => false,
-        'openEffect' => 'elastic',
-        'closeEffect' => 'elastic',
-        'prevEffect' => 'elastic',
-        'nextEffect' => 'elastic',
-        'closeBtn' => false,
-        'openOpacity' => true,
-        'helpers' => [
-            'title' => ['type' => 'float'],
-            'buttons' => [],
-            'thumbs' => ['width' => 68, 'height' => 50],
-            'overlay' => [
-                'css' => [
-                    'background' => 'rgba(0, 0, 0, 0.8)'
-                ]
-            ]
-        ],
-    ]
-]);
-
 ?>
 
 <div class="offer-view">
@@ -112,7 +79,9 @@ echo newerton\fancybox\FancyBox::widget([
   <div class="row">
     <?php foreach ($model->getOfferFiles()->all() as $f): ?>
       <div class="col-xs-6 col-md-3 form-group">
-        <a href="<?= $f->url ?>" class="thumbnail"><?= Html::img($f->url) ?></a>
+        <a href="<?= $f->url ?>" class="thumbnail">
+            <?= Html::tag('div', null, ['class' => 'img', 'style' => 'background-image: url(' . $f->url . ')']) ?>
+        </a>
         <?= Html::a(Yii::t('app', 'Delete'), ['delete-file', 'id' => $f->id], [
             'class' => 'btn btn-small btn-danger',
             'data' => [
@@ -142,19 +111,3 @@ echo newerton\fancybox\FancyBox::widget([
     ActiveForm::end();
   ?>
 </div>
-<?php
-$script = <<< JS
-(function($) {
-    $.fn.uniformHeight = function() {
-        var minHeight   = Number.MAX_VALUE,
-            min         = Math.min;
-
-        return this.each(function() {
-            minHeight = min(minHeight, $(this).height());
-        }).children('img').css('max-height', minHeight);
-    }
-})(jQuery);
-$('.thumbnail').uniformHeight();
-JS;
-$this->registerJs($script);
-?>

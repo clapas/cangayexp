@@ -4,9 +4,9 @@ use yii\helpers\Url;
 $viewURL = Url::to(['offer/view', 'id' => $model->id]);
 ?>
   <div class="thumbnail">
-    <a href="<?= $viewURL ?>">
+    <a class="img-wrapper" href="<?= $viewURL ?>">
       <?php if (isset($model->offerFiles[0])):
-          echo Html::img($model->offerFiles[0]['url'], ['class' => 'std',]);
+          echo Html::tag('div', null, ['class' => 'img', 'style' => 'background-image: url(' . $model->offerFiles[0]['url']. ')']);
       else: ?>
           <img data-src="holder.js/300x300/auto/industrial" alt="...">
       <?php endif; ?>
