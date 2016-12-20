@@ -4,10 +4,10 @@ $config = [
     'components' => [
         'request' => [
             'cookieValidationKey' => 'Ck7FtcDbllhxtQFLhngH3hs_gZAZmXkY',
-            'baseUrl' => '/projects/lts',
+            'baseUrl' => '/projects/cangayexp',
         ],
         'urlManager' => [
-            'baseUrl' => '/projects/lts'
+            'baseUrl' => '/projects/cangayexp'
         ],
         'session' => [
             'name' => 'PHPFRONTSESSID',

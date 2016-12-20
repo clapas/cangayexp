@@ -3,7 +3,7 @@
 use yii\db\Schema;
 use yii\db\Migration;
 
-class m141211_152619_lts_init extends Migration {
+class m161117_124019_cangayexp_init extends Migration {
     public function safeUp() {
         $this->createTable('{{%language}}', [
             'code' => Schema::TYPE_STRING . '(2) primary key',
@@ -104,9 +104,75 @@ class m141211_152619_lts_init extends Migration {
             'package_id' => Schema::TYPE_INTEGER . ' not null references package(id) on delete cascade',
             'n_units' => Schema::TYPE_SMALLINT
         ]);
+        $this->createTable('{{%activity}}', [
+            'id' => Schema::TYPE_PK,
+            'start_ts' => Schema::TYPE_DATETIME,
+            'end_ts' => Schema::TYPE_DATETIME,
+            'start_place_name' => Schema::TYPE_STRING . '(64)',
+            'start_place_map_url' => Schema::TYPE_STRING . '(128)',
+            'end_place_name' => Schema::TYPE_STRING . '(64)',
+            'end_place_map_url' => Schema::TYPE_STRING . '(128)',
+            'price_eucents' => Schema::TYPE_INTEGER,
+            'vacants' => Schema::TYPE_INTEGER,
+            'capacity' => Schema::TYPE_INTEGER,
+        ]);
+        $this->createTable('{{%activity_title}}', [
+            'id' => Schema::TYPE_PK,
+            'language_code' => Schema::TYPE_STRING . '(2) not null references language(code)',
+            'activity_id' => Schema::TYPE_INTEGER . ' references activity(id) on delete cascade',
+            'title' => Schema::TYPE_STRING . '(32)',
+            'unique (language_code, activity_id)'
+        ]);
+        $this->createTable('{{%activity_subtitle}}', [
+            'id' => Schema::TYPE_PK,
+            'language_code' => Schema::TYPE_STRING . '(2) not null references language(code)',
+            'activity_id' => Schema::TYPE_INTEGER . ' references activity(id) on delete cascade',
+            'subtitle' => Schema::TYPE_STRING . '(64)',
+            'unique (language_code, activity_id)'
+        ]);
+        $this->createTable('{{%activity_itinerary}}', [
+            'id' => Schema::TYPE_PK,
+            'language_code' => Schema::TYPE_STRING . '(2) not null references language(code)',
+            'activity_id' => Schema::TYPE_INTEGER . ' references activity(id) on delete cascade',
+            'itinerary' => Schema::TYPE_STRING . '(512)',
+            'unique (language_code, activity_id)'
+        ]);
+        $this->createTable('{{%activity_description}}', [
+            'id' => Schema::TYPE_PK,
+            'language_code' => Schema::TYPE_STRING . '(2) not null references language(code)',
+            'activity_id' => Schema::TYPE_INTEGER . ' references activity(id) on delete cascade',
+            'description' => Schema::TYPE_STRING . '(256)',
+            'unique (language_code, activity_id)'
+        ]);
+        $this->createTable('{{%activity_includes}}', [
+            'id' => Schema::TYPE_PK,
+            'language_code' => Schema::TYPE_STRING . '(2) not null references language(code)',
+            'activity_id' => Schema::TYPE_INTEGER . ' references activity(id) on delete cascade',
+            'includes' => Schema::TYPE_STRING . '(128)',
+            'unique (language_code, activity_id)'
+        ]);
+        $this->createTable('{{%activity_notes}}', [
+            'id' => Schema::TYPE_PK,
+            'language_code' => Schema::TYPE_STRING . '(2) not null references language(code)',
+            'activity_id' => Schema::TYPE_INTEGER . ' references activity(id) on delete cascade',
+            'notes' => Schema::TYPE_STRING . '(256)',
+        ]);
+        $this->createTable('{{%activity_file}}', [
+            'id' => Schema::TYPE_PK,
+            'url' => Schema::TYPE_STRING . '(255)',
+            'activity_id' => Schema::TYPE_INTEGER . ' references activity(id) on delete cascade'
+        ]);
     }
 
     public function safeDown() {
+        $this->dropTable('{{%activity_file}}');
+        $this->dropTable('{{%activity_notes}}');
+        $this->dropTable('{{%activity_includes}}');
+        $this->dropTable('{{%activity_description}}');
+        $this->dropTable('{{%activity_itinerary}}');
+        $this->dropTable('{{%activity_subtitle}}');
+        $this->dropTable('{{%activity_title}}');
+        $this->dropTable('{{%activity}}');
         $this->dropTable('{{%package_offer}}');
         $this->dropTable('{{%package}}');
         $this->dropTable('{{%offer_description}}');

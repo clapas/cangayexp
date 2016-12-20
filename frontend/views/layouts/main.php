@@ -1,5 +1,6 @@
 <?php
 use yii\helpers\Html;
+use yii\helpers\Url;
 use yii\bootstrap\Nav;
 use yii\bootstrap\NavBar;
 use frontend\components\LanguageBootstrap;
@@ -26,51 +27,21 @@ AppAsset::register($this);
     <div class="wrap">
         <?php
             NavBar::begin([
-                'brandLabel' => 'Living In The Sunset',
+                'brandLabel' => '<img alt="Canary Gay Experience" src="' . Url::to('@web/img/logo.png') . '">',
                 'brandUrl' => Yii::$app->homeUrl,
                 'options' => [
-                    'class' => 'navbar-inverse navbar-fixed-top',
+                    'class' => 'navbar-default navbar-static-top',
                 ],
                 'innerContainerOptions' => [
-                    'class' => 'container-fluid'
+                    'class' => 'container navbar-center'
                 ]
             ]);
             $menuItems = [
                 ['label' => Yii::t('app', 'Home'), 'url' => Yii::$app->homeUrl],
-                ['label' => Yii::t('app', 'Sales'), 'url' => '#', 'items' => [
-		    ['label' => Yii::t('app', 'All'), 'url' => ['/offer/all/sales']],
-		    ['label' => 'Meloneras', 'url' => ['/offer/meloneras/sales']],
-		    ['label' => 'Playa del Inglés', 'url' => ['/offer/playa_del_ingles/sales']],
-		    ['label' => 'Campo de Golf', 'url' => ['/offer/campo_de_golf/sales']],
-		    ['label' => 'San Agustín', 'url' => ['/offer/san_agustin/sales']],
-		    ['label' => 'Puerto Rico', 'url' => ['/offer/puerto_rico/sales']],
-		]],
-                ['label' => Yii::t('app', 'Rentals'), 'url' => '#', 'items' => [
-		    ['label' => Yii::t('app', 'All'), 'url' => ['/offer/all/rentals']],
-		    ['label' => 'Meloneras', 'url' => ['/offer/meloneras/rentals']],
-		    ['label' => 'Playa del Inglés', 'url' => ['/offer/playa_del_ingles/rentals']],
-		    ['label' => 'Campo de Golf', 'url' => ['/offer/campo_de_golf/rentals']],
-		    ['label' => 'San Agustín', 'url' => ['/offer/san_agustin/rentals']],
-		    ['label' => 'Puerto Rico', 'url' => ['/offer/puerto_rico/rentals']],
-		]],
-                ['label' => Yii::t('app', 'Vacations'), 'url' => '#', 'items' => [
-		    ['label' => Yii::t('app', 'All'), 'url' => ['/offer/all/vacations']],
-		    ['label' => 'Meloneras', 'url' => ['/offer/meloneras/vacations']],
-		    ['label' => 'Playa del Inglés', 'url' => ['/offer/playa_del_ingles/vacations']],
-		    ['label' => 'Campo de Golf', 'url' => ['/offer/campo_de_golf/vacations']],
-		    ['label' => 'San Agustín', 'url' => ['/offer/san_agustin/vacations']],
-		    ['label' => 'Puerto Rico', 'url' => ['/offer/puerto_rico/vacations']],
-		]],
-                ['label' => Yii::t('app', 'VIP Services'), 'url' => '#', 'items' => [
-                    ['label' => Yii::t('app', 'Excursions'), 'url' => ['site/index', '#' => 'excursions']],
-                    ['label' => Yii::t('app', 'Cooker'), 'url' => ['site/index', '#' => 'cooker']],
-                    ['label' => Yii::t('app', 'Baby sitter'), 'url' => ['site/index', '#' => 'baby_sitter']],
-                    ['label' => Yii::t('app', 'Chauffeur'), 'url' => ['site/index', '#' => 'chauffeur']],
-                    ['label' => Yii::t('app', 'Touristic Guide'), 'url' => ['site/index', '#' => 'touristic_guide']],
-                    ['label' => Yii::t('app', 'Arranged Events'), 'url' => ['site/index', '#' => 'arranged_events']],
-                    ['label' => Yii::t('app', 'Cleaning'), 'url' => ['site/index', '#' => 'cleaning']],
-                    ['label' => Yii::t('app', 'Personal Shopper'), 'url' => ['site/index', '#' => 'personal_shopper']],
-                ]],
+                ['label' => Yii::t('app', 'Calendar'), 'url' => Yii::$app->homeUrl],
+                ['label' => Yii::t('app', 'Activities'), 'url' => ['/site/activities']],
+                ['label' => Yii::t('app', 'Blog'), 'url' => Yii::$app->homeUrl],
+                ['label' => '', 'url' => null, 'options' => ['class' => 'divider-vertical']],
             ];
             /*
             if (Yii::$app->user->isGuest) {
@@ -79,15 +50,10 @@ AppAsset::register($this);
             } else {
                 $menuItems[] = [
                     'label' => 'Logout (' . Yii::$app->user->identity->username . ')',
-                    'url' => ['/site/logout'],
-                    'linkOptions' => ['data-method' => 'post']
+                    'url' => ['/site/logout'], 'linkOptions' => ['data-method' => 'post']
                 ];
             }
             */
-            echo Nav::widget([
-                'options' => ['class' => 'navbar-nav'],
-                'items' => $menuItems,
-            ]);
             $altLangs = [];
             foreach (Yii::$app->params['languages'] as $code => $lang) {
 	        if ($code != Yii::$app->language) $altLangs[] = [
@@ -95,34 +61,64 @@ AppAsset::register($this);
 		    'url' => LanguageBootstrap::hRefLang(Yii::$app->request->url, $code)
 		];
             }
-            $langMenu = [[
+            $langMenu = [
                 'label' => Yii::$app->params['languages'][Yii::$app->language],
                 'url' => '#',
                 'items' => $altLangs
-            ]];
+            ];
+            $menuItems[] = $langMenu;
             echo Nav::widget([
-                'options' => ['class' => 'navbar-nav navbar-right'],
-                'items' => $langMenu,
+                'options' => ['class' => 'navbar-nav'],
+                'items' => $menuItems,
             ]);
             NavBar::end();
         ?>
         <div class="navbar-filler"></div>
+        <div class="bg"></div>
+        <div class="jumbotron container text-center">
+            <h1><?=Yii::t('app', 'Live new experiences')?></h1>
+            <p class="lead"><?=Yii::t('app', 'Alternative activities in the Canary Islands: speleo, hiking, canyoing, sports, expositions, skydiving, partying, etc.')?></p>
+        </div>
 
         <?= $content ?>
 
     </div>
 
-    <footer class="footer">
-      <div class="container">
-        <p class="lead">Living In The Sunset&reg;  <?= date('Y') ?></p>
-        <p>Estaremos encantados de atender sus peticiones; puede ponerse en contacto con nosotros a través de:</p>
-        <ul>
-          <li>Email: <a href="mailto:livinginthesunset@gmail.com">livinginthesunset@gmail.com</a></li>
-          <li>Tf: 0034 679 297 297</li>
-          <li>Tf: 0034 649094148</li>
-          <li>Tf: 0034 28 931339</li>
-        </ul>
-      </div>
+    <footer class="container-fluid">
+            <div class="row">
+                <div class="col-md-2 col-md-offset-1">
+                    <img class="logo" src="<?= Url::to('@web/img/baloon.png') ?>">
+                </div>
+                <div class="col-md-3">
+                    <address>
+                      <h4>Canary Gay Experience, S.L.</h4>
+                      1355 Market Street, Maspalomas<br>
+                      Las Palmas 34103, España<br>
+                      <span class="glyphicon glyphicon-earphone"> (123) 456-7890</span><br>
+                      <span class="glyphicon glyphicon-envelope"> <a mailto="info@canarygayexperience.com">info@canarygayexperience.com</a>
+                    </address>
+                    <span class="label label-default">Condiciones legales</span><br>
+                </div>
+                <div class="col-md-3 secondary-menu">
+                    <hr class="visible-xs-block visible-sm-block">
+                    <h4 class="invisible">Menú</h4>
+                    Libro de visitas<br>
+                    Precios y ofertas de grupo<br>
+                    Estamos en facebook<br>
+                    Sobre nosotros<br>
+                    Solicitar promoción de actividad<br>
+                    Política de privacidad
+                </div>
+                <div class="col-md-2 social-buttons">
+                  <span class="social-btn social-btn-facebook"></span>
+                  <span class="social-btn social-btn-instagram"></span>
+                  <span class="social-btn social-btn-pinterest"></span>
+                  <span class="social-btn social-btn-twitter"></span>
+                  <span class="social-btn social-btn-youtube"></span>
+                </div>
+            </div>
+            <hr>
+            <p class="text-center">Copyright &copy; canarygayexperience.com 2016</p>
     </footer>
     <?php $this->endBody() ?>
 </body>

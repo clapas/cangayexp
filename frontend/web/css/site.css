@@ -1,228 +1,441 @@
-html,
+/*!
+ * Start Bootstrap - Small Business (http://startbootstrap.com/)
+ * Copyright 2013-2016 Start Bootstrap
+ * Licensed under MIT (https://github.com/BlackrockDigital/startbootstrap/blob/gh-pages/LICENSE)
+ */
+
+/*
+@font-face {
+    font-family: CMU-Bright;
+    src: url('/home/claudio/.fonts/cmunbmr.otf'); 
+}
+
 body {
-    height: 100%;
+   font-family: CMU-Bright; 
+}
+*/
+
+.navbar-default {
+    border-color: #dfdfdf;
+    background-color: #eee; /* old browsers */
 }
 
-.wrap {
-    min-height: 100%;
-    height: auto;
-    margin: 0 auto -60px;
-    padding: 0 0 60px;
+.navbar-brand {
+    float: none;
+    padding: 0;
 }
 
-.wrap > .container {
-    padding: 15px 15px 20px;
+.navbar-brand > img {
+    display: inline;
+    margin-top: 4px;
 }
 
-.footer {
-    background-color: rgb(255, 204, 0);
-    color: #444;
-    border-top: 1px solid #ddd;
-    padding-top: 40px;
-    padding-bottom: 30px;
-}
-
-.jumbotron {
+.navbar-header {
+    float: none;
     text-align: center;
-    background-color: #2196f3;
-    margin-top: 48px;
-    color: #444;
-    padding-left: 24px;
-    padding-right: 24px;
 }
 
-.jumbotron h1 {
-    color: rgb(255, 204, 0);
-    margin-bottom: 1.2em;
-}
-
-.jumbotron .btn {
-    font-size: 21px;
-    padding: 14px 24px;
-}
-
-.jumbotron p {
-    font-size: 18px;
-}
-
-.jumbotron .glyphicon {
-    font-size: 10em;
-    color: white;
-}
-
-.not-set {
-    color: #c55;
-    font-style: italic;
-}
-
-.navbar-filler {
-    height: 70px;
-}
-
-.navbar-inverse .navbar-brand {
-    color: rgb(255, 204, 0);
-}
-
-/* add sorting icons to gridview sort links */
-a.asc:after, a.desc:after {
-    position: relative;
-    top: 1px;
+.navbar .nav {
+    float: none;
     display: inline-block;
-    font-family: 'Glyphicons Halflings';
-    font-style: normal;
-    font-weight: normal;
-    line-height: 1;
-    padding-left: 5px;
+    font-size: 1.3em;
 }
 
-a.asc:after {
-    content: /*"\e113"*/ "\e151";
+footer {
+    padding: 50px 0 20px;
+    margin: 90px 0 0;
+    background-color: #e6d8fc;
+    border-top: 1px solid #dfbfef;
 }
 
-a.desc:after {
-    content: /*"\e114"*/ "\e152";
+footer .logo {
+    width: 200px;
+    max-width: 100%;
 }
 
-.sort-numerical a.asc:after {
-    content: "\e153";
+footer hr {
+    margin: 16px 100px 8px;
+    border-bottom: solid 2px #d0b9e0;
+    border-top: solid 1px #efe0ef;
+
 }
 
-.sort-numerical a.desc:after {
-    content: "\e154";
-}
-
-.sort-ordinal a.asc:after {
-    content: "\e155";
-}
-
-.sort-ordinal a.desc:after {
-    content: "\e156";
-}
-
-.grid-view th {
-    white-space: nowrap;
-}
-
-.hint-block {
-    display: block;
-    margin-top: 5px;
-    color: #999;
-}
-
-.error-summary {
-    color: #a94442;
-    background: #fdf7f7;
-    border-left: 3px solid #eed3d7;
-    padding: 10px 20px;
-    margin: 0 0 15px 0;
-}
-
-.service-box {
-    margin-bottom: 25px;
-    margin-top: 25px;
-}
-
-@media (min-width: 768px) {
-    .service-box {
-      min-height: 480px;
+@media(max-width:991px){
+    footer {
+        text-align: center;
+    }
+    .social-buttons {
+        margin: 24px 0;
     }
 }
 
-.service {
-    margin-top: 60px;
-    padding: 25px 20px 20px 20px;
-    border: 1px solid #ececec;
-    border-radius: 4px;
-    text-align: center;
-    transition: .3s;
+@media(min-width:768px) {
+    .navbar-center {
+        text-align: center;
+    }
+
+    .navbar-fixed-top .navbar-brand {
+        padding: 15px 0;
+    }
+}
+
+.full-width-text {
+    text-align: justify;
+}
+
+.full-width-text:after {
+    content: "";
+    display: inline-block;
+    width: 100%;
+}
+
+.navbar .divider-vertical {
+    height: 25px;
+    margin: 12px 9px;
+    border-right: 1px solid #ccc;
+    border-left: 1px solid #c2c2c2;
+}
+
+.navbar-inverse .divider-vertical {
+    border-right-color: #222222;
+    border-left-color: #111111;
+}
+
+time.icon {
+  font-size: 0.85em; /* change icon size */
+  display: block;
+  position: relative;
+  width: 6em;
+  height: 7em;
+  background-color: #fff;
+  border-radius: 0.6em;
+  box-shadow: 0 1px 0 #bdbdbd, 0 2px 0 #fff, 0 0 0 1px #bdbdbd;
+  overflow: hidden;
+  margin: 0 0 6px;
+}
+
+time.icon *
+{
+  display: block;
+  width: 100%;
+  font-size: 1em;
+  font-weight: bold;
+  font-style: normal;
+  text-align: center;
+}
+
+time.icon strong
+{
+  position: absolute;
+  top: 0;
+  padding: 0.4em 0;
+  color: #fff;
+  background-color: #a00;
+}
+
+time.icon em
+{
+  position: absolute;
+  bottom: 0.3em;
+  color: #000;
+}
+
+time.icon span
+{
+  font-size: 2.8em;
+  letter-spacing: -0.05em;
+  padding-top: 0.8em;
+  color: #2f2f2f;
+}
+
+.tags {
+  text-transform: uppercase;
+  font-size: 0.8em;
+  overflow: hidden;
+}
+
+.join-us {
+  padding: 70px;
+}
+
+.activity {
+  margin-top: 24px;
+}
+.activity .activity-description {
+  background-image: url(../../subespeleo.jpg);
+  background-repeat: no-repeat;
+  background-position: 15px;
+  color: #ddd;
+  -moz-border-radius: 6px; 
+  border-radius: 6px; /* standards-compliant: (IE) */ 
+}
+
+.activity .activity-description * {
+  background-color: black;
+}
+
+.bg {
+  background: url('../img/bg.jpg') no-repeat center center;
+  position: absolute;
+  width: 100%;
+  height: 400px; /*same height as jumbotron */
+  z-index: -1;
+  margin-top: -20px;
+}
+
+.jumbotron {
+  height: 400px;
+  color: white;
+  text-shadow: #444 0 2px 2px;
+  background:transparent;
+  position: relative;
+  padding-top: 110px;
+  top: 0;
+}
+
+@media (max-width: 767px) {
+    .navbar-collapse .nav > .divider-vertical {
+        display: none;
+     }
+     /*
+     .navbar-brand {
+         margin-left: 40px;
+     }
+     */
+     time.icon {
+         width: 100%;
+     }
+     .margin-below-sm {
+       margin-bottom: 24px;
+       padding-bottom: 18px;
+       border-bottom: 1px solid #ddd;
+     }
+}
+
+.social-btn {
+    display: inline-block;
+    width: 66px;
+    height: 66px;
+    background-image: url(../img/social-buttons.png);
+    border: solid 1px #ece;
+}
+
+.social-btn.social-btn-facebook {
+    background-position: -9px -82px;
+}
+
+.social-btn.social-btn-instagram {
+    background-position: 73px -230px;
+}
+
+.social-btn.social-btn-pinterest {
+    background-position: -9px -230px;
+}
+
+.social-btn.social-btn-youtube {
+    background-position: 73px -9px;
+}
+
+.social-btn.social-btn-twitter {
+    background-position: 73px -82px;
+}
+
+.blog-index {
+    border-right: 1px solid #dfdfdf;
+    text-shadow: #aaa 0px 1px 2px;
+    color: #333;
+    background-color: #eee;
+    margin-top: -20px;
     position: relative;
 }
 
-.service > h3 {
-    text-transform: uppercase;
-    font-size: 20px;
-    font-weight: 700;
+@media (max-width: 991px) {
+  .blog-index {
+    margin-top: -40px;
+  }
 }
 
-.service .glyphicon {
-   color: #0c84e4;
+.blog-index h1 {
+    padding: 20px 0;
+    text-shadow: #999 0px 1px 2px;
+    color: #666;
 }
 
-.body-content .title {
-    margin-left: auto;
-    margin-right: auto;
-    margin-bottom: 64px;
-    float: none;
-    max-width: 92%;
+.blog-index a {
+    text-shadow: initial;
 }
 
-.body-content .title h1 {
-    text-transform: uppercase;
-    color: #515151;
-    font-size: 48px;
-    font-weight: 300;
-    text-align: center;
+/*¿
+.blog-index-entry.active {
+    color: white;
+    text-shadow: #666 0px 1px 2px;
+    border-left: 6px solid #ccc;
+}
+*/
+
+.blog-index-entry {
+    margin-left: -15px;
+    margin-right: -15px;
+    padding: 12px;
 }
 
-.masthead .btn-group-vertical > .btn {
-    border-bottom-left-radius: 0;
-    border-top-left-radius: 0;
-    margin-top: 0.5em;
-    margin-bottom: 0.5em;
-    padding-top: 1em;
-    padding-bottom: 1em;
+.blog-index-entry h2 {
+    margin: 0;
+    font-size: 18px;
 }
 
-.masthead .btn-group-vertical > .btn:first-child {
-    margin-top: 0;
-    margin-bottom: 0.5em;
-    padding-top: 1em;
-    padding-bottom: 1em;
+.blog-index-entry-n1 {
+    /*background-color: #e30303;*/
+    background-color: #fd7373;
 }
 
-.masthead .col-md-2 {
-    padding-left: inherit;
-    padding-right: inherit;
+.blog-index-entry-n2 {
+    /*background-color: #ff8c00;*/
+    background-color: #ffc47f;
 }
 
-@media (min-width: 992px) {
-.navbar-collapse .navbar-nav:first-child {
-    padding-left: 12%;
-}
-}
-
-.carousel-control .glyphicon {
-    color: rgb(255, 204, 0);
+.blog-index-entry-n3 {
+    /*background-color: #ffed00;*/
+    background-color: #fff77f;
 }
 
-.thumbnail h3 {
-    font-size: 20px;
+.blog-index-entry-n4 {
+    /*background-color: #008026;*/
+    background-color: #3fff7a;
 }
 
-.thumbnail div.img {
-    height: 300px;
-    display: block;
-    background-repeat: no-repeat; 
-    background-size: cover;
+.blog-index-entry-n5 {
+    /*background-color: #004dff;*/
+    background-color: #7fa6ff;
+}
+
+.blog-index-entry-n6 {
+    /*background-color: #750887;*/
+    background-color: #dc51f5;
+}
+
+.blog-entry {
+    padding-left: 32px;
+}
+
+.blog-entry p.lead::first-letter {
+    float: left;
+    color: #903;
+    font-size: 75px;
+    line-height: 60px;
+    padding-top: 4px;
+    padding-right: 8px;
+    padding-left: 3px;
+    font-family: Georgia;
+    
+}
+
+.blog-index .pager li>a, .blog-index .pager .disabled > a {
+    background-color: transparent;
+    border: none;
+    font-size: 1.2em;
+}
+
+@media (max-width: 991px) {
+  nav .pager {
+    padding-bottom: 12px;
+  }
+}
+
+.activities {
+    margin-top: 24px;
+    border-radius: 8px;
+}
+
+.activity {
+    font-size: 0.85em;
+    margin-bottom: 36px;
+}
+
+.activity .activity-header {
+    height: 350px;
+    background-size: auto 100%;
     background-position: center;
+    padding: 36px;
+    position: relative;
+    margin-bottom: 12px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
 }
 
-.navbar-fixed-top .navbar-collapse, .navbar-fixed-bottom .navbar-collapse {
-    max-height: none;
-}
-.carousel-inner > .item > img, .carousel-inner > .item > a > img {
-    margin-left: auto;
-    margin-right: auto;
-}
-.row .summary {
-    margin: 0 15px 15px;
-}
-.row .pagination {
-    display: block;
-    clear: both;
-    margin: 0 15px 15px;
+.activity-hiking .activity-header {
+    background-image: url(../hiking.jpg);
 }
 
-.fancybox-nav span {
-    visibility: visible;
+.activity-canyon .activity-header {
+    background-image: url(../canyon.jpg);
+}
+
+.activity-kayak .activity-header {
+    background-image: url(../kayak.jpg);
+}
+
+.activity-surf .activity-header {
+    background-image: url(../surf.jpg);
+}
+
+.activity-header > p ,.activity-header > h2 {
+    padding: 8px;
+    background-color: rgba(0, 0, 0, 0.35);
+    text-shadow: black 0 1px 2px;
+    color: white;
+}
+
+.activity-header > h2 {
+    margin-bottom: 48px;
+}
+
+.activity-header > .btn {
+    position: absolute;
+    bottom: 36px;
+    right: 36px;
+}
+
+span.date {
+    padding: 2px 8px;
+    font-size: 0.9em;
+    color: #eee;
+    border-radius: 3px;
+    border: 1px solid #555;
+    text-shadow: #333 0px 1px 2px;
+    background: #666;
+    position: relative;
+    top: 1px;
+    display: inline-block;
+    margin-bottom: 6px;
+}
+
+.activity-list h3, .activity-list h4 {
+    margin-top: 4px;
+    margin-bottom: 4px;
+}
+
+.activity-list p {
+    margin: 8px 0;
+}
+
+.activity-list .img {
+    height: 200px;
+    width: 100%;
+    background-position: center;
+    background-size: auto 100%;
+    background-clip: content-box;
+    background-repeat: no-repeat;
+    background-color: #333;
+}
+
+.activity-list-item {
+    margin-bottom: 84px;
+}
+
+p.pagination-info {
+    font-style: italic;
+    text-align: right;
+    color: #333;
+    margin-bottom: 2px;
 }

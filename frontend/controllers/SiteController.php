@@ -2,8 +2,10 @@
 namespace frontend\controllers;
 
 use Yii;
-use common\models\LoginForm;
+use yii\helpers\ArrayHelper;
 use common\components\LanguageFilter;
+use common\models\LoginForm;
+use common\models\Activity;
 use frontend\models\PasswordResetRequestForm;
 use frontend\models\ResetPasswordForm;
 use frontend\models\SignupForm;
@@ -74,8 +76,33 @@ class SiteController extends Controller
 
     public function actionIndex()
     {
+        $activity = Activity::find()->one();
+        $titles = ArrayHelper::map($activity->getTitles()->asArray()->all(), 'language_code', 'title');
+        $activity->title = $titles[Yii::$app->language];
+        if ($activity->title) $activity->title = $titles[Yii::$app->sourceLanguage];
+        $subtitles = ArrayHelper::map($activity->getSubtitles()->asArray()->all(), 'language_code', 'subtitle');
+        $activity->subtitle = $subtitles[Yii::$app->language];
+        if ($activity->subtitle) $activity->subtitle = $subtitles[Yii::$app->sourceLanguage];
+        $descriptions = ArrayHelper::map($activity->getDescriptions()->asArray()->all(), 'language_code', 'description');
+        $activity->description = $descriptions[Yii::$app->language];
+        if (!$activity->description) $activity->description = $descriptions[Yii::$app->sourceLanguage];
+        $itineraries = ArrayHelper::map($activity->getItineraries()->asArray()->all(), 'language_code', 'itinerary');
+        $activity->itinerary = $itineraries[Yii::$app->language];
+        if (!$activity->itinerary) $activity->itinerary = $itineraries[Yii::$app->sourceLanguage];
+        $includeses = ArrayHelper::map($activity->getIncludes()->asArray()->all(), 'language_code', 'includes');
+        $activity->includes = $includeses[Yii::$app->language];
+        if (!$activity->includes) $activity->includes = $includeses[Yii::$app->sourceLanguage];
+        $noteses = ArrayHelper::map($activity->getNotes()->asArray()->all(), 'language_code', 'notes');
+        $activity->notes = $noteses[Yii::$app->language];
+        if (!$activity->notes) $activity->notes = $noteses[Yii::$app->sourceLanguage];
+        $time = strtotime($activity->start_ts);
+        $activity->start_weekday = date('l', $time);
+        $activity->start_month = date('F', $time);
+        $activity->start_day = date('d', $time);
         $this->layout = 'main';
-        return $this->render('index');
+        return $this->render('index', [
+            'activity' => $activity
+        ]);
     }
 
     public function actionLogin()
