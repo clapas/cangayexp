@@ -3,7 +3,6 @@ namespace frontend\controllers;
 
 use Yii;
 use yii\helpers\ArrayHelper;
-use common\components\LanguageFilter;
 use common\models\LoginForm;
 use common\models\Activity;
 use frontend\models\PasswordResetRequestForm;
@@ -69,11 +68,6 @@ class SiteController extends Controller
         ];
     }
 
-    public function actionMeloneras() {
-        $this->layout = 'main';
-        return $this->render('meloneras');
-    }
-
     public function actionIndex()
     {
         $activity = Activity::find()->one();
@@ -99,7 +93,7 @@ class SiteController extends Controller
         $activity->start_weekday = date('l', $time);
         $activity->start_month = date('F', $time);
         $activity->start_day = date('d', $time);
-        $this->layout = 'main';
+        $this->layout = 'front';
         return $this->render('index', [
             'activity' => $activity
         ]);
@@ -128,6 +122,9 @@ class SiteController extends Controller
         return $this->goHome();
     }
 
+    public function actionActivities() {
+        return $this->render('catalog');
+    }
     public function actionContact()
     {
         $model = new ContactForm();

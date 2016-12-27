@@ -5,12 +5,12 @@ namespace frontend\models;
 use Yii;
 use yii\base\Model;
 use yii\data\ActiveDataProvider;
-use common\models\Offer;
+use common\models\Activity;
 
 /**
- * OfferSearch represents the model behind the search form about `common\models\Offer`.
+ * ActivitySearch represents the model behind the search form about `common\models\Activity`.
  */
-class OfferSearch extends Offer
+class ActivitySearch extends Activity
 {
     /**
      * @inheritdoc
@@ -19,8 +19,7 @@ class OfferSearch extends Offer
     {
         return [
             [['id'], 'integer'],
-            [['valid_from', 'valid_until', 'our_reference', 'their_reference'], 'safe'],
-            [['is_for_rent', 'is_featured'], 'boolean'],
+            [['start_ts', 'end_ts', 'start_place_name', 'end_place_name'], 'safe'],
         ];
     }
 
@@ -42,13 +41,13 @@ class OfferSearch extends Offer
      */
     public function search($params)
     {
-        $query = Offer::find()->with([
-	    'offerFiles',
-	    'offerTitles' => function($q) {
+        $query = Activity::find()->with([
+	    'files',
+	    'titles' => function($q) {
 	        $q->asArray()->andWhere('language_code = :lang and title != \'\' or title = \'\' and language_code = :slang', [':lang' => Yii::$app->language, ':slang' => Yii::$app->sourceLanguage]);
             },
-	    'offerDescriptions' => function($q) {
-	        $q->asArray()->andWhere('language_code = :lang and md_content != \'\' or md_content = \'\' and language_code = :slang', [':lang' => Yii::$app->language, ':slang' => Yii::$app->sourceLanguage]);
+	    'descriptions' => function($q) {
+	        $q->asArray()->andWhere('language_code = :lang and description != \'\' or description = \'\' and language_code = :slang', [':lang' => Yii::$app->language, ':slang' => Yii::$app->sourceLanguage]);
             }
 	]);
 	//\yii\helpers\VarDumper::dump($query, 5, true); die;
@@ -61,16 +60,10 @@ class OfferSearch extends Offer
             return $dataProvider;
         }
 
-        $query->andFilterWhere([
-            'id' => $this->id,
-            'valid_from' => $this->valid_from,
-            'valid_until' => $this->valid_until,
-            'is_for_rent' => $this->is_for_rent,
-            'is_featured' => $this->is_featured,
+        $query->filterWhere([
+            '>=', 'start_ts', $this->start_ts,
+            //['like', 'title', $this->end_place_name]
         ]);
-
-        $query->andFilterWhere(['like', 'our_reference', $this->our_reference])
-            ->andFilterWhere(['like', 'their_reference', $this->their_reference]);
 
         return $dataProvider;
     }

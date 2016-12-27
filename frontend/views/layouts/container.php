@@ -6,13 +6,13 @@ use frontend\widgets\Alert;
 $this->beginContent('@app/views/layouts/main.php');
 ?>
 
-<div class="container">
+<div class="container-fluid">
 <?php echo Breadcrumbs::widget([
     'links' => isset($this->params['breadcrumbs']) ? $this->params['breadcrumbs'] : [],
 ]);
 Alert::widget();
 ?>
-<?php echo $content; ?>
 </div>
+<?php echo $content; ?>
 
 <?php $this->endContent(); ?>

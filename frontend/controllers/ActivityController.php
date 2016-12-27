@@ -5,12 +5,12 @@ namespace frontend\controllers;
 use Yii;
 
 use common\models\Language;
-use common\models\Offer;
-use common\models\OfferDescription;
-use common\models\OfferFile;
-use common\models\OfferTitle;
+use common\models\Activity;
+use common\models\ActivityDescription;
+use common\models\ActivityFile;
+use common\models\ActivityTitle;
 
-use frontend\models\OfferSearch;
+use frontend\models\ActivitySearch;
 
 use yii\filters\VerbFilter;
 use yii\helpers\ArrayHelper;
@@ -19,9 +19,9 @@ use yii\web\NotFoundHttpException;
 use yii\web\UploadedFile;
 
 /**
- * OfferController implements the CRUD actions for Offer model.
+ * ActivityController implements the CRUD actions for Activity model.
  */
-class OfferController extends Controller
+class ActivityController extends Controller
 {
     public $layout = 'container';
 
@@ -38,13 +38,15 @@ class OfferController extends Controller
     }
 
     /**
-     * Lists all Offer models.
+     * Lists all Activity models.
      * @return mixed
      */
     public function actionIndex()
     {
-        $searchModel = new OfferSearch();
+        $searchModel = new ActivitySearch();
+        $searchModel->start_ts = date('Y-m-d');
         $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
+        $dataProvider->pagination->pageSize = 4;
 
         return $this->render('index', [
             'searchModel' => $searchModel,
@@ -53,15 +55,15 @@ class OfferController extends Controller
     }
 
     /**
-     * Displays a single Offer model.
+     * Displays a single Activity model.
      * @param integer $id
      * @return mixed
      */
     public function actionView($id)
     {
 	$model = $this->findModel($id);
-	$titles = ArrayHelper::map($model->getOfferTitles()->asArray()->all(), 'language_code', 'title');
-	$descriptions = ArrayHelper::map($model->getOfferDescriptions()->asArray()->all(), 'language_code', 'md_content');
+	$titles = ArrayHelper::map($model->getTitles()->asArray()->all(), 'language_code', 'title');
+	$descriptions = ArrayHelper::map($model->getDescriptions()->asArray()->all(), 'language_code', 'md_content');
 	$title = $titles[Yii::$app->language] ? $titles[Yii::$app->language] : $titles[Yii::$app->sourceLanguage];
 	$description = $descriptions[Yii::$app->language] ? $descriptions[Yii::$app->language] : $descriptions[Yii::$app->sourceLanguage];
         return $this->render('view', [
@@ -72,15 +74,15 @@ class OfferController extends Controller
     }
 
     /**
-     * Finds the Offer model based on its primary key value.
+     * Finds the Activity model based on its primary key value.
      * If the model is not found, a 404 HTTP exception will be thrown.
      * @param integer $id
-     * @return Offer the loaded model
+     * @return Activity the loaded model
      * @throws NotFoundHttpException if the model cannot be found
      */
     protected function findModel($id)
     {
-        if (($model = Offer::findOne($id)) !== null) {
+        if (($model = Activity::findOne($id)) !== null) {
             return $model;
         } else {
             throw new NotFoundHttpException('The requested page does not exist.');

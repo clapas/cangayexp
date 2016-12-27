@@ -54,8 +54,8 @@ footer .logo {
 }
 
 footer hr {
-    margin: 16px 100px 8px;
-    border-bottom: solid 2px #d0b9e0;
+    margin: 12px 100px 12px;
+    border-bottom: solid 1px #d0b9e0;
     border-top: solid 1px #efe0ef;
 
 }
@@ -322,7 +322,7 @@ time.icon span
     float: left;
     color: #903;
     font-size: 75px;
-    line-height: 60px;
+    line-height: 40px;
     padding-top: 4px;
     padding-right: 8px;
     padding-left: 3px;
@@ -364,19 +364,19 @@ time.icon span
 }
 
 .activity-hiking .activity-header {
-    background-image: url(../hiking.jpg);
+    background-image: url(../img/hiking.jpg);
 }
 
 .activity-canyon .activity-header {
-    background-image: url(../canyon.jpg);
+    background-image: url(../img/canyon.jpg);
 }
 
 .activity-kayak .activity-header {
-    background-image: url(../kayak.jpg);
+    background-image: url(../img/kayak.jpg);
 }
 
 .activity-surf .activity-header {
-    background-image: url(../surf.jpg);
+    background-image: url(../img/surf.jpg);
 }
 
 .activity-header > p ,.activity-header > h2 {
@@ -419,7 +419,7 @@ span.date {
     margin: 8px 0;
 }
 
-.activity-list .img {
+.activity-list img {
     height: 200px;
     width: 100%;
     background-position: center;
@@ -430,7 +430,7 @@ span.date {
 }
 
 .activity-list-item {
-    margin-bottom: 84px;
+    margin-bottom: 24px;
 }
 
 p.pagination-info {
@@ -438,4 +438,8 @@ p.pagination-info {
     text-align: right;
     color: #333;
     margin-bottom: 2px;
+}
+
+.navbar-default .navbar-nav > .active > a, .navbar-default .navbar-nav > .active > a:hover, .navbar-default .navbar-nav > .active > a:focus  {
+    background-color: #b8b8b8;
 }

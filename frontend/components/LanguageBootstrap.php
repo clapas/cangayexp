@@ -20,20 +20,20 @@ class LanguageBootstrap implements BootstrapInterface {
         ArrayHelper::remove($languages, Yii::$app->sourceLanguage);
         $langPatt = implode(array_keys($languages), '|');
         Yii::$app->urlManager->addRules([
-            "<lang:({$langPatt})>/offer/view/<id:\d+>" => 'offer/view',
-            'offer/view/<id:\d+>' => 'offer/view',
-            "<lang:({$langPatt})>/offer/<location:\w+>/<offer_type:\w+>" => 'offer/index',
-            "<lang:({$langPatt})>/offer/<location:\w*>" => 'offer/index',
-            "<lang:({$langPatt})>/offer" => 'offer/index',
+            "<lang:({$langPatt})>/activity/view/<id:\d+>" => 'activity/view',
+            'activity/view/<id:\d+>' => 'activity/view',
+            "<lang:({$langPatt})>/activity/<location:\w+>/<activity_type:\w+>" => 'activity/index',
+            "<lang:({$langPatt})>/activity/<location:\w*>" => 'activity/index',
+            "<lang:({$langPatt})>/activity" => 'activity/index',
 	    ['pattern' => "<lang:({$langPatt})>/", 'route' => 'site/index', 'suffix' => '/'],
-            'offer/<location:\w+>/<offer_type:\w+>' => 'offer/index',
-            'offer/<location:\w*>' => 'offer/index',
-            'offer' => 'offer/index',
+            'activity/<location:\w+>/<activity_type:\w+>' => 'activity/index',
+            'activity/<location:\w*>' => 'activity/index',
+            "<lang:({$langPatt})>/blog/<year:\d+>/<month:\d+>/<day:\d+>/<slug:\w+>" => 'blog/view/',
+            'blog/<year:\d+>/<month:\d+>/<day:\d+>/<slug:\w+>' => 'blog/view/',
+            'activity' => 'activity/index',
 	    ['pattern' => '/', 'route' => 'site/index', 'suffix' => '/'],
-            /*
+            "<lang:({$langPatt})>/<module:\w+>/<controller:\w+>/<action:\w+>" => '<module>/<controller>/<action>',
             "<lang:({$langPatt})>/<controller:\w+>/<action:\w+>" => '<controller>/<action>',
-            "<lang:({$langPatt})>/<controller:\w+>/<action:\w+>/<id:\d+>" => '<controller>/<action>',
-            */
         ]);
     }
     public static function changeLanguage($lang) {

@@ -37,8 +37,8 @@ AppAsset::register($this);
                 ]
             ]);
             $menuItems = [
-                ['label' => Yii::t('app', 'Home'), 'url' => Yii::$app->homeUrl],
-                ['label' => Yii::t('app', 'Calendar'), 'url' => Yii::$app->homeUrl],
+                ['label' => Yii::t('app', 'Home'), 'url' => Yii::$app->homeUrl, 'active' => $this->context->route == 'site/index'],
+                ['label' => Yii::t('app', 'Calendar'), 'url' => ['activity/index'], 'active' => $this->context->route == 'activity/index'],
                 ['label' => Yii::t('app', 'Activities'), 'url' => ['/site/activities']],
                 ['label' => Yii::t('app', 'Blog'), 'url' => Yii::$app->homeUrl],
                 ['label' => '', 'url' => null, 'options' => ['class' => 'divider-vertical']],
@@ -73,13 +73,6 @@ AppAsset::register($this);
             ]);
             NavBar::end();
         ?>
-        <div class="navbar-filler"></div>
-        <div class="bg"></div>
-        <div class="jumbotron container text-center">
-            <h1><?=Yii::t('app', 'Live new experiences')?></h1>
-            <p class="lead"><?=Yii::t('app', 'Alternative activities in the Canary Islands: speleo, hiking, canyoing, sports, expositions, skydiving, partying, etc.')?></p>
-        </div>
-
         <?= $content ?>
 
     </div>

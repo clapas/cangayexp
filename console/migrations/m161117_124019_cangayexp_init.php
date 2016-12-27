@@ -162,9 +162,20 @@ class m161117_124019_cangayexp_init extends Migration {
             'url' => Schema::TYPE_STRING . '(255)',
             'activity_id' => Schema::TYPE_INTEGER . ' references activity(id) on delete cascade'
         ]);
+        $this->createTable('{{%blog_entry}}', [
+            'id' => Schema::TYPE_PK,
+            'language_code' => Schema::TYPE_STRING . '(2) not null references language(code)',
+            'title' => Schema::TYPE_STRING . '(48) not null',
+            'slug' => Schema::TYPE_STRING . '(48) not null',
+            'post_date' => Schem::TYPE_DATE . ' not null',
+            'author' => Schema::TYPE_STRING . '(16) not null',
+            'lead_para' => Schema::TYPE_STRING . '(255)',
+            'md_content' => Schema::TYPE_TEXT . ' not null',
+        ]);
     }
 
     public function safeDown() {
+        $this->dropTable('{{%blog_entry}}');
         $this->dropTable('{{%activity_file}}');
         $this->dropTable('{{%activity_notes}}');
         $this->dropTable('{{%activity_includes}}');

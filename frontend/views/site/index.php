@@ -70,21 +70,21 @@ use yii\helpers\Url;
     <!-- Content Row -->
     <div class="row">
       <div class="col-md-4">
-        <img src="<?=Url::to('@web/img/subhead1.jpg')?>" class="img-responsive">
+        <img src="<?=Url::to('@web/img/subhead1.jpg')?>" class="img-responsive img-rounded">
         <h3><?=Yii::t('app', 'Alternative activities in the Canary Islands')?></h3>
         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Saepe rem nisi accusamus error velit animi non ipsa placeat. Recusandae, suscipit, soluta quibusdam accusamus a veniam quaerat eveniet eligendi dolor consectetur.</p>
         <a class="btn btn-default" href="#"><?=Yii::t('app', 'More Info')?></a>
       </div>
       <!-- /.col-md-4 -->
       <div class="col-md-4">
-        <img src="<?=Url::to('@web/img/subhead2.jpg')?>" class="img-responsive">
+        <img src="<?=Url::to('@web/img/subhead2.jpg')?>" class="img-responsive img-rounded">
         <h3><?=Yii::t('app', 'For visitors and residents')?></h3>
         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Saepe rem nisi accusamus error velit animi non ipsa placeat. Recusandae, suscipit, soluta quibusdam accusamus a veniam quaerat eveniet eligendi dolor consectetur.</p>
         <a class="btn btn-default" href="#"><?=Yii::t('app', 'More Info')?></a>
       </div>
       <!-- /.col-md-4 -->
       <div class="col-md-4">
-        <img src="<?=Url::to('@web/img/subhead3.jpg')?>" class="img-responsive">
+        <img src="<?=Url::to('@web/img/subhead3.jpg')?>" class="img-responsive img-rounded">
         <h3><?=Yii::t('app', 'Professionalism and experience')?></h3>
         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Saepe rem nisi accusamus error velit animi non ipsa placeat. Recusandae, suscipit, soluta quibusdam accusamus a veniam quaerat eveniet eligendi dolor consectetur.</p>
         <a class="btn btn-default" href="#"><?=Yii::t('app', 'More Info')?></a>

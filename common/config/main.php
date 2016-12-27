@@ -3,6 +3,11 @@ return [
     'vendorPath' => dirname(dirname(__DIR__)) . '/vendor',
     'sourceLanguage' => 'en',
     'language' => 'en',
+    'modules' => [
+        'markdown' => [
+            'class' => 'kartik\markdown\Module',
+        ]
+    ],
     'components' => [
         'cache' => [
             'class' => 'yii\caching\FileCache',
