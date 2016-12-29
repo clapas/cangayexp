@@ -46,7 +46,7 @@ class ActivityController extends Controller
         $searchModel = new ActivitySearch();
         $searchModel->start_ts = date('Y-m-d');
         $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
-        $dataProvider->pagination->pageSize = 4;
+        $dataProvider->pagination->defaultPageSize = 4;
 
         return $this->render('index', [
             'searchModel' => $searchModel,

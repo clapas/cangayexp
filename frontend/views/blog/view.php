@@ -1,79 +1,47 @@
 <?php
 use kartik\markdown\Markdown;
+use yii\helpers\Url;
 use yii\helpers\Html;
+use yii\widgets\Pjax;
+use yii\widgets\ListView;
 
 ?>
 <div class="container-fluid">
   <div class="row">
-    <div class="col-md-3 blog-index">
-        <h1>> Blog</h1>
-        <div class="blog-index-entry blog-index-entry-n1">
-          <h2 >Relocated to San Francisco</h2>
-          <span class="date">28 oct 2016</span>
-        </div>
-        <div class="blog-index-entry blog-index-entry-n2">
-          <h2>Dynamic Bezier Lines</h2>
-          <span class="date">28 oct 2016</span>
-        </div>
-        <div class="blog-index-entry blog-index-entry-n3">
-          <h2>Transition and old browsers</h2>
-          <span class="date">28 oct 2016</span>
-        </div>
-        <div class="blog-index-entry blog-index-entry-n4">
-          <h2>A nice recursion example</h2>
-          <span class="date">28 oct 2016</span>
-        </div>
-        <div class="blog-index-entry blog-index-entry-n5">
-          <h2>Welcome minimal monkey</h2>
-          <span class="date">28 oct 2016</span>
-        </div>
-        <div class="blog-index-entry blog-index-entry-n6">
-          <h2>CSS3 Animation Effects</h2>
-          <span class="date">28 oct 2016</span>
-        </div>
-        <nav aria-label="...">
-          <ul class="pager">
-            <li class="previous disabled"><a href="#"><span aria-hidden="true">&larr;</span> Anteriores</a></li>
-            <li class="next"><a href="#">Posteriores <span aria-hidden="true">&rarr;</span></a></li>
-          </ul>
-        </nav>
-    </div>
+    <?php
+      Pjax::begin([
+          'enablePushState' => false, // to disable push state
+          'options' => ['class' => 'blog-index col-md-3'],
+          'enableReplaceState' => false // to disable replace state
+      ]);
+      echo ListView::widget([
+          'dataProvider' => $dataProvider,
+          'itemView' => '_view',
+          'layout' => "<div class=\"blog-index-header\"><h1>> Blog</h1><small class=\"text-right\">{summary}</small></div>\n<div class=\"blog-index-body\">{items}</div>\n<div class=\"text-center\">{pager}</div>",
+          'itemOptions' => ['tag' => false],
+      ]);
+      Pjax::end(); ?>
     <div class="col-md-6 blog-entry">
       <h1><?=$model->title?></h1>
-      <span class="date"><?=$model->post_date?></span><br>
-      <?=Yii::t('app', 'By')?> <span class="author"><?=$model->author?></span><br><br>
+      <span class="small"><?=$model->post_date?> <?=Yii::t('app', 'By')?> <?=$model->author?></span><br><br>
       <p class="lead"><?=$model->lead_para?></p>
       <?=Markdown::convert($model->md_content);?>
       <img src="../dummy_social_plugin.png" class="img-responsive">
-      <hr>
-      <nav aria-label="...">
-          <ul class="pager">
-            <li class="previous disabled"><a href="#"><span aria-hidden="true">&larr;</span> Anteriores</a></li>
-            <li class="next"><a href="#">Posteriores <span aria-hidden="true">&rarr;</span></a></li>
-          </ul>
-      </nav>
     </div>
     <br class="visible-xs-block visible-sm-block">
     <div class="col-md-3">
       <div class="list-group activities">
         <div class="list-group-item list-group-item-info">
-          <h4>Próximas actividades</h4>
+          <h4><?=Yii::t('app', 'Upcoming activities')?></h4>
         </div>
-        <a href="#" class="list-group-item">
-          <span class="date">28 nov 2016</span>
-          <h4 class="list-group-item-heading">Submarinismo</h4>
-          <p class="list-group-item-text">Inmersión con botella en la Playa del Cabrón</p>
-        </a>
-        <a href="#" class="list-group-item">
-          <span class="date">08 dic 2016</span>
-          <h4 class="list-group-item-heading">Escalada</h4>
-          <p class="list-group-item-text">Estilo libre en montaña de roca</p>
-        </a>
-        <a href="#" class="list-group-item">
-          <span class="date">17 ene 2017</span>
-          <h4 class="list-group-item-heading">Surf</h4>
-          <p class="list-group-item-text">Iniciación en San Andrés</p>
-        </a>
+      <?php
+      echo ListView::widget([
+          'dataProvider' => $upcoming_activities,
+          'summary' => false,
+          'itemView' => '_activity_view',
+          'options' => ['tag' => false],
+          'itemOptions' => ['tag' => false]
+      ]); ?>
       </div>
     </div>
   </div>

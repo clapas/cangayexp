@@ -40,7 +40,7 @@ AppAsset::register($this);
                 ['label' => Yii::t('app', 'Home'), 'url' => Yii::$app->homeUrl, 'active' => $this->context->route == 'site/index'],
                 ['label' => Yii::t('app', 'Calendar'), 'url' => ['activity/index'], 'active' => $this->context->route == 'activity/index'],
                 ['label' => Yii::t('app', 'Activities'), 'url' => ['/site/activities']],
-                ['label' => Yii::t('app', 'Blog'), 'url' => Yii::$app->homeUrl],
+                ['label' => Yii::t('app', 'Blog'), 'url' => Yii::$app->params['blog_link'], 'active' => $this->context->route == 'blog/view'],
                 ['label' => '', 'url' => null, 'options' => ['class' => 'divider-vertical']],
             ];
             /*
@@ -88,9 +88,9 @@ AppAsset::register($this);
                       1355 Market Street, Maspalomas<br>
                       Las Palmas 34103, España<br>
                       <span class="glyphicon glyphicon-earphone"> (123) 456-7890</span><br>
-                      <span class="glyphicon glyphicon-envelope"> <a mailto="info@canarygayexperience.com">info@canarygayexperience.com</a>
+                      <span class="glyphicon glyphicon-envelope"> <a mailto="direccion@canarygayexperience.com">info@canarygayexperience.com</a>
                     </address>
-                    <span class="label label-default">Condiciones legales</span><br>
+                    <a href="<?=Url::to(['/site/conditions'])?>" class="label label-default">Condiciones legales</a><br>
                 </div>
                 <div class="col-md-3 secondary-menu">
                     <hr class="visible-xs-block visible-sm-block">
@@ -98,9 +98,9 @@ AppAsset::register($this);
                     Libro de visitas<br>
                     Precios y ofertas de grupo<br>
                     Estamos en facebook<br>
-                    Sobre nosotros<br>
+                    <a href="<?=Url::to(['/site/about'])?>"><?=Yii::t('app', 'About us')?></a><br>
                     Solicitar promoción de actividad<br>
-                    Política de privacidad
+                    <a href="<?=Url::to(['/site/privacy'])?>"><?=Yii::t('app', 'Privacy policy')?></a>
                 </div>
                 <div class="col-md-2 social-buttons">
                   <span class="social-btn social-btn-facebook"></span>

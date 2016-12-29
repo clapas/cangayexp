@@ -52,13 +52,13 @@ $this->title = Yii::t('app', 'Calendar');
           'pager' => [
               'options' => ['class' => 'pagination pagination-lg']
           ],
-  	'itemView' => '_view',
-  	'options' => ['class' => 'row'],
-          /*
-  	'itemOptions' => [
-  	    'class' => 'col-sm-6 col-md-4'
-  	]
-          */
+          'itemView' => '_view',
+          'options' => ['class' => 'row'],
+              /*
+          'itemOptions' => [
+              'class' => 'col-sm-6 col-md-4'
+          ]
+              */
       ]); ?>
   </div>
 </div>

@@ -81,6 +81,13 @@ class Activity extends \yii\db\ActiveRecord
         ];
     }
 
+    public function afterFind() {
+        parent::afterFind();
+        $time = strtotime($this->start_ts);
+        $this->start_weekday = date('l', $time);
+        $this->start_month = date('F', $time);
+        $this->start_day = date('d', $time);
+    }
     /**
      * @return \yii\db\ActiveQuery
      */

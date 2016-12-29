@@ -50,12 +50,6 @@ class ActivitySearch extends Activity
 	        $q->asArray()->andWhere('language_code = :lang and description != \'\' or description = \'\' and language_code = :slang', [':lang' => Yii::$app->language, ':slang' => Yii::$app->sourceLanguage]);
             }
 	]);
-	//\yii\helpers\VarDumper::dump($query, 5, true); die;
-
-        $dataProvider = new ActiveDataProvider([
-            'query' => $query,
-        ]);
-
         if ($this->load($params) && !$this->validate()) {
             return $dataProvider;
         }
@@ -63,6 +57,10 @@ class ActivitySearch extends Activity
         $query->filterWhere([
             '>=', 'start_ts', $this->start_ts,
             //['like', 'title', $this->end_place_name]
+        ]);
+
+        $dataProvider = new ActiveDataProvider([
+            'query' => $query,
         ]);
 
         return $dataProvider;

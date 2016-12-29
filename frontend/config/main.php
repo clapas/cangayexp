@@ -40,8 +40,11 @@ return [
             ],
         ],
     ],
-    'as beforeRequest' => [
+    'as languageFilter' => [
         'class' => frontend\components\LanguageFilter::className()
+    ],
+    'as MenuLinkFilter' => [
+        'class' => frontend\components\MenuLinkFilter::className()
     ],
     'params' => $params,
 ];

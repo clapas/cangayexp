@@ -20,6 +20,9 @@ use Yii;
  */
 class BlogEntry extends \yii\db\ActiveRecord
 {
+    public $post_year;
+    public $post_month;
+    public $post_day;
     /**
      * @inheritdoc
      */
@@ -39,7 +42,7 @@ class BlogEntry extends \yii\db\ActiveRecord
             [['md_content'], 'string'],
             [['language_code'], 'string', 'max' => 2],
             [['title', 'slug'], 'string', 'max' => 48],
-            [['author'], 'string', 'max' => 16],
+            [['author'], 'string', 'max' => 32],
             [['lead_para'], 'string', 'max' => 255],
             [['language_code'], 'exist', 'skipOnError' => true, 'targetClass' => Language::className(), 'targetAttribute' => ['language_code' => 'code']],
         ];
@@ -65,8 +68,15 @@ class BlogEntry extends \yii\db\ActiveRecord
     /**
      * @return \yii\db\ActiveQuery
      */
-    public function getLanguageCode()
+    public function getLanguage()
     {
         return $this->hasOne(Language::className(), ['code' => 'language_code']);
+    }
+    public function afterFind() {
+        parent::afterFind();
+        $time = strtotime($this->post_date);
+        $this->post_year = date('Y', $time);
+        $this->post_month = date('m', $time);
+        $this->post_day = date('d', $time);
     }
 }

@@ -89,10 +89,6 @@ class SiteController extends Controller
         $noteses = ArrayHelper::map($activity->getNotes()->asArray()->all(), 'language_code', 'notes');
         $activity->notes = $noteses[Yii::$app->language];
         if (!$activity->notes) $activity->notes = $noteses[Yii::$app->sourceLanguage];
-        $time = strtotime($activity->start_ts);
-        $activity->start_weekday = date('l', $time);
-        $activity->start_month = date('F', $time);
-        $activity->start_day = date('d', $time);
         $this->layout = 'front';
         return $this->render('index', [
             'activity' => $activity
@@ -143,9 +139,14 @@ class SiteController extends Controller
         }
     }
 
-    public function actionAbout()
-    {
-        return $this->render('about');
+    public function actionAbout() {
+        return $this->render('about_es');
+    }
+    public function actionConditions() {
+        return $this->render('conditions_es');
+    }
+    public function actionPrivacy() {
+        return $this->render('privacy_es');
     }
 
     public function actionSignup()
