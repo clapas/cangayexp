@@ -14,7 +14,7 @@ $this->params['breadcrumbs'][] = $this->title;
 
 ?>
 
-<div class="offer-view">
+<div class="activity-view">
 
   <div class="page-header">
     <h1><?= Html::encode($this->title) ?></h1>

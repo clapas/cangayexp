@@ -27,7 +27,7 @@ use yii\web\NotFoundHttpException;
 use yii\web\UploadedFile;
 
 /**
- * ActivityController implements the CRUD actions for Offer model.
+ * ActivityController implements the CRUD actions for Activity model.
  */
 class ActivityController extends Controller
 {
@@ -54,7 +54,7 @@ class ActivityController extends Controller
     }
 
     /**
-     * Lists all Offer models.
+     * Lists all Activity models.
      * @return mixed
      */
     public function actionIndex()
@@ -69,7 +69,7 @@ class ActivityController extends Controller
     }
 
     /**
-     * Displays a single Offer model.
+     * Displays a single Activity model.
      * @param integer $id
      * @return mixed
      */
@@ -81,10 +81,10 @@ class ActivityController extends Controller
     }
 
     /**
-     * Finds the Offer model based on its primary key value.
+     * Finds the Activity model based on its primary key value.
      * If the model is not found, a 404 HTTP exception will be thrown.
      * @param integer $id
-     * @return Offer the loaded model
+     * @return Activity the loaded model
      * @throws NotFoundHttpException if the model cannot be found
      */
     protected function findModel($id)
@@ -116,7 +116,7 @@ class ActivityController extends Controller
         }
     }
     /**
-     * Updates an existing Offer model.
+     * Updates an existing Activity model.
      * If update is successful, the browser will be redirected to the 'view' page.
      * @param integer $id
      * @return mixed

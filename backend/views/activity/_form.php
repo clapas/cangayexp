@@ -10,7 +10,7 @@ use kartik\widgets\DateTimePicker;
 /* @var $form yii\widgets\ActiveForm */
 ?>
 
-<div class="offer-form">
+<div class="activity-form">
 
     <?php $form = ActiveForm::begin(['options' => ['enctype' => 'multipart/form-data']]); ?>
 
