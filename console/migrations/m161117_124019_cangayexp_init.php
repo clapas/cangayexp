@@ -79,7 +79,7 @@ class m161117_124019_cangayexp_init extends Migration {
             'language_code' => Schema::TYPE_STRING . '(2) not null references language(code)',
             'title' => Schema::TYPE_STRING . '(48) not null',
             'slug' => Schema::TYPE_STRING . '(48) not null',
-            'post_date' => Schem::TYPE_DATE . ' not null',
+            'post_date' => Schema::TYPE_DATE . ' not null',
             'author' => Schema::TYPE_STRING . '(32) not null',
             'lead_para' => Schema::TYPE_STRING . '(255)',
             'md_content' => Schema::TYPE_TEXT . ' not null',

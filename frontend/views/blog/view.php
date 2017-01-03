@@ -23,10 +23,14 @@ use yii\widgets\ListView;
       Pjax::end(); ?>
     <div class="col-md-6 blog-entry">
       <h1><?=$model->title?></h1>
-      <span class="small"><?=$model->post_date?> <?=Yii::t('app', 'By')?> <?=$model->author?></span><br><br>
+       <?=Yii::t('app', 'By')?> <?=$model->author?><br>
+       <?=Yii::t('app', 'Published on')?> <span class="small"><?=Yii::$app->formatter->asDate($model->post_date, 'medium')?></span><br><br>
       <p class="lead"><?=$model->lead_para?></p>
-      <?=Markdown::convert($model->md_content);?>
-      <img src="../dummy_social_plugin.png" class="img-responsive">
+      <?=Markdown::convert($model->md_content, [
+          'custom' => [
+              '<img' => '<img class="img img-responsive"'
+          ]
+      ]);?>
     </div>
     <br class="visible-xs-block visible-sm-block">
     <div class="col-md-3">
