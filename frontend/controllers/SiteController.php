@@ -71,24 +71,6 @@ class SiteController extends Controller
     public function actionIndex()
     {
         $activity = Activity::find()->one();
-        $titles = ArrayHelper::map($activity->getTitles()->asArray()->all(), 'language_code', 'title');
-        $activity->title = $titles[Yii::$app->language];
-        if ($activity->title) $activity->title = $titles[Yii::$app->sourceLanguage];
-        $subtitles = ArrayHelper::map($activity->getSubtitles()->asArray()->all(), 'language_code', 'subtitle');
-        $activity->subtitle = $subtitles[Yii::$app->language];
-        if ($activity->subtitle) $activity->subtitle = $subtitles[Yii::$app->sourceLanguage];
-        $descriptions = ArrayHelper::map($activity->getDescriptions()->asArray()->all(), 'language_code', 'description');
-        $activity->description = $descriptions[Yii::$app->language];
-        if (!$activity->description) $activity->description = $descriptions[Yii::$app->sourceLanguage];
-        $itineraries = ArrayHelper::map($activity->getItineraries()->asArray()->all(), 'language_code', 'itinerary');
-        $activity->itinerary = $itineraries[Yii::$app->language];
-        if (!$activity->itinerary) $activity->itinerary = $itineraries[Yii::$app->sourceLanguage];
-        $includeses = ArrayHelper::map($activity->getIncludes()->asArray()->all(), 'language_code', 'includes');
-        $activity->includes = $includeses[Yii::$app->language];
-        if (!$activity->includes) $activity->includes = $includeses[Yii::$app->sourceLanguage];
-        $noteses = ArrayHelper::map($activity->getNotes()->asArray()->all(), 'language_code', 'notes');
-        $activity->notes = $noteses[Yii::$app->language];
-        if (!$activity->notes) $activity->notes = $noteses[Yii::$app->sourceLanguage];
         $this->layout = 'front';
         return $this->render('index', [
             'activity' => $activity
@@ -121,24 +103,22 @@ class SiteController extends Controller
     public function actionActivities() {
         return $this->render('catalog');
     }
-    public function actionContact()
-    {
-        $model = new ContactForm();
-        if ($model->load(Yii::$app->request->post()) && $model->validate()) {
-            if ($model->sendEmail(Yii::$app->params['adminEmail'])) {
-                Yii::$app->session->setFlash('success', 'Thank you for contacting us. We will respond to you as soon as possible.');
-            } else {
-                Yii::$app->session->setFlash('error', 'There was an error sending email.');
-            }
-
-            return $this->refresh();
-        } else {
-            return $this->render('contact', [
-                'model' => $model,
-            ]);
-        }
+    public function actionContact() {
+        return $this->render('contact_es');
     }
 
+    public function actionEnrol() {
+        return $this->render('enrol_es', [
+            'activity' => Yii::$app->request->get('activity'),
+            'start_ts' => Yii::$app->request->get('start_ts')
+        ]);
+    }
+    public function actionOrders() {
+        return $this->render('orders_es');
+    }
+    public function actionGroups() {
+        return $this->render('groups_es');
+    }
     public function actionAbout() {
         return $this->render('about_es');
     }

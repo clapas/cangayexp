@@ -12,7 +12,7 @@ $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="activity-index">
 
-    <h1><?= Html::encode($this->title) ?></h1>
+    <h1 class="page-header"><?= Html::encode($this->title) ?></h1>
     <?php // echo $this->render('_search', ['model' => $searchModel]); ?>
 
     <p>
@@ -26,19 +26,14 @@ $this->params['breadcrumbs'][] = $this->title;
         'filterModel' => $searchModel,
         'columns' => [
             ['class' => 'yii\grid\SerialColumn'],
-
             'id',
             'start_ts',
             'start_place_name',
-            'start_place_map_url',
             'end_ts',
             'end_place_name',
-            'end_place_map_url',
+            'price_eucents',
             'vacants',
             'capacity',
-            // 'our_reference',
-            // 'their_reference',
-
             ['class' => 'yii\grid\ActionColumn'],
         ],
     ]); ?>

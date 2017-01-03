@@ -14,6 +14,10 @@ use common\models\Activity;
 use common\models\ActivityDescription;
 use common\models\ActivityFile;
 use common\models\ActivityTitle;
+use common\models\ActivitySubtitle;
+use common\models\ActivityIncludes;
+use common\models\ActivityNotes;
+use common\models\ActivityItinerary;
 
 use yii\filters\AccessControl;
 use yii\filters\VerbFilter;
@@ -86,9 +90,6 @@ class ActivityController extends Controller
     protected function findModel($id)
     {
         if (($model = ActivityForm::findOne($id)) !== null) {
-	    $model->titles = ArrayHelper::map($model->getActivityTitles()->asArray()->all(), 'language_code', 'title');
-	    $model->descriptions = ArrayHelper::map($model->getActivityDescriptions()->asArray()->all(), 'language_code', 'description');
-	    //$model->files = $model->getActivityFiles()->asArray()->all();
             return $model;
         } else {
             throw new NotFoundHttpException('The requested page does not exist.');
@@ -114,25 +115,86 @@ class ActivityController extends Controller
             ]);
         }
     }
+    /**
+     * Updates an existing Offer model.
+     * If update is successful, the browser will be redirected to the 'view' page.
+     * @param integer $id
+     * @return mixed
+     */
+    public function actionUpdate($id)
+    {
+        $model = $this->findModel($id);
+	$languages = ArrayHelper::map(Language::find()->all(), 'code', 'name');
+
+        if ($model->load(Yii::$app->request->post()) && $model->save()) {
+            $this->saveRelations($model, $languages);
+            return $this->redirect(['view', 'id' => $model->id]);
+        } else {
+            return $this->render('update', [
+                'model' => $model,
+		'languages' => $languages,
+            ]);
+        }
+    }
     protected function saveRelations($model, $languages) {
         foreach ($model->titles as $lang => $title) {
             if (in_array($lang,  array_keys($languages))) {
-		$ot = ActivityTitle::findOne(['activity_id' => $model->id, 'language_code' => $lang]);
-		if (!$ot) $ot = new ActivityTitle();
-                $ot->title = $title;
-                $ot->activity_id = $model->id;
-                $ot->language_code = $lang;
-                $ot->save();
+		$rel = ActivityTitle::findOne(['activity_id' => $model->id, 'language_code' => $lang]);
+		if (!$rel) $rel = new ActivityTitle();
+                $rel->title = $title;
+                $rel->activity_id = $model->id;
+                $rel->language_code = $lang;
+                $rel->save();
+            }
+        }
+        foreach ($model->subtitles as $lang => $subtitle) {
+            if (in_array($lang, array_keys($languages))) {
+		$rel = ActivitySubtitle::findOne(['activity_id' => $model->id, 'language_code' => $lang]);
+		if (!$rel) $rel = new ActivitySubtitle();
+                $rel->subtitle = $subtitle;
+                $rel->activity_id = $model->id;
+                $rel->language_code = $lang;
+                $rel->save();
             }
         }
         foreach ($model->descriptions as $lang => $desc) {
-            if (in_array($lang,  array_keys($languages))) {
-		$ad = ActivityDescription::findOne(['activity_id' => $model->id, 'language_code' => $lang]);
-                if (!$ad) $ad = new ActivityDescription();
-                $ad->description = $desc;
-                $ad->activity_id = $model->id;
-                $ad->language_code = $lang;
-                $ad->save();
+            if (in_array($lang, array_keys($languages))) {
+		$rel = ActivityDescription::findOne(['activity_id' => $model->id, 'language_code' => $lang]);
+                if (!$rel) $rel = new ActivityDescription();
+                $rel->description = $desc;
+                $rel->activity_id = $model->id;
+                $rel->language_code = $lang;
+                $rel->save();
+            }
+        }
+        foreach ($model->includeses as $lang => $includes) {
+            if (in_array($lang, array_keys($languages))) {
+		$rel = ActivityIncludes::findOne(['activity_id' => $model->id, 'language_code' => $lang]);
+                if (!$rel) $rel = new ActivityIncludes();
+                $rel->includes = $includes;
+                $rel->activity_id = $model->id;
+                $rel->language_code = $lang;
+                $rel->save();
+            }
+        }
+        foreach ($model->itineraries as $lang => $itinerary) {
+            if (in_array($lang, array_keys($languages))) {
+		$rel = ActivityItinerary::findOne(['activity_id' => $model->id, 'language_code' => $lang]);
+                if (!$rel) $rel = new ActivityItinerary();
+                $rel->itinerary = $itinerary;
+                $rel->activity_id = $model->id;
+                $rel->language_code = $lang;
+                $rel->save();
+            }
+        }
+        foreach ($model->noteses as $lang => $notes) {
+            if (in_array($lang, array_keys($languages))) {
+		$rel = ActivityNotes::findOne(['activity_id' => $model->id, 'language_code' => $lang]);
+                if (!$rel) $rel = new ActivityNotes();
+                $rel->notes = $notes;
+                $rel->activity_id = $model->id;
+                $rel->language_code = $lang;
+                $rel->save();
             }
         }
     }

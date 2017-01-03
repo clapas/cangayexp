@@ -95,6 +95,10 @@ a.desc:after {
     fieldset { display: table-cell; }
 }
 
+td {
+    word-break: break-all;
+}
+
 .tab-content {
     border-left: 1px solid #ddd;
     border-right: 1px solid #ddd;

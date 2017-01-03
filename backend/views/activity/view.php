@@ -35,20 +35,56 @@ $this->params['breadcrumbs'][] = $this->title;
     <div class="col-md-7">
       <h2><?= Yii::t('app', 'Titles') ?></h2>
       <table class="table table-bordered table-stripped">
-        <?php foreach ($model->titles as $lang => $title): ?>
+        <?php if ($model->titles) foreach ($model->titles as $lang => $title): ?>
         <tr>
-          <td><?= $lang ?></td>
+          <th><?= $lang ?></th>
           <td><?= $title ?></td>
+        </tr>
+        <?php endforeach; ?>
+      </table>
+      <h2><?= Yii::t('app', 'Subtitles') ?></h2>
+      <table class="table table-bordered table-stripped">
+        <?php if ($model->subtitles) foreach ($model->subtitles as $lang => $subtitle): ?>
+        <tr>
+          <th><?= $lang ?></th>
+          <td><?= $subtitle ?></td>
         </tr>
         <?php endforeach; ?>
       </table>
       <h2><?= Yii::t('app', 'Descriptions') ?></h2>
       <table class="table table-bordered table-stripped">
-        <?php foreach ($model->descriptions as $lang => $desc): ?>
+        <?php if ($model->descriptions) foreach ($model->descriptions as $lang => $desc): ?>
           <tr>
-            <td><?= $lang ?></td>
-            <td><?= $desc ?></td>
+            <th><?= $lang ?></th>
+            <td><?= $desc?></td>
           </tr>
+        <?php endforeach; ?>
+      </table>
+      <h2><?= Yii::t('app', 'Itinerary') ?></h2>
+      <table class="table table-bordered table-stripped">
+        <?php if ($model->itineraries) foreach ($model->itineraries as $lang => $itinerary): ?>
+        <tr>
+          <th><?= $lang ?></th>
+          <td><?= $itinerary?></td>
+        </tr>
+        <?php endforeach; ?>
+      </table>
+      <h2><?= Yii::t('app', 'Includes') ?></h2>
+      <table class="table table-bordered table-stripped">
+        <?php if ($model->includeses) foreach ($model->includeses as $lang => $includes): ?>
+        <tr>
+          <th><?= $lang ?></th>
+          <td><?= $includes?></td>
+        </tr>
+        <?php endforeach; ?>
+      </table>
+      <h2><?= Yii::t('app', 'Notes') ?></h2>
+      <table class="table table-bordered table-stripped">
+        <?php if ($model->noteses) foreach ($model->noteses as $lang => $notes): ?>
+        <tr>
+          <th><?= $lang ?></th>
+          <td><?= $notes?></td>
+        </tr>
         <?php endforeach; ?>
       </table>
   
@@ -62,6 +98,9 @@ $this->params['breadcrumbs'][] = $this->title;
               'start_ts',
               'start_place_name',
               'start_place_map_url',
+              'end_ts',
+              'end_place_name',
+              'end_place_map_url',
               'price_eucents',
               'capacity',
               'vacants',
@@ -71,7 +110,7 @@ $this->params['breadcrumbs'][] = $this->title;
   </div>
   <h2><?= Yii::t('app', 'Pictures') ?></h2>
   <div class="row">
-    <?php foreach ($model->getActivityFiles()->all() as $f): ?>
+    <?php if ($model->files) foreach ($model->files as $f): ?>
       <div class="col-xs-6 col-md-3 form-group">
         <a href="<?= $f->url ?>" class="thumbnail">
             <?= Html::tag('div', null, ['class' => 'img', 'style' => 'background-image: url(' . $f->url . ')']) ?>

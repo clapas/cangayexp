@@ -65,7 +65,7 @@ class ActivityNotes extends \yii\db\ActiveRecord
     /**
      * @return \yii\db\ActiveQuery
      */
-    public function getLanguageCode()
+    public function getLanguage()
     {
         return $this->hasOne(Language::className(), ['code' => 'language_code']);
     }

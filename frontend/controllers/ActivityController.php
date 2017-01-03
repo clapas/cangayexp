@@ -44,9 +44,10 @@ class ActivityController extends Controller
     public function actionIndex()
     {
         $searchModel = new ActivitySearch();
-        $searchModel->start_ts = date('Y-m-d');
+        if (!Yii::$app->request->get('start_ts')) $searchModel->start_ts = date('Y-m-d');
         $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
         $dataProvider->pagination->defaultPageSize = 4;
+        $dataProvider->sort = ['defaultOrder' => ['start_ts' => SORT_ASC]];
 
         return $this->render('index', [
             'searchModel' => $searchModel,
@@ -62,14 +63,8 @@ class ActivityController extends Controller
     public function actionView($id)
     {
 	$model = $this->findModel($id);
-	$titles = ArrayHelper::map($model->getTitles()->asArray()->all(), 'language_code', 'title');
-	$descriptions = ArrayHelper::map($model->getDescriptions()->asArray()->all(), 'language_code', 'md_content');
-	$title = $titles[Yii::$app->language] ? $titles[Yii::$app->language] : $titles[Yii::$app->sourceLanguage];
-	$description = $descriptions[Yii::$app->language] ? $descriptions[Yii::$app->language] : $descriptions[Yii::$app->sourceLanguage];
         return $this->render('view', [
-            'model' => $model,
-	    'model_title' => $title,
-	    'model_description' => $description
+            'activity' => $model,
         ]);
     }
 

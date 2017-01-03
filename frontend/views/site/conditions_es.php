@@ -2,7 +2,7 @@
 <h1 class="page-header text-center">Aviso legal</h1>
 
 <h2>Objeto</h2>
-<p>El objeto de las presentes condiciones generales es regular el uso que pueden realizar los usuarios de la web corporativa de Canary Gay Experience , que actualmente se encuentra en la URL: www.canarygayexperience.com (en adelante la web corporativa).</p>
+<p>El objeto de las presentes condiciones generales es regular el uso que pueden realizar los usuarios de la web corporativa de Canary Gay Experience, que actualmente se encuentra en el dominio canarygayexperience.com (en adelante la web corporativa).</p>
 <p>Canary Gay Experience es una compañía española con domicilio social en Calle Bonsai s/n (C.P. 35100) San Bartolomé de Tirajana – Las Palmas de Gran Canaria.</p>
 
 <h2>Funcionamiento de la web corporativa</h2>

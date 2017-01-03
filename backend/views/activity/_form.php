@@ -32,8 +32,24 @@ use kartik\widgets\DateTimePicker;
               <input type="text" class="form-control" name="ActivityForm[titles][<?= $code ?>]" maxlength="32" value="<?= $model->titles[$code] ?>">
 	    </div>
 	    <div class="form-group">
+              <?= Html::activeLabel($model, 'subtitles') ?>
+              <input type="text" class="form-control" name="ActivityForm[subtitles][<?= $code ?>]" maxlength="32" value="<?= $model->subtitles[$code] ?>">
+	    </div>
+	    <div class="form-group">
               <?= Html::activeLabel($model, 'descriptions') ?>
               <textarea rows="8" class="form-control" name="ActivityForm[descriptions][<?= $code ?>]"><?= $model->descriptions[$code] ?></textarea>
+	    </div>
+	    <div class="form-group">
+              <?= Html::activeLabel($model, 'itineraries') ?>
+              <input type="text" class="form-control" name="ActivityForm[itineraries][<?= $code ?>]" maxlength="32" value="<?= $model->itineraries[$code] ?>">
+	    </div>
+	    <div class="form-group">
+              <?= Html::activeLabel($model, 'includeses') ?>
+              <input type="text" class="form-control" name="ActivityForm[includeses][<?= $code ?>]" maxlength="32" value="<?= $model->includeses[$code] ?>">
+	    </div>
+	    <div class="form-group">
+              <?= Html::activeLabel($model, 'noteses') ?>
+              <input type="text" class="form-control" name="ActivityForm[noteses][<?= $code ?>]" maxlength="32" value="<?= $model->noteses[$code] ?>">
 	    </div>
           </div>
 	<?php endforeach; ?>

@@ -32,6 +32,9 @@ class ActivitySearch extends Activity
         return Model::scenarios();
     }
 
+    public function formName() {
+        return '';
+    }
     /**
      * Creates data provider instance with search query applied
      *
@@ -41,15 +44,7 @@ class ActivitySearch extends Activity
      */
     public function search($params)
     {
-        $query = Activity::find()->with([
-	    'files',
-	    'titles' => function($q) {
-	        $q->asArray()->andWhere('language_code = :lang and title != \'\' or title = \'\' and language_code = :slang', [':lang' => Yii::$app->language, ':slang' => Yii::$app->sourceLanguage]);
-            },
-	    'descriptions' => function($q) {
-	        $q->asArray()->andWhere('language_code = :lang and description != \'\' or description = \'\' and language_code = :slang', [':lang' => Yii::$app->language, ':slang' => Yii::$app->sourceLanguage]);
-            }
-	]);
+        $query = Activity::find();
         if ($this->load($params) && !$this->validate()) {
             return $dataProvider;
         }

@@ -70,6 +70,9 @@ footer hr {
 }
 
 @media(min-width:768px) {
+    .navbar-collapse.collapse {
+      padding-bottom: 4px;
+    }
     .navbar-center {
         text-align: center;
     }
@@ -335,7 +338,7 @@ time.icon span
     border-radius: 8px;
 }
 
-.activity {
+.activities .activity {
     font-size: 0.85em;
     margin-bottom: 36px;
 }
@@ -430,4 +433,16 @@ p.pagination-info {
 
 .navbar-default .navbar-nav > .active > a, .navbar-default .navbar-nav > .active > a:hover, .navbar-default .navbar-nav > .active > a:focus  {
     background-color: #b8b8b8;
+}
+
+.activity .img-thumbnail, .activity-list-item .img-thumbnail , .activity .carousel-inner .img-thumbnail {
+    height: 300px;
+    width: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: auto 100%;
+}
+
+.activity-list-item .img-thumbnail {
+    height: 180px;
 }
