@@ -24,7 +24,7 @@ use yii\widgets\ListView;
     <div class="col-md-6 blog-entry">
       <h1><?=$model->title?></h1>
        <?=Yii::t('app', 'By')?> <?=$model->author?><br>
-       <?=Yii::t('app', 'Published on')?> <span class="small"><?=Yii::$app->formatter->asDate($model->post_date, 'medium')?></span><br><br>
+       <span class="small"><?=Yii::t('app', 'Published on')?> <?=Yii::$app->formatter->asDate($model->post_date, 'medium')?></span><br><br>
       <p class="lead"><?=$model->lead_para?></p>
       <?=Markdown::convert($model->md_content, [
           'custom' => [

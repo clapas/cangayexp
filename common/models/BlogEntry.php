@@ -60,7 +60,7 @@ class BlogEntry extends \yii\db\ActiveRecord
             'slug' => Yii::t('app', 'Slug'),
             'post_date' => Yii::t('app', 'Post Date'),
             'author' => Yii::t('app', 'Author'),
-            'lead_para' => Yii::t('app', 'Lead Para'),
+            'lead_para' => Yii::t('app', 'Lead Paragraph'),
             'md_content' => Yii::t('app', 'Md Content'),
         ];
     }

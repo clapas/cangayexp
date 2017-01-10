@@ -33,6 +33,8 @@ AppAsset::register($this);
             ]);
             $menuItems = [
                 ['label' => Yii::t('app', 'Home'), 'url' => Yii::$app->homeUrl],
+                ['label' => Yii::t('app', 'Activities'), 'url' => ['activity/index']],
+                ['label' => Yii::t('app', 'Blog entries'), 'url' => ['blog/index']],
             ];
             echo Nav::widget([
                 'options' => ['class' => 'navbar-nav'],

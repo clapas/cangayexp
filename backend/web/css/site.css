@@ -95,7 +95,7 @@ a.desc:after {
     fieldset { display: table-cell; }
 }
 
-td {
+td.break-all {
     word-break: break-all;
 }
 
@@ -112,4 +112,3 @@ td {
     background-size: cover;
     background-position: center;
 }
-
