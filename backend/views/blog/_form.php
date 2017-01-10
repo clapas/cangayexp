@@ -19,7 +19,7 @@ use kartik\markdown\MarkdownEditor;
     <div class="col-lg-6">
       <?= $form->field($model, 'title')->textInput(['maxlength' => 48, 'tabindex' => 1]) ?>
       <?= $form->field($model, 'slug')->textInput(['maxlength' => 48, 'tabindex' => 3]) ?>
-      <?= $form->field($model, 'lead_para')->textArea(['rows' => 3, 'maxlength' => 255]) ?>
+      <?= $form->field($model, 'lead_para')->textArea(['rows' => 3, 'maxlength' => 255, 'tabindex' => 5]) ?>
     </div>
     <div class="col-lg-6">
       <?= $form->field($model, 'author')->textInput(['maxlength' => 32, 'tabindex' => 2]) ?>
@@ -34,7 +34,7 @@ use kartik\markdown\MarkdownEditor;
              'pluginOptions' => [
                  'autoclose' => true
              ], 'options' => [
-                 'tabindex' => 5
+                 'tabindex' => 6
              ]
          ]);
       ?>
@@ -43,7 +43,7 @@ use kartik\markdown\MarkdownEditor;
       <div class="form-group">
         <?php echo $form->field($model, 'md_content')->widget(
             MarkdownEditor::classname(), 
-            ['height' => 300, 'encodeLabels' => false]
+            ['height' => 300, 'encodeLabels' => false, 'options' => ['tabindex' => 7]]
         ); ?>
       </div>
     </div>
@@ -56,3 +56,12 @@ use kartik\markdown\MarkdownEditor;
   <?php ActiveForm::end(); ?>
 
 </div>
+<?php
+$script = <<< JS
+\$slug = $('[name="BlogEntry[slug]"]');
+$('[name="BlogEntry[title]"]').on('keyup', function() {
+    \$slug.val($(this).val().replace(/ /g, '-'));
+    return false;
+});
+JS;
+$this->registerJs($script);
