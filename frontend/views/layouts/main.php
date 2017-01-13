@@ -92,11 +92,11 @@ AppAsset::register($this);
                     <a href="https://drive.google.com/file/d/0B6m4bpAU2AOgT3JucDVSV19CMVE/view?usp=sharing"><?=Yii::t('app', 'Download catalog')?></a><br>
                 </div>
                 <div class="col-md-2 social-buttons">
-                  <a href="http://www.facebook.com/CanaryGayExperience"><span class="social-btn social-btn-facebook"></span></a>
-                  <a href="http://www.instagram.com/canarygayexperience"><span class="social-btn social-btn-instagram"></span></a>
-                  <a href="http://es.pinterest.com/CanaryGayExp/"><span class="social-btn social-btn-pinterest"></span></a>
-                  <a href="http://twitter.com/CanaryGayExp"><span class="social-btn social-btn-twitter"></span></a>
-                  <a href="http://www.youtube.com/channel/UCtyWjQkAeCcgUY40X4tsgjQ"><span class="social-btn social-btn-youtube"></span></a>
+                  <a target="_blank" href="http://www.facebook.com/CanaryGayExperience"><span class="social-btn social-btn-facebook"></span></a>
+                  <a target="_blank" href="http://www.instagram.com/canarygayexperience"><span class="social-btn social-btn-instagram"></span></a>
+                  <a target="_blank" href="http://es.pinterest.com/CanaryGayExp/"><span class="social-btn social-btn-pinterest"></span></a>
+                  <a target="_blank" href="http://twitter.com/CanaryGayExp"><span class="social-btn social-btn-twitter"></span></a>
+                  <a target="_blank" href="http://www.youtube.com/channel/UCtyWjQkAeCcgUY40X4tsgjQ"><span class="social-btn social-btn-youtube"></span></a>
                 </div>
             </div>
             <hr>

@@ -339,7 +339,7 @@ time.icon span
 }
 
 .activities .activity {
-    font-size: 0.85em;
+    /*font-size: 0.85em;*/
     margin-bottom: 36px;
 }
 
@@ -357,22 +357,30 @@ time.icon span
 .activity-hiking .activity-header {
     background-image: url(../img/hiking.jpg);
 }
-
 .activity-canyon .activity-header {
     background-image: url(../img/canyon.jpg);
 }
-
 .activity-kayak .activity-header {
     background-image: url(../img/kayak.jpg);
 }
-
 .activity-surf .activity-header {
     background-image: url(../img/surf.jpg);
 }
-
+.activity-coastering .activity-header {
+    background-image: url(../img/coastering.jpg);
+}
+.activity-scubadiving .activity-header {
+    background-image: url(../img/scubadiving.jpg);
+}
+.activity-skydiving .activity-header {
+    background-image: url(../img/skydiving.jpg);
+}
+.activity-schooner .activity-header {
+    background-image: url(../img/schooner.jpg);
+}
 .activity-header > p ,.activity-header > h2 {
     padding: 8px;
-    background-color: rgba(0, 0, 0, 0.35);
+    background-color: rgba(0, 0, 0, 0.5);
     text-shadow: black 0 1px 2px;
     color: white;
 }

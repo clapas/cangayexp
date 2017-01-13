@@ -32,9 +32,9 @@ use yii\helpers\Url;
 </ul>
 <p>Cuando superemos el límite de plazas en cada actividad, lo comunicaremos vía mail.</p>
 
-<p>Si tienes cualquier pregunta, no dudes en contactarnos a través del FORMULARIO DE CONTACTO (aquí debe derivarlo a la parte de contactos) para resolverla.</p>
+<p>Si tienes cualquier pregunta, no dudes en contactarnos a través del <a href="<?=Url::to(['/site/enrol'])?>">formulario de contacto</a> para resolverla.</p>
 
-<p>Lo ideal es que cada uno rellene el formulario de manera individual,accediendo cada uno de vosotros a nuestro formulario.</p>
+<p>Lo ideal es que cada uno rellene el formulario de manera individual, accediendo cada uno de vosotros a nuestro formulario.</p>
 
 <p>¡Hasta pronto!</p>
 

@@ -37,19 +37,19 @@ use kartik\widgets\DateTimePicker;
 	    </div>
 	    <div class="form-group">
               <?= Html::activeLabel($model, 'descriptions') ?>
-              <textarea rows="8" class="form-control" name="ActivityForm[descriptions][<?= $code ?>]"><?= $model->descriptions[$code] ?></textarea>
+              <textarea rows="2" class="form-control" name="ActivityForm[descriptions][<?= $code ?>]" maxlength="256"><?= $model->descriptions[$code] ?></textarea>
 	    </div>
 	    <div class="form-group">
               <?= Html::activeLabel($model, 'itineraries') ?>
-              <input type="text" class="form-control" name="ActivityForm[itineraries][<?= $code ?>]" maxlength="32" value="<?= $model->itineraries[$code] ?>">
+              <textarea rows="4" class="form-control" name="ActivityForm[itineraries][<?= $code ?>]" maxlength="512"><?= $model->itineraries[$code] ?></textarea>
 	    </div>
 	    <div class="form-group">
               <?= Html::activeLabel($model, 'includeses') ?>
-              <input type="text" class="form-control" name="ActivityForm[includeses][<?= $code ?>]" maxlength="32" value="<?= $model->includeses[$code] ?>">
+              <input type="text" class="form-control" name="ActivityForm[includeses][<?= $code ?>]" maxlength="128" value="<?= $model->includeses[$code] ?>">
 	    </div>
 	    <div class="form-group">
               <?= Html::activeLabel($model, 'noteses') ?>
-              <input type="text" class="form-control" name="ActivityForm[noteses][<?= $code ?>]" maxlength="32" value="<?= $model->noteses[$code] ?>">
+              <textarea rows="2" class="form-control" name="ActivityForm[noteses][<?= $code ?>]" maxlength="256"><?= $model->noteses[$code] ?></textarea>
 	    </div>
           </div>
 	<?php endforeach; ?>
@@ -59,25 +59,22 @@ use kartik\widgets\DateTimePicker;
 
   <div class="row">
     <div class="col-lg-6">
-      <?= $form->field($model, 'start_ts')->textInput() ?>
-      <?php DateTimePicker::widget([
-             'model' => $model,
-             'language' => Yii::$app->language,
-             'attribute' => 'start_ts',
-             'type' => 1,
-             //'language' => 'ru',
-             //'dateFormat' => 'yyyy-MM-dd hh:mm',
-         ]);
-      ?>
-      <?= $form->field($model, 'start_place_name')->textInput(['maxlength' => 64]) ?>
-      <?= $form->field($model, 'start_place_map_url')->textInput(['maxlength' => 128]) ?>
+      <?= $form->field($model, 'start_ts')->widget(DateTimePicker::classname(), [
+          'type' => 1,
+          'options' => ['tabindex' => 1],
+          'pluginOptions' => ['autoclose' => true]
+      ]); ?>
+      <?= $form->field($model, 'start_place_name')->textInput(['maxlength' => 64, 'tabindex' => 3]) ?>
+      <?= $form->field($model, 'start_place_map_url')->textInput(['maxlength' => 128, 'tabindex' => 5]) ?>
       <?= $form->field($model, 'capacity')->widget(MaskedInput::classname(), [
+          'options' => ['tabindex' => 7, 'class' => 'form-control'],
           'clientOptions' => [
               'alias' =>  'integer',
               'autoGroup' => true
           ]
       ]) ?>
       <?= $form->field($model, 'price_eucents')->widget(MaskedInput::classname(), [
+          'options' => ['tabindex' => 9, 'class' => 'form-control'],
           'clientOptions' => [
               'alias' =>  'decimal',
               'autoGroup' => true
@@ -85,19 +82,15 @@ use kartik\widgets\DateTimePicker;
       ]) ?>
     </div>
     <div class="col-lg-6">
-      <?= $form->field($model, 'end_ts')->textInput() ?>
-      <?php DateTimePicker::widget([
-             'model' => $model,
-             'language' => Yii::$app->language,
-             'attribute' => 'end_ts',
-             'type' => 1,
-             //'language' => 'ru',
-             //'dateFormat' => 'yyyy-MM-dd hh:mm',
-         ]);
-      ?>
-      <?= $form->field($model, 'end_place_name')->textInput(['maxlength' => 64]) ?>
-      <?= $form->field($model, 'end_place_map_url')->textInput(['maxlength' => 128]) ?>
+      <?= $form->field($model, 'end_ts')->widget(DateTimePicker::classname(), [
+          'type' => 1,
+          'options' => ['tabindex' => 2],
+          'pluginOptions' => ['autoclose' => true]
+      ]); ?>
+      <?= $form->field($model, 'end_place_name')->textInput(['maxlength' => 64, 'tabindex' => 4]) ?>
+      <?= $form->field($model, 'end_place_map_url')->textInput(['maxlength' => 128, 'tabindex' => 6]) ?>
       <?= $form->field($model, 'vacants')->widget(MaskedInput::classname(), [
+          'options' => ['tabindex' => 8, 'class' => 'form-control'],
           'clientOptions' => [
               'alias' =>  'integer',
               'autoGroup' => true

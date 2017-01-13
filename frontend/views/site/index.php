@@ -20,22 +20,22 @@ use yii\helpers\Url;
     <div class="row">
       <div class="col-md-4">
         <img src="<?=Url::to('@web/img/subhead1.jpg')?>" class="img-responsive img-rounded">
-        <h3><?=Yii::t('app', 'Conoce nuestra historia')?></h3>
-        <p>Viaja a través del tiempo y conoce la historia de Canarias, cómo se formaron las islas, cómo vivían los aborígenes y los diferentes períodos tras las conquista. Visita el barrio de Vegueta y escucha lo que sus empedradas calles te cuentan sobre Colón o sus historias de piratas.</p>
+        <h3><?=Yii::t('app', 'Know our history')?></h3>
+        <p><?=Yii::t('app', 'Travel through time and know the history of the Canaries, how the islands were formed, how the Aborigines lived and the different periods after the conquest. Visit the neighborhood of Vegueta and listen to what its cobbled streets tell you about Columbus or his stories of pirates.')?></p>
         <a class="btn btn-default" href="#"><?=Yii::t('app', 'More Info')?></a>
       </div>
       <!-- /.col-md-4 -->
       <div class="col-md-4">
         <img src="<?=Url::to('@web/img/subhead2.jpg')?>" class="img-responsive img-rounded">
-        <h3><?=Yii::t('app', 'Descubre rincones de Gran Canaria')?></h3>
-        <p>Explora el interior de la isla y podrás descubrir pequeños monumentos naturales, disfrutar de parajes únicos, conectar con la naturaleza y vivir un día de aventuras con nuestras experiencias. Descubre otras formas de vivir nuestra costa con nuestras actividades acuáticas.</p>
+        <h3><?=Yii::t('app', 'Discover corners of Gran Canaria')?></h3>
+        <p><?=Yii::t('app', 'Explore the interior of the island and discover small natural monuments, enjoy unique places, connect with nature and live a day of adventure with our experiences. Discover other ways to live our coast with our water activities.')?></p>
         <a class="btn btn-default" href="#"><?=Yii::t('app', 'More Info')?></a>
       </div>
       <!-- /.col-md-4 -->
       <div class="col-md-4">
         <img src="<?=Url::to('@web/img/subhead3.jpg')?>" class="img-responsive img-rounded">
-        <h3><?=Yii::t('app', 'Déjate llevar por los sabores de Canarias')?></h3>
-        <p>Sumergente en nuestros intensos sabores, disfruta de una isla llena de aromas y colores. Prueba nuestras "papas arrugás" con mojo picón, cata nuestros quesos y vinos, saborea el gofio en las diversas creaciones culinarias. Llévate un buen sabor de boca de Gran Canaria.</p>
+        <h3><?=Yii::t('app', 'Let yourself be carried away by the flavors of the Canary Islands')?></h3>
+        <p><?=Yii::t('app', 'Get submerged in our intense flavors, enjoy an island full of aromas and colors. Try our <em>papas arrugás</em> with <em>mojo picón</em>, taste our cheeses and wines, savor the <em>gofio</em> in its diverse culinary creations. Take a good taste of Gran Canaria.')?></p>
         <a class="btn btn-default" href="#"><?=Yii::t('app', 'More Info')?></a>
       </div>
       <!-- /.col-md-4 -->

@@ -8,8 +8,8 @@ use kartik\widgets\FileInput;
 /* @var $this yii\web\View */
 /* @var $model common\models\Activity */
 
-$this->title = $model->id;
-$this->params['breadcrumbs'][] = ['label' => Yii::t('app', 'Activities'), 'url' => ['index']];
+$this->title = Yii::t('app', 'Activity') . ' #' . $model->id;
+$this->params['breadcrumbs'][] = ['label' => Yii::t('app', 'Activities'), 'url' => ['activity/index']];
 $this->params['breadcrumbs'][] = $this->title;
 
 ?>
