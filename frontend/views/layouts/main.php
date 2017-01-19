@@ -19,6 +19,7 @@ AppAsset::register($this);
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <?= Html::csrfMetaTags() ?>
     <title><?= Html::encode($this->title) ?></title>
+    <link rel="shortcut icon" href="<?=Url::to('@web/favicon.ico')?>" type="image/x-icon">
     <!--<link rel="stylesheet" href="css/font-awesome.min.css">-->
     <?php $this->head() ?>
 </head>
@@ -68,15 +69,15 @@ AppAsset::register($this);
 
     <footer class="container-fluid">
             <div class="row">
-                <div class="col-md-2 col-md-offset-1">
+                <div class="col-md-2">
                     <img class="logo" src="<?= Url::to('@web/img/baloon.png') ?>">
                 </div>
-                <div class="col-md-3">
+                <div class="col-md-5">
                     <address>
-                      <h4>Canary Gay Experience, S.L.</h4>
-                      1355 Market Street, Maspalomas<br>
-                      Las Palmas 34103, España<br>
-                      <span class="glyphicon glyphicon-earphone"></span> (+34) 619 368 771<br>
+                      <h4 class="can-gay-exp">Canary Gay Experience, S.L.</h4>
+                      Bonsai s/n, Maspalomas<br>
+                      Las Palmas 35100, España<br>
+                      <span class="glyphicon glyphicon-earphone"></span> (+34) 699 798 809<br>
                       <span class="glyphicon glyphicon-envelope"></span> <a mailto="direccion@canarygayexperience.com">direccion@canarygayexperience.com</a>
                     </address>
                     <a href="<?=Url::to(['/site/conditions'])?>" class="label label-default">Condiciones legales</a><br>

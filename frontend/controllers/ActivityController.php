@@ -46,7 +46,6 @@ class ActivityController extends Controller
         $searchModel = new ActivitySearch();
         if (!Yii::$app->request->get('start_ts')) $searchModel->start_ts = date('Y-m-d');
         $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
-        $dataProvider->pagination->defaultPageSize = 4;
         $dataProvider->sort = ['defaultOrder' => ['start_ts' => SORT_ASC]];
 
         return $this->render('index', [

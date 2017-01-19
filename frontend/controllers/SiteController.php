@@ -6,6 +6,7 @@ use yii\helpers\ArrayHelper;
 use common\models\LoginForm;
 use common\models\Activity;
 use frontend\models\PasswordResetRequestForm;
+use frontend\models\ActivitySearch;
 use frontend\models\ResetPasswordForm;
 use frontend\models\SignupForm;
 use frontend\models\ContactForm;
@@ -101,7 +102,7 @@ class SiteController extends Controller
     }
 
     public function actionActivities() {
-        return $this->render('catalog');
+        return $this->render('catalog_es');
     }
     public function actionContact() {
         return $this->render('contact_es');
@@ -120,7 +121,13 @@ class SiteController extends Controller
         return $this->render('groups_es');
     }
     public function actionAbout() {
-        return $this->render('about_es');
+        $activitySearch = new ActivitySearch();
+        $activitySearch->start_ts = date('Y-m-d');
+        $upcoming_activities = $activitySearch->search(Yii::$app->request->queryParams);
+        $upcoming_activities->query->orderBy('start_ts asc');
+        $upcoming_activities->query->limit(3);
+        $upcoming_activities->pagination = false;
+        return $this->render('about_es', compact('upcoming_activities'));
     }
     public function actionConditions() {
         return $this->render('conditions_es');

@@ -24,11 +24,11 @@ use yii\helpers\Url;
 
 <h2>Política de devolución</h2>
 <ul>
-<li>En caso de cancelación del evento por decisión de CanaryGayExperience (cualquiera que sea el motivo), se devolverá la totalidad de la fianza.</li>
+<li>En caso de cancelación del evento por decisión de <span class="can-gay-exp">Canary Gay Experience</span> (cualquiera que sea el motivo), se devolverá la totalidad de la fianza.</li>
 
-<li>En caso de cancelación por parte del cliente con un mínimo de 48 horas antes del día de la actividad, CanaryGayExperience devuelve 50% de la fianza.</li>
+<li>En caso de cancelación por parte del cliente con un mínimo de 48 horas antes del día de la actividad, <span class="can-gay-exp">Canary Gay Experience</span> devuelve 50% de la fianza.</li>
 
-<li>En caso de cancelación por parte del cliente dentro de las 48 horas previas al día de la actividad, no se devolverá la fianza. CanaryGayExperience guardará la fianza que servirá para reservar cualquier otra actividad, válida durante un plazo de 1 mes y por el mismo valor o abonando la diferencia. Pasado el plazo de 1 mes, se pierde la fianza.</li>
+<li>En caso de cancelación por parte del cliente dentro de las 48 horas previas al día de la actividad, no se devolverá la fianza. <span class="can-gay-exp">Canary Gay Experience</span> guardará la fianza que servirá para reservar cualquier otra actividad, válida durante un plazo de 1 mes y por el mismo valor o abonando la diferencia. Pasado el plazo de 1 mes, se pierde la fianza.</li>
 </ul>
 <p>Cuando superemos el límite de plazas en cada actividad, lo comunicaremos vía mail.</p>
 

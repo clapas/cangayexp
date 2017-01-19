@@ -38,7 +38,7 @@ return [
     'Discover corners of Gran Canaria' => 'Descubre rincones de Gran Canaria',
     'Details' => 'Detalles',
     'Download catalog' => 'Descargar el catálogo',
-    'Let yourself be carried away by the flavors of the Canary Islands' => 'Déjate llevar por los sabores de Canarias',
+    'Be carried away by the flavors' => 'Déjate llevar por los sabores',
     'End Place Map URL' => 'URL de llegada en mapa',
     'End Place Name' => 'Lugar de llegada',
     'End Timestamp' => 'Fecha y hora de llegada',

@@ -19,7 +19,7 @@ $this->title = Yii::t('app', 'Calendar');
     <h1><?= Html::encode($this->title) ?></h1>
   </div>
   
-      <?php // echo $this->render('_search', ['model' => $searchModel]); ?>
+  <?php // echo $this->render('_search', ['model' => $searchModel]); ?>
   <form class="well well-sm form-inline row">
     <div class="form-group col-md-4 col-sm-7">
       <?php 
@@ -34,7 +34,7 @@ $this->title = Yii::t('app', 'Calendar');
               'autoclose' => true
           ],
           'pluginEvents' => [
-              'changeDate' => 'function(e) { $.pjax({container: \'#p0\', data: {start_ts: e.date.toISOString()}}); }'
+              'changeDate' => 'function(e) { $.pjax({container: \'#p0\', data: {start_ts: e.date.toISOString().substring(0, 10)}, scrollTo: false}); }'
           ],
           'type' => DatePicker::TYPE_COMPONENT_PREPEND
       ]); ?>
@@ -53,11 +53,6 @@ $this->title = Yii::t('app', 'Calendar');
           ],
           'itemView' => '_view',
           'options' => ['class' => 'row'],
-              /*
-          'itemOptions' => [
-              'class' => 'col-sm-6 col-md-4'
-          ]
-              */
       ]); 
       Pjax::end(); ?>
   </div>
