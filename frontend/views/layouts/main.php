@@ -19,7 +19,7 @@ AppAsset::register($this);
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <?= Html::csrfMetaTags() ?>
     <title><?= Html::encode($this->title) ?></title>
-    <link rel="shortcut icon" href="<?=Url::to('@web/favicon.ico')?>" type="image/x-icon">
+    <link rel="shortcut icon" href="<?=Url::to('@web/img/favicon.ico')?>" type="image/x-icon">
     <!--<link rel="stylesheet" href="css/font-awesome.min.css">-->
     <?php $this->head() ?>
 </head>
