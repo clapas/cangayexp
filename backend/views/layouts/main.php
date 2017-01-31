@@ -35,6 +35,7 @@ AppAsset::register($this);
                 ['label' => Yii::t('app', 'Home'), 'url' => Yii::$app->homeUrl],
                 ['label' => Yii::t('app', 'Activities'), 'url' => ['activity/index']],
                 ['label' => Yii::t('app', 'Blog entries'), 'url' => ['blog/index']],
+                ['label' => Yii::t('app', 'Configuration'), 'url' => ['site/index']],
             ];
             echo Nav::widget([
                 'options' => ['class' => 'navbar-nav'],

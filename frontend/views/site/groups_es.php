@@ -3,7 +3,7 @@ use yii\helpers\Url;
 ?>
 <div class="container">
 <h1 class="page-header text-center">Precios y ofertas de grupo</h1>
-<p>Si tienes un grupo de mínimo 4 personas y quieren realizar una actividad fuera de las fechas previstas en nuestro <a href="<?=Url::to(['/activity/index'])?>">calendario</a> envíanos una <a href="https://goo.gl/dixREi">solicitud de actividad</a> y buscamos juntos una fecha para su realización.</p>
+<p>Si tienes un grupo de mínimo 4 personas y quieren realizar una actividad fuera de las fechas previstas en nuestro <a target="_blank" href="<?=Url::to(['/activity/index'])?>">calendario</a> envíanos una <a href="https://goo.gl/dixREi">solicitud de actividad</a> y buscamos juntos una fecha para su realización.</p>
 
 <p>Explícanos en detalle qué quieres, para que te hagamos la propuesta más personalizada y adecuada posible: tamaño del grupo, edades, nivel deseado, experiencia previa, evento sorpresa, cumpleaños, despedida de solter@, etc.</p>
 

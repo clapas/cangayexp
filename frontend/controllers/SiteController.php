@@ -71,7 +71,7 @@ class SiteController extends Controller
 
     public function actionIndex()
     {
-        $activity = Activity::find()->one();
+        $activity = Activity::find()->where('start_ts > now()')->orderBy('start_ts asc')->one();
         $this->layout = 'front';
         return $this->render('index', [
             'activity' => $activity

@@ -41,6 +41,7 @@ use yii\widgets\ListView;
       <?php
       echo ListView::widget([
           'dataProvider' => $upcoming_activities,
+          'emptyText' => '<div class="list-group-item">' . Yii::t('yii', 'No results found.') . '</div>',
           'summary' => false,
           'itemView' => '_activity_view',
           'options' => ['tag' => false],

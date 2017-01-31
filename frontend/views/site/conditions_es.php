@@ -3,7 +3,7 @@
 
 <h2>Objeto</h2>
 <p>El objeto de las presentes condiciones generales es regular el uso que pueden realizar los usuarios de la web corporativa de <span class="can-gay-exp">Canary Gay Experience</span>, que actualmente se encuentra en el dominio canarygayexperience.com (en adelante la web corporativa).</p>
-<p><span class="can-gay-exp">Canary Gay Experience</span> es una compañía española con domicilio social en Calle Bonsai s/n (C.P. 35100) San Bartolomé de Tirajana – Las Palmas de Gran Canaria.</p>
+<p><span class="can-gay-exp">Canary Gay Experience</span> es una compañía española con domicilio social en Calle Bonsai s/n, Apto. 269, San Bartolomé de Tirajana – 35100 Las Palmas.</p>
 
 <h2>Funcionamiento de la web corporativa</h2>
 <p><span class="can-gay-exp">Canary Gay Experience</span> se reserva la facultad de efectuar, en cualquier momento y sin necesidad de previo aviso, las modificaciones y actualizaciones que estime convenientes en la web corporativa, de la configuración y presentación de ésta y de las condiciones de acceso pudiendo incluir servicios y contenidos adicionales a los actuales o, en su caso, suprimirlos o modificar la configuración y presentación de ésta y de las condiciones de acceso.</p>
@@ -29,6 +29,6 @@
 <p>El usuario puede desactivar de su ordenador la instalación de cookies mediante la configuración de su navegador. Para desactivar correctamente las cookies le recomendamos consultar directamente el manual de su navegador ya que, dependiendo de éste, la forma de hacerlo puede variar.</p>
 
 <h2>Reclamaciones</h2>
-<p>El usuario podrá dirigir las reclamaciones sobre los servicios prestados a <span class="can-gay-exp">Canary Gay Experience</span>, Calle Bonsai s/n (C.P. 35100) San Bartolomé de Tirajana – Las Palmas de Gran Canaria. Telf.: 699 798 809.</p>
+<p>El usuario podrá dirigir las reclamaciones sobre los servicios prestados a <span class="can-gay-exp">Canary Gay Experience</span>, Calle Bonsai s/n, Apto. 269, San Bartolomé de Tirajana – 35100 Las Palmas. Telf: (+34) 619 368 771.</p>
 <p>El usuario tendrá disponibles Hojas de Reclamaciones Oficiales en la dirección anteriormente referida. <span class="can-gay-exp">Canary Gay Experience</span> y el usuario, con renuncia expresa a cualquier otro fuero, se someten al de los Juzgados y Tribunales de Las Palmas de Gran Canaria</p>
 </div>

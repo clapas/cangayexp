@@ -28,7 +28,7 @@ AppAsset::register($this);
     <div class="wrap">
         <?php
             NavBar::begin([
-                'brandLabel' => '<img alt="Canary Gay Experience" src="' . Url::to('@web/img/logo.png') . '">',
+                'brandLabel' => '<img class="img-responsive" alt="Canary Gay Experience" src="' . Url::to('@web/img/logo.png') . '">',
                 'brandUrl' => Yii::$app->homeUrl,
                 'options' => [
                     'class' => 'navbar-default navbar-static-top',
@@ -75,10 +75,10 @@ AppAsset::register($this);
                 <div class="col-md-5">
                     <address>
                       <h4 class="can-gay-exp">Canary Gay Experience, S.L.</h4>
-                      Bonsai s/n, Maspalomas<br>
+                      Bonsai s/n Apto. 269, Maspalomas<br>
                       Las Palmas 35100, España<br>
-                      <span class="glyphicon glyphicon-earphone"></span> (+34) 699 798 809<br>
-                      <span class="glyphicon glyphicon-envelope"></span> <a mailto="direccion@canarygayexperience.com">direccion@canarygayexperience.com</a>
+                      (+34) 619 368 771<br>
+                      <a mailto="direccion@canarygayexperience.com">direccion@canarygayexperience.com</a>
                     </address>
                     <a href="<?=Url::to(['/site/conditions'])?>" class="label label-default">Condiciones legales</a><br>
                 </div>
@@ -90,7 +90,7 @@ AppAsset::register($this);
                     <a href="<?=Url::to(['/site/about'])?>"><?=Yii::t('app', 'About us')?></a><br>
                     <a href="<?=Url::to(['/site/privacy'])?>"><?=Yii::t('app', 'Privacy policy')?></a><br>
                     <a href="<?=Url::to(['/site/contact'])?>"><?=Yii::t('app', 'Contact form')?></a><br>
-                    <a href="https://drive.google.com/file/d/0B6m4bpAU2AOgT3JucDVSV19CMVE/view?usp=sharing"><?=Yii::t('app', 'Download catalog')?></a><br>
+                    <a target="_blank" href="<?=Yii::$app->params['catalog_url']?>"><?=Yii::t('app', 'Download catalog')?></a><br>
                 </div>
                 <div class="col-md-2 social-buttons">
                   <a target="_blank" href="http://www.facebook.com/CanaryGayExperience"><span class="social-btn social-btn-facebook"></span></a>

@@ -10,7 +10,7 @@ use yii\helpers\Html;
 $this->title = $name;
 ?>
 <div class="site-error">
-
+  <div class="container">
     <h1><?= Html::encode($this->title) ?></h1>
 
     <div class="alert alert-danger">
@@ -24,4 +24,5 @@ $this->title = $name;
         Please contact us if you think this is a server error. Thank you.
     </p>
 
+  </div>
 </div>

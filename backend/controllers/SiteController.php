@@ -3,8 +3,10 @@ namespace backend\controllers;
 
 use Yii;
 use yii\filters\AccessControl;
+use yii\base\Model;
 use yii\web\Controller;
 use common\models\LoginForm;
+use common\models\Config;
 use yii\filters\VerbFilter;
 use backend\models\BackendLoginForm;
 
@@ -56,7 +58,15 @@ class SiteController extends Controller
 
     public function actionIndex()
     {
-        return $this->render('index');
+        $config = Config::find()->all();
+        if (Model::loadMultiple($config, Yii::$app->request->post()) && 
+          Model::validateMultiple($config)) {
+            foreach ($config as $c) {
+                $c->save(false);
+            }
+            return $this->redirect('index');
+        }
+        return $this->render('index', compact('config'));
     }
 
     public function actionLogin()

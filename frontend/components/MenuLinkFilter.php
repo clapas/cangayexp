@@ -4,6 +4,7 @@ namespace frontend\components;
 use Yii;
 use yii\base\ActionFilter;
 use common\models\BlogEntry;
+use common\models\Config;
 use yii\helpers\Url;
 
 use frontend\components\LanguageBootstrap;
@@ -20,6 +21,8 @@ class MenuLinkFilter extends ActionFilter {
             'slug' => $blog_entry->slug
         ]);
         Yii::$app->params['blog_link'] = $blog_link;
+        $catalog_url = Config::findOne('catalog_url')->value;
+        Yii::$app->params['catalog_url'] = $catalog_url;
         return parent::beforeAction($action);
     }
 }
