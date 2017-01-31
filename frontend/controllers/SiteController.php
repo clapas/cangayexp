@@ -107,6 +107,9 @@ class SiteController extends Controller
     public function actionContact() {
         return $this->render('contact_es');
     }
+    public function actionRequest() {
+        return $this->render('request_es');
+    }
 
     public function actionEnrol() {
         return $this->render('enrol_es', [
