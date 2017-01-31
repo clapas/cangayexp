@@ -4,9 +4,9 @@ use yii\helpers\Url;
 $catalogUrl = Url::to(['activity/index']);
 ?>
 <div class="container">
-  <h1 class="text-center page-header">Actividades</h1>
-  <!--We will take care of making your way through the island something different, in contact with the nature and culture of our land, delivering unique life experiences to you-->
-  <p class="text-center lead">Nos encargamos de hacer tu paso por la isla diferente, en contacto con la naturaleza y la cultura de nuestra tierra, haciendo que vivas experiencias únicas.</p>
+  <h1 class="text-center page-header"><?=Yii::t('app', 'Activities')?></h1>
+  <!---->
+  <p class="text-center lead"><?=Yii::t('app', 'We will take care of making your way through the island something different, in contact with the nature and culture of our land, delivering unique life experiences to you')?></p>
   <div class="row well activities">
     <div class="col-md-6 activity activity-hiking">
       <div class="activity-header">

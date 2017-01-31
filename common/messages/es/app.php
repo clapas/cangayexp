@@ -98,4 +98,5 @@ return [
     'Update' => 'Actualizar',
     'Update {modelClass}: ' => 'Actualizar {modelClass}:',
     'Url' => 'Url',
+    'We will take care of making your way through the island something different, in contact with the nature and culture of our land, delivering unique life experiences to you' => 'Nos encargamos de hacer tu paso por la isla diferente, en contacto con la naturaleza y la cultura de nuestra tierra, haciendo que vivas experiencias únicas',
 ];
