@@ -2,11 +2,12 @@
 use yii\helpers\Url;
 
 $catalogUrl = Url::to(['activity/index']);
+$lead_para = Yii::t('app', 'We will take care of making your way through the island something different, in contact with the nature and culture of our land, delivering unique life experiences to you');
 ?>
 <div class="container">
   <h1 class="text-center page-header"><?=Yii::t('app', 'Activities')?></h1>
   <!---->
-  <p class="text-center lead"><?=Yii::t('app', 'We will take care of making your way through the island something different, in contact with the nature and culture of our land, delivering unique life experiences to you')?></p>
+  <p class="text-center lead"><?=$lead_para?></p>
   <div class="row well activities">
     <div class="col-md-6 activity activity-hiking">
       <div class="activity-header">
@@ -91,5 +92,8 @@ $catalogUrl = Url::to(['activity/index']);
       <p>Navegaremos por la costa sur de la isla, seduciéndote con el paisaje de sus apartadas playas y calas, sus acantilados y cuevas. Verás la isla con otros ojos y podrás tomar el sol, nadar y bucear con snorkel.</p>
       <p>Con capacidad para 12 personas, garantizamos un trato exclusivo y único.</p>
     </div>
+  </div>
+  <div class="col-md-8 col-md-offset-2">
+    <?= $this->render('/site/_share_buttons', ['url' => Url::to('', true), 'title' => Yii::t('app', 'Alternative activities in the Canary Islands: speleo, hiking, canyoing, sports, expositions, skydiving, partying, etc.'), 'description' => $lead_para]) ?>
   </div>
 </div>

@@ -31,6 +31,8 @@ use yii\widgets\ListView;
               '<img' => '<img class="img img-responsive"'
           ]
       ]);?>
+      <hr>
+      <?= $this->render('/site/_share_buttons', ['url' => Url::canonical(), 'title' => $model->title, 'description' => $model->lead_para]) ?>
     </div>
     <br class="visible-xs-block visible-sm-block">
     <div class="col-md-3">

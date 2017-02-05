@@ -65,6 +65,6 @@ use yii\helpers\Url;
   </div>
 <?php else: ?> 
   <div class="col-md-12 text-danger">
-    <strong><?= Yii::t('yii', 'No results found') ?></strong>
+    <strong><?= Yii::t('yii', 'No results found.') ?></strong>
   </div>
 <?php endif; ?> 

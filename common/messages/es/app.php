@@ -35,6 +35,7 @@ return [
     'Contact form' => 'Formulario de contacto',
     'Contact us at' => 'Contactanos en',
     'Description' => 'Descripción',
+    'Did you like this post? Please share it with your followers!' => '¿Te ha gustado esta entrada? Por favor, ¡compártela con tus seguidores!',
     'Discover corners of Gran Canaria' => 'Descubre rincones de Gran Canaria',
     'Details' => 'Detalles',
     'Download catalog' => 'Descargar el catálogo',
