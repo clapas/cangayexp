@@ -1,3 +1,6 @@
+<?php
+$this->title = 'Canary Gay Experience - Condiciones legales';
+?>
 <div class="container">
 <h1 class="page-header text-center">Aviso legal</h1>
 

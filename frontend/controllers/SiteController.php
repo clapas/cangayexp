@@ -102,7 +102,7 @@ class SiteController extends Controller
     }
 
     public function actionActivities() {
-        return $this->render('catalog_es');
+        return $this->render('catalog_' . Yii::$app->language);
     }
     public function actionContact() {
         return $this->render('contact_es');
@@ -118,10 +118,10 @@ class SiteController extends Controller
         ]);
     }
     public function actionOrders() {
-        return $this->render('orders_es');
+        return $this->render('orders_' . Yii::$app->language);
     }
     public function actionGroups() {
-        return $this->render('groups_es');
+        return $this->render('groups_' . Yii::$app->language);
     }
     public function actionAbout() {
         $activitySearch = new ActivitySearch();
@@ -130,13 +130,13 @@ class SiteController extends Controller
         $upcoming_activities->query->orderBy('start_ts asc');
         $upcoming_activities->query->limit(3);
         $upcoming_activities->pagination = false;
-        return $this->render('about_es', compact('upcoming_activities'));
+        return $this->render('about_' . Yii::$app->language, compact('upcoming_activities'));
     }
     public function actionConditions() {
-        return $this->render('conditions_es');
+        return $this->render('conditions_' . Yii::$app->language);
     }
     public function actionPrivacy() {
-        return $this->render('privacy_es');
+        return $this->render('privacy_' . Yii::$app->language);
     }
 
     public function actionSignup()

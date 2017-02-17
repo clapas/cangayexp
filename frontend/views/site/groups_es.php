@@ -1,5 +1,6 @@
 <?php
 use yii\helpers\Url;
+$this->title = 'Canary Gay Experience - Ofertas de grupo';
 ?>
 <div class="container">
 <h1 class="page-header text-center">Precios y ofertas de grupo</h1>
@@ -7,5 +8,5 @@ use yii\helpers\Url;
 
 <p>Explícanos en detalle qué quieres, para que te hagamos la propuesta más personalizada y adecuada posible: tamaño del grupo, edades, nivel deseado, experiencia previa, evento sorpresa, cumpleaños, despedida de solter@, etc.</p>
 
-<p>¡Ojo! Algunas de las actividades tiene un mínimo de 10 o 12 personas. Descárgate aquí <a href="https://drive.google.com/file/d/0B6m4bpAU2AOgT3JucDVSV19CMVE/view?usp=sharing">nuestro catálogo</a> para hacerte una idea.
+<p>¡Ojo! Algunas de las actividades tiene un mínimo de 10 o 12 personas. Descárgate aquí <a target="_blank" href="<?=Yii::$app->params['catalog_url']?>">nuestro catálogo</a> para hacerte una idea.
 </div>

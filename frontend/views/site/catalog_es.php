@@ -1,11 +1,12 @@
 <?php 
 use yii\helpers\Url;
 
+$this->title = 'Canary Gay Experience - Nuestras actividades';
 $catalogUrl = Url::to(['activity/index']);
-$lead_para = Yii::t('app', 'We will take care of making your way through the island something different, in contact with the nature and culture of our land, delivering unique life experiences to you');
+$lead_para = 'Nos encargamos de hacer tu paso por la isla diferente, en contacto con la naturaleza y la cultura de nuestra tierra, haciendo que vivas experiencias únicas';
 ?>
 <div class="container">
-  <h1 class="text-center page-header"><?=Yii::t('app', 'Activities')?></h1>
+  <h1 class="text-center page-header">Actividades</h1>
   <!---->
   <p class="text-center lead"><?=$lead_para?></p>
   <div class="row well activities">
@@ -15,8 +16,8 @@ $lead_para = Yii::t('app', 'We will take care of making your way through the isl
         <p class="lead">La mejor manera de conocer todos los rincones secretos de la isla.</p>
         <a href="<?=$catalogUrl?>" class="btn btn-primary">Ver programadas</a>
       </div>
-      <p>En invierno recorremos Barranco Hondo, el pequeño cañón del colorado canario. Atravesaremos un túnel de 200 metros a oscuras, veremos edificaciones aborígenes y cardones centenarios, accederemos al arco natural de roca más grande de Gran Canaria. ¡Un recorrido sorprendente y pétreo! </p> 
-        <p>En verano vamos al Barranco de los Cernícalos, un lugar dónde el agua está presente todo el año, dentro de un bosque de galería y laurisilva lleno de especies endémicas; un espacio que el visitante no espera encontrar, en esta isla con contrastes de verdes y paisajes desérticos.</p>
+      <p>Caminando podemos acceder a paisajes con contrastes. Ver cascadas de agua dentro de un bosque de laurisilva o adentrarse en un cañón desértico donde las paredes verticales nos muestran caprichosas formas y cuevas con centenarios cactus gigantes.</p> 
+        <p>Tenemos varios itinerarios diseñados por su espectacularidad y originalidad ofreciendo paisajes atractivos. Los únicos requisitos que tiene que cumplir el participante son: no tener excesivo miedo a las alturas o vértigo, independientemente de la edad que tenga.</p>
     </div>
     <div class="col-md-6 activity activity-canyon">
       <div class="activity-header">
@@ -24,9 +25,8 @@ $lead_para = Yii::t('app', 'We will take care of making your way through the isl
         <p class="lead">¡Caminar, saltar, trepar, descender, nadar, rapelar y disfrutar!</p>
         <a href="<?=$catalogUrl?>" class="btn btn-primary">Ver programadas</a>
       </div>
-      <p>En temporada de invierno, salimos a la zona suroeste: barrancos de la Manta y del Mulato, y a la zona sur: Barranco del Toro y Cañón del Águila.</p>
-      <p>En temporada de verano nos desplazamos al centro-norte, realizando descensos en el Barranco de los Cernícalos y de La Mina.</p>
-      <p>Dependiendo del barranco elegido, tendremos selvas con cascadas de agua, o barrancos divertidísimos con saltos de diferentes alturas y toboganes naturales. La actividad en sí dependerá del barranco elegido.</p>
+      <p>Actividad de aventura que consiste en descender por un barranco o cañón, siguiendo el curso del agua, donde se combinan diferentes ejercicios como: caminar, saltar, destrepar, nadar, rapelar y disfrutar! Vamos equipados con traje de neopreno, casco y equipos de protección individual (arnés, mosquetón y ocho)</p>
+      <p>Lo único que necesita una persona para realizar esta actividad, es: zapatillas deportivas (que se van a mojar) y otro calzado para cambiarse, bañador y toalla.</p>
     </div>
     <div class="clearfix"></div>
     <div class="col-md-6 activity activity-kayak">

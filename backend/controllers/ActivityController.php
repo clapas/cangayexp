@@ -217,6 +217,11 @@ class ActivityController extends Controller
         }
         return $this->redirect(['view', 'id' => $id]);
     }
+    public function actionDelete($id) {
+        $model = $this->findModel($id);
+        $model->delete();
+        return $this->redirect(['index']);
+    }
     public function actionDeleteFile($id) {
         $model_file = ActivityFile::findOne($id); 
         $model_id = $model_file->activity_id;

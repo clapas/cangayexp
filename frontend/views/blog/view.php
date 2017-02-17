@@ -4,7 +4,7 @@ use yii\helpers\Url;
 use yii\helpers\Html;
 use yii\widgets\Pjax;
 use yii\widgets\ListView;
-
+$this->title = 'Canary Gay Experience Blog - ' . $model->title;
 ?>
 <div class="container-fluid">
   <div class="row">

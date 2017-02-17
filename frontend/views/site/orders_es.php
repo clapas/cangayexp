@@ -1,5 +1,6 @@
 <?php
 use yii\helpers\Url;
+$this->title = 'Canary Gay Experience - Pedidos y devoluciones';
 ?>
 <div class="container">
 <h1 class="page-header text-center">Pedidos y devoluciones</h1>

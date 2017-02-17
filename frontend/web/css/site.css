@@ -313,7 +313,7 @@ time.icon span
     float: left;
     color: #903;
     font-size: 75px;
-    line-height: 19px;
+    line-height: 40px;
     padding-top: 4px;
     padding-right: 8px;
     padding-left: 3px;
@@ -380,13 +380,13 @@ time.icon span
 }
 .activity-header > p ,.activity-header > h2 {
     padding: 8px;
-    background-color: rgba(0, 0, 0, 0.5);
+    background-color: rgba(0, 0, 0, 0.6);
     text-shadow: black 0 1px 2px;
     color: white;
 }
 
 .activity-header > h2 {
-    margin-bottom: 48px;
+    margin-bottom: 28px;
 }
 
 .activity-header > .btn {

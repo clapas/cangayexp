@@ -60,7 +60,7 @@ use kartik\markdown\MarkdownEditor;
 $script = <<< JS
 \$slug = $('[name="BlogEntry[slug]"]');
 $('[name="BlogEntry[title]"]').on('keyup', function() {
-    \$slug.val($(this).val().replace(/ /g, '-'));
+    \$slug.val($(this).val().replace(/[^A-Za-z0-9_ ]/g, '').replace(/ /g, '-'));
     return false;
 });
 JS;

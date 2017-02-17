@@ -1,6 +1,7 @@
 <?php 
 use yii\helpers\Url;
 use yii\widgets\ListView;
+$this->title = 'Canary Gay Experience - Sobre nosotros';
 ?>
 <div class="container">
 <div class="row">
