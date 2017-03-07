@@ -103,6 +103,28 @@ AppAsset::register($this);
             <hr>
             <p class="text-center">Copyright &copy; canarygayexperience.com (<?=Yii::$app->formatter->asDate('now', 'yyyy')?>)</p>
     </footer>
+    <link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.0.3/cookieconsent.min.css" />
+    <script src="//cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.0.3/cookieconsent.min.js"></script>
+    <script>
+      window.addEventListener("load", function(){
+        window.cookieconsent.initialise({
+          "palette": {
+            "popup": {
+              "background": "#aa0000",
+              "text": "#ffdddd"
+            },
+            "button": {
+              "background": "#ff0000"
+            }
+          },
+          "position": "bottom-left",
+          "content": {
+            "message": "<?= Yii::t('app', 'This website uses cookies to ensure you get the best experience on our website.') ?>",
+            "dismiss": "<?= Yii::t('app', 'Got it!') ?>",
+            "link": "<?= Yii::t('app', 'Learn more') ?>"
+          }
+      })});
+    </script>
     <?php $this->endBody() ?>
 </body>
 </html>
