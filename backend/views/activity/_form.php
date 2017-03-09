@@ -33,7 +33,7 @@ use kartik\widgets\DateTimePicker;
 	    </div>
 	    <div class="form-group">
               <?= Html::activeLabel($model, 'subtitles') ?>
-              <input type="text" class="form-control" name="ActivityForm[subtitles][<?= $code ?>]" maxlength="32" value="<?= $model->subtitles[$code] ?>">
+              <input type="text" class="form-control" name="ActivityForm[subtitles][<?= $code ?>]" maxlength="64" value="<?= $model->subtitles[$code] ?>">
 	    </div>
 	    <div class="form-group">
               <?= Html::activeLabel($model, 'descriptions') ?>

@@ -34,7 +34,7 @@ class ActivityNotes extends \yii\db\ActiveRecord
             [['language_code'], 'required'],
             [['activity_id'], 'integer'],
             [['language_code'], 'string', 'max' => 2],
-            [['notes'], 'string', 'max' => 32],
+            [['notes'], 'string', 'max' => 256],
             [['language_code', 'activity_id'], 'unique', 'targetAttribute' => ['language_code', 'activity_id'], 'message' => 'The combination of Language Code and Activity ID has already been taken.'],
             [['activity_id'], 'exist', 'skipOnError' => true, 'targetClass' => Activity::className(), 'targetAttribute' => ['activity_id' => 'id']],
             [['language_code'], 'exist', 'skipOnError' => true, 'targetClass' => Language::className(), 'targetAttribute' => ['language_code' => 'code']],
