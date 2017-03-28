@@ -11,7 +11,7 @@ $viewURL = Url::to(['activity/view', 'id' => $model->id]);
     if (count($model->files) < 1) 
         echo '<img class="img-responsive img-thumbnail img-rounded" src="http://placehold.it/288x200" alt="">';
     else
-        echo "<div class=\"img-responsive img-thumbnail img-rounded\" style=\"background-image: url({$model->files[0]->url})\")></div>"; ?>
+        echo "<div class=\"img-responsive img-thumbnail img-rounded\" style=\"background-image: url('{$model->files[0]->url})'\")></div>"; ?>
   </div>
   <div class="col-md-9 col-sm-6 col-xs-12 margin-below-sm">
     <span class="date hidden-xs"><?=Yii::$app->formatter->asDate($model->start_ts, 'full')?></span>

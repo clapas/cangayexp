@@ -1,8 +1,5 @@
 <?php 
 
-use yii\widgets\Breadcrumbs;
-use frontend\widgets\Alert;
-
 $this->beginContent('@app/views/layouts/main.php');
 ?>
 

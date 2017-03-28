@@ -74,7 +74,7 @@ $lead_para = 'We will take care of making your way through the island something 
     <div class="col-md-6 activity activity-skydiving">
       <div class="activity-header">
         <h2>Paracaidismo</h2>
-        <p class="lead">Aquellos que no salten, jamás sabrán lo que es volar.</p>
+        <p class="lead">Those who don't jump will never fly.</p>
         <a href="<?=$catalogUrl?>" class="btn btn-primary">See schedule</a>
       </div>
       <p>This is an experience for true adventurers!</p>
