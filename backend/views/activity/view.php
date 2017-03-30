@@ -113,7 +113,7 @@ $this->params['breadcrumbs'][] = $this->title;
     <?php if ($model->files) foreach ($model->files as $f): ?>
       <div class="col-xs-6 col-md-3 form-group">
         <a href="<?= $f->url ?>" class="thumbnail">
-            <?= Html::tag('div', null, ['class' => 'img', 'style' => 'background-image: url(' . $f->url . ')']) ?>
+            <?php $url= str_replace(' ', '%20', $f->url); echo Html::tag('div', null, ['class' => 'img', 'style' => "background-image: url($url)"]) ?>
         </a>
         <?= Html::a(Yii::t('app', 'Delete'), ['delete-file', 'id' => $f->id], [
             'class' => 'btn btn-small btn-danger',
