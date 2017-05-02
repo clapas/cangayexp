@@ -27,7 +27,7 @@ $this->title = 'Canary Gay Experience - Sobre nosotros';
           'dataProvider' => $upcoming_activities,
           'emptyText' => '<div class="list-group-item">' . Yii::t('yii', 'No results found.') . '</div>',
           'summary' => false,
-          'itemView' => '_activity_view',
+          'itemView' => '/blog/_activity_view',
           'options' => ['tag' => false],
           'itemOptions' => ['tag' => false]
       ]); ?>
